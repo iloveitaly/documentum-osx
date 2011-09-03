@@ -1,0 +1,27 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {findNext = id; findPrevious = id; }; 
+            CLASS = FirstResponder; 
+            LANGUAGE = ObjC; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {
+                findNext = id; 
+                findPrevious = id; 
+                openWebViewFindPanel = id; 
+                quickSearchReturn = id; 
+            }; 
+            CLASS = WHSearchController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                oFindNextButton = NSButton; 
+                oFindPanel = NSWindow; 
+                oFindStringField = NSTextField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

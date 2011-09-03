@@ -1,0 +1,68 @@
+{
+    IBClasses = (
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = PHSplitView; LANGUAGE = ObjC; SUPERCLASS = NSSplitView; }, 
+        {
+            ACTIONS = {gotoHomePage = id; }; 
+            CLASS = WHAppController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {oMainWindow = NSWindow; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {startIndexing = id; stopIndexing = id; }; 
+            CLASS = WHHelpIndexer; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                oMainWindow = NSWindow; 
+                oProgress = NSProgressIndicator; 
+                oSheetWindow = NSWindow; 
+                oStopIndexButton = NSButton; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = WHOutlineDataSource; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                oHelpTree = NSOutlineView; 
+                oSearchController = WHSearchController; 
+                oSearchField = NSSearchField; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {CLASS = WHPluginList; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {
+            ACTIONS = {
+                findNext = id; 
+                findPrevious = id; 
+                openWebViewFindPanel = id; 
+                quickSearchReturn = id; 
+            }; 
+            CLASS = WHSearchController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                oFindNextButton = NSButton; 
+                oFindPanel = NSWindow; 
+                oFindStringField = NSTextField; 
+                oHelpTree = NSOutlineView; 
+                oWebView = WebView; 
+            }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            CLASS = WHToolbarController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {oMainWindow = NSWindow; oPluginPopup = NSView; oSearchFieldView = NSView; }; 
+            SUPERCLASS = NSObject; 
+        }, 
+        {
+            ACTIONS = {setHelpPage = id; }; 
+            CLASS = WHWebController; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {oHelpTree = NSOutlineView; oWebView = WebView; }; 
+            SUPERCLASS = NSObject; 
+        }
+    ); 
+    IBVersion = 1; 
+}

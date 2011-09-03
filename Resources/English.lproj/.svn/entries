@@ -1,0 +1,47 @@
+10
+
+dir
+73
+svn+ssh://iloveitaly@svn.mabwebdesign.com/home/iloveitaly/svn/PyHelp/trunk/Resources/English.lproj
+svn+ssh://iloveitaly@svn.mabwebdesign.com/home/iloveitaly/svn/PyHelp
+
+
+
+2009-05-30T16:36:35.643788Z
+50
+Mike
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+46301a22-cd2d-0410-b635-f8334a66240c
+
+InfoPlist.strings
+file
+
+
+
+
+2007-04-22T14:12:08.000000Z
+ccd99e3d954391c24f8e55f8e7336510
+2007-04-22T00:28:51.187619Z
+3
+Mike
+has-props
+
+MainMenu.nib
+dir
+
+Find.nib
+dir
+

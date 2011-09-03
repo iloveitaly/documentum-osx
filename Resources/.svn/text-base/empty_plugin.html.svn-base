@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>empty_plugin</title>
+	<style type="text/css" media="screen">
+		body {
+			font-family:  "Lucida Grande", Verdana, Helvetica, sans-serif;
+			font-weight: bold;
+			font-size: 1.4em;
+			color: #444;
+			margin:0;
+		}
+		
+		body, html {
+			height:100%;
+		}
+		
+		div {
+			top:50%;
+			width:100%;
+			text-align:center;
+			margin-top:-.5em;
+			position:absolute;
+		}
+	</style>
+</head>
+<body>
+	<div>Documentation Empty</div>
+</body>
+</html>

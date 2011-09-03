@@ -1,0 +1,1426 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27046CC80C0B2DC300430E1B /* WHSupportFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 27046CC70C0B2DC300430E1B /* WHSupportFolder.m */; };
+		271BC1C10C5E3717004FB6C5 /* Find.nib in Resources */ = {isa = PBXBuildFile; fileRef = 271BC1BF0C5E3717004FB6C5 /* Find.nib */; };
+		272171FA0BDD832900ECBC6C /* MABEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 272171F90BDD832900ECBC6C /* MABEncrypt.m */; };
+		272172E40BDE2C5400ECBC6C /* encrypt_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 272172D90BDE2C2300ECBC6C /* encrypt_main.m */; };
+		272172E50BDE2C5800ECBC6C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		272173000BDE2C7300ECBC6C /* MABEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 272171F90BDD832900ECBC6C /* MABEncrypt.m */; };
+		2721733B0BDE41BE00ECBC6C /* WHHelpIndexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2721733A0BDE41BE00ECBC6C /* WHHelpIndexer.m */; };
+		272173450BDE451E00ECBC6C /* AMURLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 272173440BDE451E00ECBC6C /* AMURLLoader.m */; };
+		272173490BDE453500ECBC6C /* NSString_AMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 272173480BDE453500ECBC6C /* NSString_AMAdditions.m */; };
+		2725A7DA0F0D6A7800B3BE06 /* override.css in Resources */ = {isa = PBXBuildFile; fileRef = 2725A7D90F0D6A7800B3BE06 /* override.css */; };
+		2725A8920F11958200B3BE06 /* Python.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 2725A8860F11953700B3BE06 /* Python.plugin */; };
+		2725A8B00F11965D00B3BE06 /* PHDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2711B9F60C0DEA4600B5A7C8 /* PHDataSource.m */; };
+		2725A8B10F11966C00B3BE06 /* py_index in Resources */ = {isa = PBXBuildFile; fileRef = 277814480C5E6AB60044FDB1 /* py_index */; };
+		2725A9240F1198DB00B3BE06 /* CSSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 277814260C5E674A0044FDB1 /* CSSDataSource.m */; };
+		2725A9280F1198E700B3BE06 /* css_index in Resources */ = {isa = PBXBuildFile; fileRef = 277814800C5F76B40044FDB1 /* css_index */; };
+		2725A9380F11991400B3BE06 /* CSS.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 2725A91B0F1198C800B3BE06 /* CSS.plugin */; };
+		2725A9530F119A4300B3BE06 /* WHCommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2725A9470F1199DD00B3BE06 /* WHCommonFunctions.m */; };
+		274466DC0F0D4ADD0059E529 /* MTDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 274466B50F0D496C0059E529 /* MTDataSource.m */; };
+		274467320F0D4DD70059E529 /* MooTools.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 274466D20F0D4AAE0059E529 /* MooTools.plugin */; };
+		274467560F0D515A0059E529 /* mt_index in Resources */ = {isa = PBXBuildFile; fileRef = 274467550F0D515A0059E529 /* mt_index */; };
+		275100C20C5D3EEA004C8CA9 /* WHToolbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275100C10C5D3EEA004C8CA9 /* WHToolbarController.m */; };
+		275101110C5D4537004C8CA9 /* WHSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275101100C5D4537004C8CA9 /* WHSearchController.m */; };
+		275118C510D43F33007815B2 /* kohana_index in Resources */ = {isa = PBXBuildFile; fileRef = 275118C410D43F33007815B2 /* kohana_index */; };
+		27674D890C447750009BC88B /* empty_plugin.html in Resources */ = {isa = PBXBuildFile; fileRef = 27674D880C447750009BC88B /* empty_plugin.html */; };
+		276753C00C499065009BC88B /* WHPluginList.m in Sources */ = {isa = PBXBuildFile; fileRef = 276753BF0C499065009BC88B /* WHPluginList.m */; };
+		2778154F0C5F8FC20044FDB1 /* NSString+SearchAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2778154D0C5F8FC20044FDB1 /* NSString+SearchAdditions.m */; };
+		277A0CC00BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */; };
+		277A0CC10BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */; };
+		277A0CF10BE1AF8900C17EBA /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CF00BE1AF8900C17EBA /* libsqlite3.a */; };
+		279607440FD9536800FB72BE /* WHPluginXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 279607430FD9536800FB72BE /* WHPluginXMLParser.m */; };
+		279608690FD984E400FB72BE /* buildindex.py in Resources */ = {isa = PBXBuildFile; fileRef = 279608680FD984E400FB72BE /* buildindex.py */; };
+		279608AF0FD9879100FB72BE /* Kohana-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279608AE0FD9879100FB72BE /* Kohana-Info.plist */; };
+		279608C70FD9881100FB72BE /* KHHelpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 279607E50FD983F600FB72BE /* KHHelpNode.m */; };
+		279608C80FD9881100FB72BE /* KHDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 279607C50FD9806800FB72BE /* KHDataSource.m */; };
+		279608DF0FD988B700FB72BE /* Kohana.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 279608A10FD9875C00FB72BE /* Kohana.plugin */; };
+		279609590FD98DEF00FB72BE /* override.css in Resources */ = {isa = PBXBuildFile; fileRef = 279609580FD98DEF00FB72BE /* override.css */; };
+		27B06BD20BE6AF430088EA5B /* WHHelpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B06BD10BE6AF430088EA5B /* WHHelpNode.m */; };
+		27B58C2D0BCD19850011B993 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B58C2C0BCD19850011B993 /* WebKit.framework */; };
+		27B58C440BCD1CA10011B993 /* WHWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B58C430BCD1CA10011B993 /* WHWebController.m */; };
+		27B58CBC0BCD1F8C0011B993 /* PHSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B58CBB0BCD1F8C0011B993 /* PHSplitView.m */; };
+		27B58D020BCD21AF0011B993 /* SplitBar.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 27B58D010BCD21AF0011B993 /* SplitBar.tiff */; };
+		27B755980FE7F55900A67786 /* ASHelpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DB7C110DB77BB500481CC5 /* ASHelpNode.m */; };
+		27B755990FE7F55900A67786 /* ASDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DB7BF90DB778E200481CC5 /* ASDataSource.m */; };
+		27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 27B7555B0FE7F48E00A67786 /* ActionScript.plugin */; };
+		27BFB6260BCB35EF00E7B173 /* WHAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6250BCB35EF00E7B173 /* WHAppController.m */; };
+		27BFB6490BCBC57200E7B173 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6440BCBC57200E7B173 /* FMDatabase.m */; };
+		27BFB64A0BCBC57200E7B173 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6460BCBC57200E7B173 /* FMDatabaseAdditions.m */; };
+		27BFB64B0BCBC57200E7B173 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6480BCBC57200E7B173 /* FMResultSet.m */; };
+		27BFB6DE0BCC7FD600E7B173 /* WHOutlineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6DD0BCC7FD600E7B173 /* WHOutlineDataSource.m */; };
+		27BFB6F00BCC840300E7B173 /* MABSupportFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6EF0BCC840300E7B173 /* MABSupportFolder.m */; };
+		27F4DF090FD1A39200EABF46 /* WHPluginBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4DF080FD1A39200EABF46 /* WHPluginBase.m */; };
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2725A88E0F11957C00B3BE06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2725A8850F11953700B3BE06;
+			remoteInfo = Python;
+		};
+		2725A9410F11993B00B3BE06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2725A91A0F1198C800B3BE06;
+			remoteInfo = CSS;
+		};
+		274467400F0D4E9C0059E529 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 274466D10F0D4AAE0059E529;
+			remoteInfo = MooTools;
+		};
+		277A0D110BE1B67200C17EBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 272172D30BDE2BFF00ECBC6C;
+			remoteInfo = EncryptTool;
+		};
+		279608B10FD987C100FB72BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 279608A00FD9875C00FB72BE;
+			remoteInfo = Kohana;
+		};
+		27B7559B0FE7F59E00A67786 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27B7555A0FE7F48E00A67786;
+			remoteInfo = ActionScript;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		274467450F0D4EA70059E529 /* Copy Plugins */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */,
+				279608DF0FD988B700FB72BE /* Kohana.plugin in Copy Plugins */,
+				2725A9380F11991400B3BE06 /* CSS.plugin in Copy Plugins */,
+				2725A8920F11958200B3BE06 /* Python.plugin in Copy Plugins */,
+				274467320F0D4DD70059E529 /* MooTools.plugin in Copy Plugins */,
+			);
+			name = "Copy Plugins";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = Resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		27046CC60C0B2DC300430E1B /* WHSupportFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHSupportFolder.h; path = ../Controller/WHSupportFolder.h; sourceTree = "<group>"; };
+		27046CC70C0B2DC300430E1B /* WHSupportFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHSupportFolder.m; path = ../Controller/WHSupportFolder.m; sourceTree = "<group>"; };
+		2711B9EA0C0DD17400B5A7C8 /* WHDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHDataSource.h; path = Source/Plugin/WHDataSource.h; sourceTree = "<group>"; };
+		2711B9F50C0DEA4600B5A7C8 /* PHDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHDataSource.h; path = Source/Plugins/Python/PHDataSource.h; sourceTree = "<group>"; };
+		2711B9F60C0DEA4600B5A7C8 /* PHDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHDataSource.m; path = Source/Plugins/Python/PHDataSource.m; sourceTree = "<group>"; };
+		2711BB400C0F4A2500B5A7C8 /* WHIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHIndexer.h; path = Source/Plugin/WHIndexer.h; sourceTree = "<group>"; };
+		271BC1C00C5E3717004FB6C5 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = Resources/English.lproj/Find.nib; sourceTree = "<group>"; };
+		272171F80BDD832900ECBC6C /* MABEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MABEncrypt.h; sourceTree = "<group>"; };
+		272171F90BDD832900ECBC6C /* MABEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MABEncrypt.m; sourceTree = "<group>"; };
+		272172D40BDE2BFF00ECBC6C /* EncryptTool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EncryptTool; sourceTree = BUILT_PRODUCTS_DIR; };
+		272172D90BDE2C2300ECBC6C /* encrypt_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = encrypt_main.m; path = Source/encrypt_main.m; sourceTree = "<group>"; };
+		272173390BDE41BE00ECBC6C /* WHHelpIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHHelpIndexer.h; path = Source/Controller/WHHelpIndexer.h; sourceTree = "<group>"; };
+		2721733A0BDE41BE00ECBC6C /* WHHelpIndexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHHelpIndexer.m; path = Source/Controller/WHHelpIndexer.m; sourceTree = "<group>"; };
+		272173430BDE451E00ECBC6C /* AMURLLoader.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = AMURLLoader.h; sourceTree = "<group>"; };
+		272173440BDE451E00ECBC6C /* AMURLLoader.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = AMURLLoader.m; sourceTree = "<group>"; };
+		272173470BDE453500ECBC6C /* NSString_AMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = NSString_AMAdditions.h; sourceTree = "<group>"; };
+		272173480BDE453500ECBC6C /* NSString_AMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = NSString_AMAdditions.m; sourceTree = "<group>"; };
+		2725A7D90F0D6A7800B3BE06 /* override.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = override.css; path = Source/Plugins/MT/override.css; sourceTree = "<group>"; };
+		2725A8860F11953700B3BE06 /* Python.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Python.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		2725A8870F11953800B3BE06 /* Python-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Python-Info.plist"; path = "Source/Plugins/Python/Python-Info.plist"; sourceTree = "<group>"; };
+		2725A91B0F1198C800B3BE06 /* CSS.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSS.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		2725A91C0F1198C800B3BE06 /* CSS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CSS-Info.plist"; path = "Source/Plugins/CSS/CSS-Info.plist"; sourceTree = "<group>"; };
+		2725A9470F1199DD00B3BE06 /* WHCommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WHCommonFunctions.m; sourceTree = "<group>"; };
+		2725A9490F1199F600B3BE06 /* WHCommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WHCommonFunctions.h; sourceTree = "<group>"; };
+		274466B30F0D496C0059E529 /* MTDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTDataSource.h; path = Source/Plugins/MT/MTDataSource.h; sourceTree = "<group>"; };
+		274466B50F0D496C0059E529 /* MTDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTDataSource.m; path = Source/Plugins/MT/MTDataSource.m; sourceTree = "<group>"; };
+		274466B90F0D496C0059E529 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/MT/buildindex.py; sourceTree = "<group>"; };
+		274466D20F0D4AAE0059E529 /* MooTools.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MooTools.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		274466D30F0D4AAE0059E529 /* MooTools-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MooTools-Info.plist"; path = "Source/Plugins/MT/MooTools-Info.plist"; sourceTree = "<group>"; };
+		274467550F0D515A0059E529 /* mt_index */ = {isa = PBXFileReference; lastKnownFileType = file; name = mt_index; path = build/mt_index; sourceTree = "<group>"; };
+		275100C00C5D3EEA004C8CA9 /* WHToolbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHToolbarController.h; path = Source/Controller/WHToolbarController.h; sourceTree = "<group>"; };
+		275100C10C5D3EEA004C8CA9 /* WHToolbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHToolbarController.m; path = Source/Controller/WHToolbarController.m; sourceTree = "<group>"; };
+		2751010F0C5D4537004C8CA9 /* WHSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHSearchController.h; path = Source/Controller/WHSearchController.h; sourceTree = "<group>"; };
+		275101100C5D4537004C8CA9 /* WHSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHSearchController.m; path = Source/Controller/WHSearchController.m; sourceTree = "<group>"; };
+		275118C410D43F33007815B2 /* kohana_index */ = {isa = PBXFileReference; lastKnownFileType = text; name = kohana_index; path = build/kohana_index; sourceTree = "<group>"; };
+		27674D880C447750009BC88B /* empty_plugin.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; name = empty_plugin.html; path = Resources/empty_plugin.html; sourceTree = "<group>"; };
+		276753BE0C499065009BC88B /* WHPluginList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginList.h; path = Source/Controller/WHPluginList.h; sourceTree = "<group>"; };
+		276753BF0C499065009BC88B /* WHPluginList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginList.m; path = Source/Controller/WHPluginList.m; sourceTree = "<group>"; };
+		277814250C5E674A0044FDB1 /* CSSDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSDataSource.h; path = Source/Plugins/CSS/CSSDataSource.h; sourceTree = "<group>"; };
+		277814260C5E674A0044FDB1 /* CSSDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSDataSource.m; path = Source/Plugins/CSS/CSSDataSource.m; sourceTree = "<group>"; };
+		277814480C5E6AB60044FDB1 /* py_index */ = {isa = PBXFileReference; lastKnownFileType = text; name = py_index; path = build/py_index; sourceTree = "<group>"; };
+		277814800C5F76B40044FDB1 /* css_index */ = {isa = PBXFileReference; lastKnownFileType = file; name = css_index; path = build/css_index; sourceTree = "<group>"; };
+		2778154D0C5F8FC20044FDB1 /* NSString+SearchAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSString+SearchAdditions.m"; sourceTree = "<group>"; };
+		2778154E0C5F8FC20044FDB1 /* NSString+SearchAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSString+SearchAdditions.h"; sourceTree = "<group>"; };
+		277816E20C60EC400044FDB1 /* PHPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHPDataSource.h; path = Source/Plugins/PHP/PHPDataSource.h; sourceTree = "<group>"; };
+		277816E30C60EC400044FDB1 /* PHPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHPDataSource.m; path = Source/Plugins/PHP/PHPDataSource.m; sourceTree = "<group>"; };
+		2778179E0C693DFF0044FDB1 /* PHPHelpNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHPHelpNode.h; path = Source/Plugins/PHP/PHPHelpNode.h; sourceTree = "<group>"; };
+		2778179F0C693DFF0044FDB1 /* PHPHelpNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHPHelpNode.m; path = Source/Plugins/PHP/PHPHelpNode.m; sourceTree = "<group>"; };
+		277817C60C694ECF0044FDB1 /* PHPXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHPXMLParser.h; path = Source/Plugins/PHP/PHPXMLParser.h; sourceTree = "<group>"; };
+		277817C70C694ECF0044FDB1 /* PHPXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHPXMLParser.m; path = Source/Plugins/PHP/PHPXMLParser.m; sourceTree = "<group>"; };
+		277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
+		277A0CF00BE1AF8900C17EBA /* libsqlite3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlite3.a; path = Frameworks/libsqlite3.a; sourceTree = "<group>"; };
+		277A0D8B0BE2366F00C17EBA /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/Python/buildindex.py; sourceTree = "<group>"; };
+		277C749F10EAF1E200BAA961 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/AS/buildindex.py; sourceTree = "<group>"; };
+		279607420FD9536800FB72BE /* WHPluginXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginXMLParser.h; path = Source/Model/WHPluginXMLParser.h; sourceTree = "<group>"; };
+		279607430FD9536800FB72BE /* WHPluginXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginXMLParser.m; path = Source/Model/WHPluginXMLParser.m; sourceTree = "<group>"; };
+		279607C40FD9806800FB72BE /* KHDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHDataSource.h; path = Source/Plugins/Kohana/KHDataSource.h; sourceTree = "<group>"; };
+		279607C50FD9806800FB72BE /* KHDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHDataSource.m; path = Source/Plugins/Kohana/KHDataSource.m; sourceTree = "<group>"; };
+		279607E40FD983F600FB72BE /* KHHelpNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHHelpNode.h; path = Source/Plugins/Kohana/KHHelpNode.h; sourceTree = "<group>"; };
+		279607E50FD983F600FB72BE /* KHHelpNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHHelpNode.m; path = Source/Plugins/Kohana/KHHelpNode.m; sourceTree = "<group>"; };
+		279608680FD984E400FB72BE /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/Kohana/buildindex.py; sourceTree = "<group>"; };
+		279608A10FD9875C00FB72BE /* Kohana.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Kohana.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		279608AE0FD9879100FB72BE /* Kohana-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Kohana-Info.plist"; path = "Source/Plugins/Kohana/Kohana-Info.plist"; sourceTree = "<group>"; };
+		279609580FD98DEF00FB72BE /* override.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = override.css; path = Source/Plugins/Kohana/override.css; sourceTree = "<group>"; };
+		27B06BD00BE6AF430088EA5B /* WHHelpNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHHelpNode.h; path = Source/Model/WHHelpNode.h; sourceTree = "<group>"; };
+		27B06BD10BE6AF430088EA5B /* WHHelpNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHHelpNode.m; path = Source/Model/WHHelpNode.m; sourceTree = "<group>"; };
+		27B58C2C0BCD19850011B993 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
+		27B58C420BCD1CA10011B993 /* WHWebController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHWebController.h; path = Source/Controller/WHWebController.h; sourceTree = "<group>"; };
+		27B58C430BCD1CA10011B993 /* WHWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHWebController.m; path = Source/Controller/WHWebController.m; sourceTree = "<group>"; };
+		27B58C5A0BCD1DA80011B993 /* WHShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHShared.h; path = Source/WHShared.h; sourceTree = "<group>"; };
+		27B58CBA0BCD1F8C0011B993 /* PHSplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHSplitView.h; path = Source/View/PHSplitView.h; sourceTree = "<group>"; };
+		27B58CBB0BCD1F8C0011B993 /* PHSplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHSplitView.m; path = Source/View/PHSplitView.m; sourceTree = "<group>"; };
+		27B58D010BCD21AF0011B993 /* SplitBar.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SplitBar.tiff; sourceTree = "<group>"; };
+		27B7555B0FE7F48E00A67786 /* ActionScript.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionScript.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B7555C0FE7F48E00A67786 /* ActionScript-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ActionScript-Info.plist"; path = "Source/Plugins/AS/ActionScript-Info.plist"; sourceTree = "<group>"; };
+		27BFB6240BCB35EF00E7B173 /* WHAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHAppController.h; path = Source/Controller/WHAppController.h; sourceTree = "<group>"; };
+		27BFB6250BCB35EF00E7B173 /* WHAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHAppController.m; path = Source/Controller/WHAppController.m; sourceTree = "<group>"; };
+		27BFB6430BCBC57200E7B173 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		27BFB6440BCBC57200E7B173 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		27BFB6450BCBC57200E7B173 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		27BFB6460BCBC57200E7B173 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		27BFB6470BCBC57200E7B173 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		27BFB6480BCBC57200E7B173 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		27BFB6DC0BCC7FD600E7B173 /* WHOutlineDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHOutlineDataSource.h; path = Source/Controller/WHOutlineDataSource.h; sourceTree = "<group>"; };
+		27BFB6DD0BCC7FD600E7B173 /* WHOutlineDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHOutlineDataSource.m; path = Source/Controller/WHOutlineDataSource.m; sourceTree = "<group>"; };
+		27BFB6EE0BCC840300E7B173 /* MABSupportFolder.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MABSupportFolder.h; sourceTree = "<group>"; };
+		27BFB6EF0BCC840300E7B173 /* MABSupportFolder.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MABSupportFolder.m; sourceTree = "<group>"; };
+		27DB7B0B0DB5796B00481CC5 /* php_index */ = {isa = PBXFileReference; lastKnownFileType = file; name = php_index; path = build/php_index; sourceTree = "<group>"; };
+		27DB7B0E0DB579DF00481CC5 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/PHP/buildindex.py; sourceTree = "<group>"; };
+		27DB7BF80DB778E200481CC5 /* ASDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASDataSource.h; path = Source/Plugins/AS/ASDataSource.h; sourceTree = "<group>"; };
+		27DB7BF90DB778E200481CC5 /* ASDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASDataSource.m; path = Source/Plugins/AS/ASDataSource.m; sourceTree = "<group>"; };
+		27DB7C100DB77BB500481CC5 /* ASHelpNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASHelpNode.h; path = Source/Plugins/AS/ASHelpNode.h; sourceTree = "<group>"; };
+		27DB7C110DB77BB500481CC5 /* ASHelpNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASHelpNode.m; path = Source/Plugins/AS/ASHelpNode.m; sourceTree = "<group>"; };
+		27DB7CC70DB7C6FE00481CC5 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/CSS/buildindex.py; sourceTree = "<group>"; };
+		27F4DF070FD1A39200EABF46 /* WHPluginBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginBase.h; path = Source/Model/WHPluginBase.h; sourceTree = "<group>"; };
+		27F4DF080FD1A39200EABF46 /* WHPluginBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginBase.m; path = Source/Model/WHPluginBase.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* MainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = MainMenu.nib; path = Resources/English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* PyHelp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PyHelp_Prefix.pch; path = Source/PyHelp_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* PyHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PyHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		272172D20BDE2BFF00ECBC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				272172E50BDE2C5800ECBC6C /* Cocoa.framework in Frameworks */,
+				277A0CC10BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2725A8840F11953700B3BE06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2725A9190F1198C800B3BE06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		274466D00F0D4AAE0059E529 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2796089F0FD9875C00FB72BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B755590FE7F48E00A67786 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				27B58C2D0BCD19850011B993 /* WebKit.framework in Frameworks */,
+				277A0CC00BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */,
+				277A0CF10BE1AF8900C17EBA /* libsqlite3.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27B58C5A0BCD1DA80011B993 /* WHShared.h */,
+				272171F70BDD832900ECBC6C /* Util */,
+				27B58CB90BCD1F4A0011B993 /* View */,
+				27BFB6C40BCC7E1500E7B173 /* Model */,
+				27BFB63A0BCBC56500E7B173 /* Controller */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* PyHelp.app */,
+				272172D40BDE2BFF00ECBC6C /* EncryptTool */,
+				2744672C0F0D4DCA0059E529 /* Plugins */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27046B1F0C0A5C5900430E1B /* PluginSupport */ = {
+			isa = PBXGroup;
+			children = (
+				2711B9EA0C0DD17400B5A7C8 /* WHDataSource.h */,
+				2711BB400C0F4A2500B5A7C8 /* WHIndexer.h */,
+			);
+			name = PluginSupport;
+			sourceTree = "<group>";
+		};
+		27046B270C0A5E6C00430E1B /* Python */ = {
+			isa = PBXGroup;
+			children = (
+				2725A8870F11953800B3BE06 /* Python-Info.plist */,
+				277A0D8B0BE2366F00C17EBA /* buildindex.py */,
+				2711B9F50C0DEA4600B5A7C8 /* PHDataSource.h */,
+				2711B9F60C0DEA4600B5A7C8 /* PHDataSource.m */,
+			);
+			name = Python;
+			sourceTree = "<group>";
+		};
+		272171F70BDD832900ECBC6C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				27046CC60C0B2DC300430E1B /* WHSupportFolder.h */,
+				27046CC70C0B2DC300430E1B /* WHSupportFolder.m */,
+				272173430BDE451E00ECBC6C /* AMURLLoader.h */,
+				272173440BDE451E00ECBC6C /* AMURLLoader.m */,
+				272171F80BDD832900ECBC6C /* MABEncrypt.h */,
+				272171F90BDD832900ECBC6C /* MABEncrypt.m */,
+				27BFB6EE0BCC840300E7B173 /* MABSupportFolder.h */,
+				27BFB6EF0BCC840300E7B173 /* MABSupportFolder.m */,
+				2725A9490F1199F600B3BE06 /* WHCommonFunctions.h */,
+				2725A9470F1199DD00B3BE06 /* WHCommonFunctions.m */,
+				272173460BDE453500ECBC6C /* Categories */,
+				27BFB6420BCBC57200E7B173 /* FMDB */,
+			);
+			name = Util;
+			path = Source/Util;
+			sourceTree = "<group>";
+		};
+		272173460BDE453500ECBC6C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2778154E0C5F8FC20044FDB1 /* NSString+SearchAdditions.h */,
+				2778154D0C5F8FC20044FDB1 /* NSString+SearchAdditions.m */,
+				272173470BDE453500ECBC6C /* NSString_AMAdditions.h */,
+				272173480BDE453500ECBC6C /* NSString_AMAdditions.m */,
+			);
+			name = Categories;
+			path = ../Categories;
+			sourceTree = "<group>";
+		};
+		274466880F0D48380059E529 /* MT */ = {
+			isa = PBXGroup;
+			children = (
+				274466D30F0D4AAE0059E529 /* MooTools-Info.plist */,
+				274466B90F0D496C0059E529 /* buildindex.py */,
+				2725A7D90F0D6A7800B3BE06 /* override.css */,
+				274466B30F0D496C0059E529 /* MTDataSource.h */,
+				274466B50F0D496C0059E529 /* MTDataSource.m */,
+			);
+			name = MT;
+			sourceTree = "<group>";
+		};
+		2744672C0F0D4DCA0059E529 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				27B7555B0FE7F48E00A67786 /* ActionScript.plugin */,
+				279608A10FD9875C00FB72BE /* Kohana.plugin */,
+				2725A91B0F1198C800B3BE06 /* CSS.plugin */,
+				2725A8860F11953700B3BE06 /* Python.plugin */,
+				274466D20F0D4AAE0059E529 /* MooTools.plugin */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		274467670F0D517D0059E529 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				271BC1BF0C5E3717004FB6C5 /* Find.nib */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		274467680F0D51910059E529 /* EncryptedScripts */ = {
+			isa = PBXGroup;
+			children = (
+				275118C410D43F33007815B2 /* kohana_index */,
+				274467550F0D515A0059E529 /* mt_index */,
+				277814480C5E6AB60044FDB1 /* py_index */,
+				277814800C5F76B40044FDB1 /* css_index */,
+				27DB7B0B0DB5796B00481CC5 /* php_index */,
+			);
+			name = EncryptedScripts;
+			sourceTree = "<group>";
+		};
+		276755C90C4A8288009BC88B /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				27F4DFE80FD219BC00EABF46 /* Kohana */,
+				274466880F0D48380059E529 /* MT */,
+				27DB7BF70DB778A300481CC5 /* AS */,
+				277816E50C60EC450044FDB1 /* PHP */,
+				277814010C5E64E70044FDB1 /* CSS */,
+				27046B270C0A5E6C00430E1B /* Python */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
+		277814010C5E64E70044FDB1 /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				2725A91C0F1198C800B3BE06 /* CSS-Info.plist */,
+				27DB7CC70DB7C6FE00481CC5 /* buildindex.py */,
+				277814250C5E674A0044FDB1 /* CSSDataSource.h */,
+				277814260C5E674A0044FDB1 /* CSSDataSource.m */,
+			);
+			name = CSS;
+			sourceTree = "<group>";
+		};
+		277816E50C60EC450044FDB1 /* PHP */ = {
+			isa = PBXGroup;
+			children = (
+				27DB7B0E0DB579DF00481CC5 /* buildindex.py */,
+				277817C60C694ECF0044FDB1 /* PHPXMLParser.h */,
+				277817C70C694ECF0044FDB1 /* PHPXMLParser.m */,
+				2778179E0C693DFF0044FDB1 /* PHPHelpNode.h */,
+				2778179F0C693DFF0044FDB1 /* PHPHelpNode.m */,
+				277816E20C60EC400044FDB1 /* PHPDataSource.h */,
+				277816E30C60EC400044FDB1 /* PHPDataSource.m */,
+			);
+			name = PHP;
+			sourceTree = "<group>";
+		};
+		27B58CB90BCD1F4A0011B993 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				27B58CBA0BCD1F8C0011B993 /* PHSplitView.h */,
+				27B58CBB0BCD1F8C0011B993 /* PHSplitView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		27B58D000BCD21AF0011B993 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				27B58D010BCD21AF0011B993 /* SplitBar.tiff */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		27BFB63A0BCBC56500E7B173 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				276753BE0C499065009BC88B /* WHPluginList.h */,
+				276753BF0C499065009BC88B /* WHPluginList.m */,
+				27BFB6240BCB35EF00E7B173 /* WHAppController.h */,
+				27BFB6250BCB35EF00E7B173 /* WHAppController.m */,
+				27B58C420BCD1CA10011B993 /* WHWebController.h */,
+				27B58C430BCD1CA10011B993 /* WHWebController.m */,
+				27BFB6DC0BCC7FD600E7B173 /* WHOutlineDataSource.h */,
+				27BFB6DD0BCC7FD600E7B173 /* WHOutlineDataSource.m */,
+				2751010F0C5D4537004C8CA9 /* WHSearchController.h */,
+				275101100C5D4537004C8CA9 /* WHSearchController.m */,
+				272173390BDE41BE00ECBC6C /* WHHelpIndexer.h */,
+				2721733A0BDE41BE00ECBC6C /* WHHelpIndexer.m */,
+				275100C00C5D3EEA004C8CA9 /* WHToolbarController.h */,
+				275100C10C5D3EEA004C8CA9 /* WHToolbarController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		27BFB6420BCBC57200E7B173 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				27BFB6430BCBC57200E7B173 /* FMDatabase.h */,
+				27BFB6440BCBC57200E7B173 /* FMDatabase.m */,
+				27BFB6450BCBC57200E7B173 /* FMDatabaseAdditions.h */,
+				27BFB6460BCBC57200E7B173 /* FMDatabaseAdditions.m */,
+				27BFB6470BCBC57200E7B173 /* FMResultSet.h */,
+				27BFB6480BCBC57200E7B173 /* FMResultSet.m */,
+			);
+			name = FMDB;
+			path = ../FMDB;
+			sourceTree = "<group>";
+		};
+		27BFB6C40BCC7E1500E7B173 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27B06BD00BE6AF430088EA5B /* WHHelpNode.h */,
+				27B06BD10BE6AF430088EA5B /* WHHelpNode.m */,
+				27F4DF070FD1A39200EABF46 /* WHPluginBase.h */,
+				27F4DF080FD1A39200EABF46 /* WHPluginBase.m */,
+				279607420FD9536800FB72BE /* WHPluginXMLParser.h */,
+				279607430FD9536800FB72BE /* WHPluginXMLParser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		27DB7BF70DB778A300481CC5 /* AS */ = {
+			isa = PBXGroup;
+			children = (
+				27B7555C0FE7F48E00A67786 /* ActionScript-Info.plist */,
+				27DB7BF80DB778E200481CC5 /* ASDataSource.h */,
+				27DB7BF90DB778E200481CC5 /* ASDataSource.m */,
+				27DB7C100DB77BB500481CC5 /* ASHelpNode.h */,
+				27DB7C110DB77BB500481CC5 /* ASHelpNode.m */,
+				277C749F10EAF1E200BAA961 /* buildindex.py */,
+			);
+			name = AS;
+			sourceTree = "<group>";
+		};
+		27F4DFE80FD219BC00EABF46 /* Kohana */ = {
+			isa = PBXGroup;
+			children = (
+				279608AE0FD9879100FB72BE /* Kohana-Info.plist */,
+				279609580FD98DEF00FB72BE /* override.css */,
+				279608680FD984E400FB72BE /* buildindex.py */,
+				279607E40FD983F600FB72BE /* KHHelpNode.h */,
+				279607E50FD983F600FB72BE /* KHHelpNode.m */,
+				279607C40FD9806800FB72BE /* KHDataSource.h */,
+				279607C50FD9806800FB72BE /* KHDataSource.m */,
+			);
+			name = Kohana;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* PyHelp */ = {
+			isa = PBXGroup;
+			children = (
+				276755C90C4A8288009BC88B /* Plugins */,
+				27046B1F0C0A5C5900430E1B /* PluginSupport */,
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = PyHelp;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* PyHelp_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+				272172D90BDE2C2300ECBC6C /* encrypt_main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				274467680F0D51910059E529 /* EncryptedScripts */,
+				274467670F0D517D0059E529 /* Interface */,
+				27674D880C447750009BC88B /* empty_plugin.html */,
+				27B58D000BCD21AF0011B993 /* Resources */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				277A0CF00BE1AF8900C17EBA /* libsqlite3.a */,
+				277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */,
+				27B58C2C0BCD19850011B993 /* WebKit.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		272172D30BDE2BFF00ECBC6C /* EncryptTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 272172DB0BDE2C2300ECBC6C /* Build configuration list for PBXNativeTarget "EncryptTool" */;
+			buildPhases = (
+				272172D10BDE2BFF00ECBC6C /* Sources */,
+				272172D20BDE2BFF00ECBC6C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EncryptTool;
+			productName = EncryptTool;
+			productReference = 272172D40BDE2BFF00ECBC6C /* EncryptTool */;
+			productType = "com.apple.product-type.tool";
+		};
+		2725A8850F11953700B3BE06 /* Python */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2725A88A0F11953900B3BE06 /* Build configuration list for PBXNativeTarget "Python" */;
+			buildPhases = (
+				2725A8820F11953700B3BE06 /* Resources */,
+				2725A8830F11953700B3BE06 /* Sources */,
+				2725A8840F11953700B3BE06 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Python;
+			productName = Python;
+			productReference = 2725A8860F11953700B3BE06 /* Python.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+		2725A91A0F1198C800B3BE06 /* CSS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2725A91F0F1198C900B3BE06 /* Build configuration list for PBXNativeTarget "CSS" */;
+			buildPhases = (
+				2725A9170F1198C800B3BE06 /* Resources */,
+				2725A9180F1198C800B3BE06 /* Sources */,
+				2725A9190F1198C800B3BE06 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CSS;
+			productName = CSS;
+			productReference = 2725A91B0F1198C800B3BE06 /* CSS.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+		274466D10F0D4AAE0059E529 /* MooTools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 274466D60F0D4AB00059E529 /* Build configuration list for PBXNativeTarget "MooTools" */;
+			buildPhases = (
+				274466CE0F0D4AAE0059E529 /* Resources */,
+				274466CF0F0D4AAE0059E529 /* Sources */,
+				274466D00F0D4AAE0059E529 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MooTools;
+			productName = MooTools;
+			productReference = 274466D20F0D4AAE0059E529 /* MooTools.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+		279608A00FD9875C00FB72BE /* Kohana */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 279608A50FD9875E00FB72BE /* Build configuration list for PBXNativeTarget "Kohana" */;
+			buildPhases = (
+				2796089D0FD9875C00FB72BE /* Resources */,
+				2796089E0FD9875C00FB72BE /* Sources */,
+				2796089F0FD9875C00FB72BE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kohana;
+			productName = Kohana;
+			productReference = 279608A10FD9875C00FB72BE /* Kohana.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+		27B7555A0FE7F48E00A67786 /* ActionScript */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B7555F0FE7F48F00A67786 /* Build configuration list for PBXNativeTarget "ActionScript" */;
+			buildPhases = (
+				27B755570FE7F48E00A67786 /* Resources */,
+				27B755580FE7F48E00A67786 /* Sources */,
+				27B755590FE7F48E00A67786 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ActionScript;
+			productName = ActionScript;
+			productReference = 27B7555B0FE7F48E00A67786 /* ActionScript.plugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+		8D1107260486CEB800E47090 /* PyHelp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "PyHelp" */;
+			buildPhases = (
+				277A0C9D0BE1AAF400C17EBA /* EncryptScripts */,
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				274467450F0D4EA70059E529 /* Copy Plugins */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				279608B20FD987C100FB72BE /* PBXTargetDependency */,
+				2725A9420F11993B00B3BE06 /* PBXTargetDependency */,
+				2725A88F0F11957C00B3BE06 /* PBXTargetDependency */,
+				274467410F0D4E9C0059E529 /* PBXTargetDependency */,
+				27B7559C0FE7F59E00A67786 /* PBXTargetDependency */,
+				277A0D120BE1B67200C17EBA /* PBXTargetDependency */,
+			);
+			name = PyHelp;
+			productInstallPath = "$(HOME)/Applications";
+			productName = PyHelp;
+			productReference = 8D1107320486CEB800E47090 /* PyHelp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PyHelp" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* PyHelp */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* PyHelp */,
+				272172D30BDE2BFF00ECBC6C /* EncryptTool */,
+				274466D10F0D4AAE0059E529 /* MooTools */,
+				2725A8850F11953700B3BE06 /* Python */,
+				2725A91A0F1198C800B3BE06 /* CSS */,
+				279608A00FD9875C00FB72BE /* Kohana */,
+				27B7555A0FE7F48E00A67786 /* ActionScript */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2725A8820F11953700B3BE06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725A8B10F11966C00B3BE06 /* py_index in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2725A9170F1198C800B3BE06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725A9280F1198E700B3BE06 /* css_index in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		274466CE0F0D4AAE0059E529 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725A7DA0F0D6A7800B3BE06 /* override.css in Resources */,
+				274467560F0D515A0059E529 /* mt_index in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2796089D0FD9875C00FB72BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				279609590FD98DEF00FB72BE /* override.css in Resources */,
+				275118C510D43F33007815B2 /* kohana_index in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B755570FE7F48E00A67786 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				27B58D020BCD21AF0011B993 /* SplitBar.tiff in Resources */,
+				27674D890C447750009BC88B /* empty_plugin.html in Resources */,
+				271BC1C10C5E3717004FB6C5 /* Find.nib in Resources */,
+				279608690FD984E400FB72BE /* buildindex.py in Resources */,
+				279608AF0FD9879100FB72BE /* Kohana-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		277A0C9D0BE1AAF400C17EBA /* EncryptScripts */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = EncryptScripts;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$BUILD_DIR/$BUILD_STYLE/EncryptTool $SRCROOT/Source/Plugins/Python//buildindex.py $BUILD_DIR/py_index slitherypython\n$BUILD_DIR/$BUILD_STYLE/EncryptTool $SRCROOT/Source/Plugins/CSS/buildindex.py $BUILD_DIR/css_index sneakycss\n$BUILD_DIR/$BUILD_STYLE/EncryptTool $SRCROOT/Source/Plugins/PHP/buildindex.py $BUILD_DIR/php_index poopyphp\n$BUILD_DIR/$BUILD_STYLE/EncryptTool $SRCROOT/Source/Plugins/MT/buildindex.py $BUILD_DIR/mt_index moocow\n$BUILD_DIR/$BUILD_STYLE/EncryptTool $SRCROOT/Source/Plugins/Kohana/buildindex.py $BUILD_DIR/kohana_index hokan\n$BUILD_DIR/$BUILD_STYLE/EncryptTool $SRCROOT/Source/Plugins/AS/buildindex.py $BUILD_DIR/as_index scriptaction";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		272172D10BDE2BFF00ECBC6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				272173000BDE2C7300ECBC6C /* MABEncrypt.m in Sources */,
+				272172E40BDE2C5400ECBC6C /* encrypt_main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2725A8830F11953700B3BE06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725A8B00F11965D00B3BE06 /* PHDataSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2725A9180F1198C800B3BE06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725A9240F1198DB00B3BE06 /* CSSDataSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		274466CF0F0D4AAE0059E529 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				274466DC0F0D4ADD0059E529 /* MTDataSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2796089E0FD9875C00FB72BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				279608C70FD9881100FB72BE /* KHHelpNode.m in Sources */,
+				279608C80FD9881100FB72BE /* KHDataSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B755580FE7F48E00A67786 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B755980FE7F55900A67786 /* ASHelpNode.m in Sources */,
+				27B755990FE7F55900A67786 /* ASDataSource.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				27BFB6260BCB35EF00E7B173 /* WHAppController.m in Sources */,
+				27BFB6490BCBC57200E7B173 /* FMDatabase.m in Sources */,
+				27BFB64A0BCBC57200E7B173 /* FMDatabaseAdditions.m in Sources */,
+				27BFB64B0BCBC57200E7B173 /* FMResultSet.m in Sources */,
+				27BFB6DE0BCC7FD600E7B173 /* WHOutlineDataSource.m in Sources */,
+				27BFB6F00BCC840300E7B173 /* MABSupportFolder.m in Sources */,
+				27B58C440BCD1CA10011B993 /* WHWebController.m in Sources */,
+				27B58CBC0BCD1F8C0011B993 /* PHSplitView.m in Sources */,
+				272171FA0BDD832900ECBC6C /* MABEncrypt.m in Sources */,
+				2721733B0BDE41BE00ECBC6C /* WHHelpIndexer.m in Sources */,
+				272173450BDE451E00ECBC6C /* AMURLLoader.m in Sources */,
+				272173490BDE453500ECBC6C /* NSString_AMAdditions.m in Sources */,
+				27B06BD20BE6AF430088EA5B /* WHHelpNode.m in Sources */,
+				27046CC80C0B2DC300430E1B /* WHSupportFolder.m in Sources */,
+				276753C00C499065009BC88B /* WHPluginList.m in Sources */,
+				275100C20C5D3EEA004C8CA9 /* WHToolbarController.m in Sources */,
+				275101110C5D4537004C8CA9 /* WHSearchController.m in Sources */,
+				2778154F0C5F8FC20044FDB1 /* NSString+SearchAdditions.m in Sources */,
+				2725A9530F119A4300B3BE06 /* WHCommonFunctions.m in Sources */,
+				27F4DF090FD1A39200EABF46 /* WHPluginBase.m in Sources */,
+				279607440FD9536800FB72BE /* WHPluginXMLParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2725A88F0F11957C00B3BE06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2725A8850F11953700B3BE06 /* Python */;
+			targetProxy = 2725A88E0F11957C00B3BE06 /* PBXContainerItemProxy */;
+		};
+		2725A9420F11993B00B3BE06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2725A91A0F1198C800B3BE06 /* CSS */;
+			targetProxy = 2725A9410F11993B00B3BE06 /* PBXContainerItemProxy */;
+		};
+		274467410F0D4E9C0059E529 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 274466D10F0D4AAE0059E529 /* MooTools */;
+			targetProxy = 274467400F0D4E9C0059E529 /* PBXContainerItemProxy */;
+		};
+		277A0D120BE1B67200C17EBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 272172D30BDE2BFF00ECBC6C /* EncryptTool */;
+			targetProxy = 277A0D110BE1B67200C17EBA /* PBXContainerItemProxy */;
+		};
+		279608B20FD987C100FB72BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 279608A00FD9875C00FB72BE /* Kohana */;
+			targetProxy = 279608B10FD987C100FB72BE /* PBXContainerItemProxy */;
+		};
+		27B7559C0FE7F59E00A67786 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27B7555A0FE7F48E00A67786 /* ActionScript */;
+			targetProxy = 27B7559B0FE7F59E00A67786 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* InfoPlist.strings */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		271BC1BF0C5E3717004FB6C5 /* Find.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				271BC1C00C5E3717004FB6C5 /* English */,
+			);
+			name = Find.nib;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* MainMenu.nib */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		272172DC0BDE2C2300ECBC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = "$(HOME)/bin";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = EncryptTool;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		272172DD0BDE2C2300ECBC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = "$(HOME)/bin";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = EncryptTool;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		2725A8880F11953900B3BE06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/Python/Python-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Python;
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		2725A8890F11953900B3BE06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/Python/Python-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Python;
+				WRAPPER_EXTENSION = plugin;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		2725A91D0F1198C900B3BE06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/CSS/CSS-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CSS;
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		2725A91E0F1198C900B3BE06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/CSS/CSS-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CSS;
+				WRAPPER_EXTENSION = plugin;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		274466D40F0D4AAF0059E529 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/MT/MooTools-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MooTools;
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		274466D50F0D4AAF0059E529 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/MT/MooTools-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = MooTools;
+				WRAPPER_EXTENSION = plugin;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		279608A30FD9875D00FB72BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/Kohana/Kohana-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Kohana;
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		279608A40FD9875D00FB72BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/Kohana/Kohana-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = Kohana;
+				WRAPPER_EXTENSION = plugin;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		27B7555D0FE7F48F00A67786 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/AS/ActionScript-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ActionScript;
+				WRAPPER_EXTENSION = plugin;
+			};
+			name = Debug;
+		};
+		27B7555E0FE7F48F00A67786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Source/Plugins/AS/ActionScript-Info.plist";
+				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ActionScript;
+				WRAPPER_EXTENSION = plugin;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
+				OTHER_LDFLAGS = "-lcrypto";
+				PRODUCT_NAME = PyHelp;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = Resources/Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
+				OTHER_LDFLAGS = "-lcrypto";
+				PRODUCT_NAME = PyHelp;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_VERSION = .5;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_VERSION = .5;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		272172DB0BDE2C2300ECBC6C /* Build configuration list for PBXNativeTarget "EncryptTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				272172DC0BDE2C2300ECBC6C /* Debug */,
+				272172DD0BDE2C2300ECBC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2725A88A0F11953900B3BE06 /* Build configuration list for PBXNativeTarget "Python" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2725A8880F11953900B3BE06 /* Debug */,
+				2725A8890F11953900B3BE06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2725A91F0F1198C900B3BE06 /* Build configuration list for PBXNativeTarget "CSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2725A91D0F1198C900B3BE06 /* Debug */,
+				2725A91E0F1198C900B3BE06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		274466D60F0D4AB00059E529 /* Build configuration list for PBXNativeTarget "MooTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				274466D40F0D4AAF0059E529 /* Debug */,
+				274466D50F0D4AAF0059E529 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		279608A50FD9875E00FB72BE /* Build configuration list for PBXNativeTarget "Kohana" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				279608A30FD9875D00FB72BE /* Debug */,
+				279608A40FD9875D00FB72BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27B7555F0FE7F48F00A67786 /* Build configuration list for PBXNativeTarget "ActionScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B7555D0FE7F48F00A67786 /* Debug */,
+				27B7555E0FE7F48F00A67786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "PyHelp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PyHelp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.yourcompany.${PRODUCT_NAME:rfc1034identifier}</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>NSPrincipalClass</key>
+	<string>PHPDataSource</string>
+	<key>WHDocumentationDownloadLink</key>
+	<string>http://us.php.net/distributions/manual/php_manual_en.tar.gz</string>
+	<key>WHPluginStructureFileName</key>
+	<string>structure.xml</string>
+	<key>WHPluginShortName</key>
+	<string>php</string>
+	<key>WHPluginFullName</key>
+	<string>PHP</string>
+	<key>WHPluginHasSections</key>
+	<string>false</string>
+	<key>WHPluginHasTreeStructure</key>
+	<string>true</string>
+</dict>
+</plist>
