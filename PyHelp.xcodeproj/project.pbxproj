@@ -35,10 +35,7 @@
 		2778154F0C5F8FC20044FDB1 /* NSString+SearchAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2778154D0C5F8FC20044FDB1 /* NSString+SearchAdditions.m */; };
 		277A0CC00BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */; };
 		277A0CC10BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */; };
-		279377B1141C3264000925F6 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 279377B0141C3264000925F6 /* libsqlite3.dylib */; };
-		27937805141C35A4000925F6 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 279377EB141C3500000925F6 /* FMDatabase.m */; };
-		27937806141C35A4000925F6 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 279377ED141C3500000925F6 /* FMDatabaseAdditions.m */; };
-		27937807141C35A4000925F6 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 279377F0141C3500000925F6 /* FMResultSet.m */; };
+		277A0CF10BE1AF8900C17EBA /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CF00BE1AF8900C17EBA /* libsqlite3.a */; };
 		279607440FD9536800FB72BE /* WHPluginXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 279607430FD9536800FB72BE /* WHPluginXMLParser.m */; };
 		279608690FD984E400FB72BE /* buildindex.py in Resources */ = {isa = PBXBuildFile; fileRef = 279608680FD984E400FB72BE /* buildindex.py */; };
 		279608AF0FD9879100FB72BE /* Kohana-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279608AE0FD9879100FB72BE /* Kohana-Info.plist */; };
@@ -54,13 +51,13 @@
 		27B755980FE7F55900A67786 /* ASHelpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DB7C110DB77BB500481CC5 /* ASHelpNode.m */; };
 		27B755990FE7F55900A67786 /* ASDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DB7BF90DB778E200481CC5 /* ASDataSource.m */; };
 		27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 27B7555B0FE7F48E00A67786 /* ActionScript.plugin */; };
-		27BB0007137468D90050FBD8 /* PHPDataSource.h in Sources */ = {isa = PBXBuildFile; fileRef = 277816E20C60EC400044FDB1 /* PHPDataSource.h */; };
 		27BB0008137468D90050FBD8 /* PHPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 277816E30C60EC400044FDB1 /* PHPDataSource.m */; };
 		27BB009613746B570050FBD8 /* php_index in Resources */ = {isa = PBXBuildFile; fileRef = 27DB7B0B0DB5796B00481CC5 /* php_index */; };
-		27BB0280137573970050FBD8 /* BeautifulSoup.py in Resources */ = {isa = PBXBuildFile; fileRef = 27BB027F137573970050FBD8 /* BeautifulSoup.py */; };
-		27BB0287137573990050FBD8 /* BeautifulSoup.py in Python Modules */ = {isa = PBXBuildFile; fileRef = 27BB027F137573970050FBD8 /* BeautifulSoup.py */; };
 		27BBFFFA137468BE0050FBD8 /* PHP.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 27BBFFD8137468A00050FBD8 /* PHP.plugin */; };
 		27BFB6260BCB35EF00E7B173 /* WHAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6250BCB35EF00E7B173 /* WHAppController.m */; };
+		27BFB6490BCBC57200E7B173 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6440BCBC57200E7B173 /* FMDatabase.m */; };
+		27BFB64A0BCBC57200E7B173 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6460BCBC57200E7B173 /* FMDatabaseAdditions.m */; };
+		27BFB64B0BCBC57200E7B173 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6480BCBC57200E7B173 /* FMResultSet.m */; };
 		27BFB6DE0BCC7FD600E7B173 /* WHOutlineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6DD0BCC7FD600E7B173 /* WHOutlineDataSource.m */; };
 		27BFB6F00BCC840300E7B173 /* MABSupportFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6EF0BCC840300E7B173 /* MABSupportFolder.m */; };
 		27F4DF090FD1A39200EABF46 /* WHPluginBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F4DF080FD1A39200EABF46 /* WHPluginBase.m */; };
@@ -98,20 +95,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 272172D30BDE2BFF00ECBC6C;
 			remoteInfo = EncryptTool;
-		};
-		279377F7141C3500000925F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 279377E3141C3500000925F6 /* fmdb.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8DD76FA10486AA7600D96B5E;
-			remoteInfo = fmdb;
-		};
-		279377F9141C3500000925F6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 279377E3141C3500000925F6 /* fmdb.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = EE4290EF12B42F870088BD94;
-			remoteInfo = FMDB;
 		};
 		279608B10FD987C100FB72BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -159,7 +142,6 @@
 			dstPath = pymodules;
 			dstSubfolderSpec = 7;
 			files = (
-				27BB0287137573990050FBD8 /* BeautifulSoup.py in Python Modules */,
 			);
 			name = "Python Modules";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +180,7 @@
 		274466B90F0D496C0059E529 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/MT/buildindex.py; sourceTree = "<group>"; };
 		274466D20F0D4AAE0059E529 /* MooTools.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MooTools.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		274466D30F0D4AAE0059E529 /* MooTools-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MooTools-Info.plist"; path = "Source/Plugins/MT/MooTools-Info.plist"; sourceTree = "<group>"; };
-		274467550F0D515A0059E529 /* mt_index */ = {isa = PBXFileReference; lastKnownFileType = file; name = mt_index; path = build/mt_index; sourceTree = "<group>"; };
+		274467550F0D515A0059E529 /* mt_index */ = {isa = PBXFileReference; lastKnownFileType = text; name = mt_index; path = build/mt_index; sourceTree = "<group>"; };
 		275100C00C5D3EEA004C8CA9 /* WHToolbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHToolbarController.h; path = Source/Controller/WHToolbarController.h; sourceTree = "<group>"; };
 		275100C10C5D3EEA004C8CA9 /* WHToolbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHToolbarController.m; path = Source/Controller/WHToolbarController.m; sourceTree = "<group>"; };
 		2751010F0C5D4537004C8CA9 /* WHSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHSearchController.h; path = Source/Controller/WHSearchController.h; sourceTree = "<group>"; };
@@ -210,52 +192,15 @@
 		277814250C5E674A0044FDB1 /* CSSDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSDataSource.h; path = Source/Plugins/CSS/CSSDataSource.h; sourceTree = "<group>"; };
 		277814260C5E674A0044FDB1 /* CSSDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSDataSource.m; path = Source/Plugins/CSS/CSSDataSource.m; sourceTree = "<group>"; };
 		277814480C5E6AB60044FDB1 /* py_index */ = {isa = PBXFileReference; lastKnownFileType = text; name = py_index; path = build/py_index; sourceTree = "<group>"; };
-		277814800C5F76B40044FDB1 /* css_index */ = {isa = PBXFileReference; lastKnownFileType = file; name = css_index; path = build/css_index; sourceTree = "<group>"; };
+		277814800C5F76B40044FDB1 /* css_index */ = {isa = PBXFileReference; lastKnownFileType = text; name = css_index; path = build/css_index; sourceTree = "<group>"; };
 		2778154D0C5F8FC20044FDB1 /* NSString+SearchAdditions.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = "NSString+SearchAdditions.m"; sourceTree = "<group>"; };
 		2778154E0C5F8FC20044FDB1 /* NSString+SearchAdditions.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = "NSString+SearchAdditions.h"; sourceTree = "<group>"; };
 		277816E20C60EC400044FDB1 /* PHPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHPDataSource.h; path = Source/Plugins/PHP/PHPDataSource.h; sourceTree = "<group>"; };
 		277816E30C60EC400044FDB1 /* PHPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHPDataSource.m; path = Source/Plugins/PHP/PHPDataSource.m; sourceTree = "<group>"; };
 		277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
+		277A0CF00BE1AF8900C17EBA /* libsqlite3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlite3.a; path = Frameworks/libsqlite3.a; sourceTree = "<group>"; };
 		277A0D8B0BE2366F00C17EBA /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/Python/buildindex.py; sourceTree = "<group>"; };
 		277C749F10EAF1E200BAA961 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/AS/buildindex.py; sourceTree = "<group>"; };
-		279377B0141C3264000925F6 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
-		279377BC141C3500000925F6 /* config */ = {isa = PBXFileReference; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
-		279377BD141C3500000925F6 /* description */ = {isa = PBXFileReference; lastKnownFileType = text; path = description; sourceTree = "<group>"; };
-		279377BE141C3500000925F6 /* HEAD */ = {isa = PBXFileReference; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		279377C0141C3500000925F6 /* applypatch-msg.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "applypatch-msg.sample"; sourceTree = "<group>"; };
-		279377C1141C3500000925F6 /* commit-msg.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "commit-msg.sample"; sourceTree = "<group>"; };
-		279377C2141C3500000925F6 /* post-commit.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "post-commit.sample"; sourceTree = "<group>"; };
-		279377C3141C3500000925F6 /* post-receive.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "post-receive.sample"; sourceTree = "<group>"; };
-		279377C4141C3500000925F6 /* post-update.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "post-update.sample"; sourceTree = "<group>"; };
-		279377C5141C3500000925F6 /* pre-applypatch.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pre-applypatch.sample"; sourceTree = "<group>"; };
-		279377C6141C3500000925F6 /* pre-commit.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pre-commit.sample"; sourceTree = "<group>"; };
-		279377C7141C3500000925F6 /* pre-rebase.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "pre-rebase.sample"; sourceTree = "<group>"; };
-		279377C8141C3500000925F6 /* prepare-commit-msg.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "prepare-commit-msg.sample"; sourceTree = "<group>"; };
-		279377C9141C3500000925F6 /* update.sample */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = update.sample; sourceTree = "<group>"; };
-		279377CA141C3500000925F6 /* index */ = {isa = PBXFileReference; lastKnownFileType = file; path = index; sourceTree = "<group>"; };
-		279377CC141C3500000925F6 /* exclude */ = {isa = PBXFileReference; lastKnownFileType = text; path = exclude; sourceTree = "<group>"; };
-		279377CE141C3500000925F6 /* HEAD */ = {isa = PBXFileReference; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		279377D1141C3500000925F6 /* master */ = {isa = PBXFileReference; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
-		279377D5141C3500000925F6 /* pack-8482e60cbf79ba27c7e56d8d427ff3d6a1302738.idx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-8482e60cbf79ba27c7e56d8d427ff3d6a1302738.idx"; sourceTree = "<group>"; };
-		279377D6141C3500000925F6 /* pack-8482e60cbf79ba27c7e56d8d427ff3d6a1302738.pack */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-8482e60cbf79ba27c7e56d8d427ff3d6a1302738.pack"; sourceTree = "<group>"; };
-		279377D7141C3500000925F6 /* packed-refs */ = {isa = PBXFileReference; lastKnownFileType = text; path = "packed-refs"; sourceTree = "<group>"; };
-		279377DA141C3500000925F6 /* master */ = {isa = PBXFileReference; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
-		279377DD141C3500000925F6 /* HEAD */ = {isa = PBXFileReference; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
-		279377DF141C3500000925F6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		279377E0141C3500000925F6 /* CHANGES_AND_TODO_LIST.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CHANGES_AND_TODO_LIST.txt; sourceTree = "<group>"; };
-		279377E1141C3500000925F6 /* CONTRIBUTORS.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CONTRIBUTORS.txt; sourceTree = "<group>"; };
-		279377E2141C3500000925F6 /* fmdb.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = fmdb.1; sourceTree = "<group>"; };
-		279377E3141C3500000925F6 /* fmdb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = fmdb.xcodeproj; sourceTree = "<group>"; };
-		279377E6141C3500000925F6 /* fmdb_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fmdb_Prefix.pch; sourceTree = "<group>"; };
-		279377E7141C3500000925F6 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		279377E8141C3500000925F6 /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
-		279377EA141C3500000925F6 /* FMDatabase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
-		279377EB141C3500000925F6 /* FMDatabase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		279377EC141C3500000925F6 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
-		279377ED141C3500000925F6 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
-		279377EE141C3500000925F6 /* fmdb.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fmdb.m; sourceTree = "<group>"; };
-		279377EF141C3500000925F6 /* FMResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
-		279377F0141C3500000925F6 /* FMResultSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		279607420FD9536800FB72BE /* WHPluginXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginXMLParser.h; path = Source/Model/WHPluginXMLParser.h; sourceTree = "<group>"; };
 		279607430FD9536800FB72BE /* WHPluginXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginXMLParser.m; path = Source/Model/WHPluginXMLParser.m; sourceTree = "<group>"; };
 		279607C40FD9806800FB72BE /* KHDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHDataSource.h; path = Source/Plugins/Kohana/KHDataSource.h; sourceTree = "<group>"; };
@@ -277,7 +222,6 @@
 		27B58D010BCD21AF0011B993 /* SplitBar.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = SplitBar.tiff; sourceTree = "<group>"; };
 		27B7555B0FE7F48E00A67786 /* ActionScript.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActionScript.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B7555C0FE7F48E00A67786 /* ActionScript-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ActionScript-Info.plist"; path = "Source/Plugins/AS/ActionScript-Info.plist"; sourceTree = "<group>"; };
-		27BB027F137573970050FBD8 /* BeautifulSoup.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = BeautifulSoup.py; path = Frameworks/Python/BeautifulSoup.py; sourceTree = "<group>"; };
 		27BBFFD8137468A00050FBD8 /* PHP.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PHP.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BBFFD9137468A00050FBD8 /* PHP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PHP-Info.plist"; path = "Source/Plugins/PHP/PHP-Info.plist"; sourceTree = "<group>"; };
 		27BFB6240BCB35EF00E7B173 /* WHAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHAppController.h; path = Source/Controller/WHAppController.h; sourceTree = "<group>"; };
@@ -292,7 +236,7 @@
 		27BFB6DD0BCC7FD600E7B173 /* WHOutlineDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHOutlineDataSource.m; path = Source/Controller/WHOutlineDataSource.m; sourceTree = "<group>"; };
 		27BFB6EE0BCC840300E7B173 /* MABSupportFolder.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MABSupportFolder.h; sourceTree = "<group>"; };
 		27BFB6EF0BCC840300E7B173 /* MABSupportFolder.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MABSupportFolder.m; sourceTree = "<group>"; };
-		27DB7B0B0DB5796B00481CC5 /* php_index */ = {isa = PBXFileReference; lastKnownFileType = file; name = php_index; path = build/php_index; sourceTree = "<group>"; };
+		27DB7B0B0DB5796B00481CC5 /* php_index */ = {isa = PBXFileReference; lastKnownFileType = text; name = php_index; path = build/php_index; sourceTree = "<group>"; };
 		27DB7B0E0DB579DF00481CC5 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/PHP/buildindex.py; sourceTree = "<group>"; };
 		27DB7BF80DB778E200481CC5 /* ASDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASDataSource.h; path = Source/Plugins/AS/ASDataSource.h; sourceTree = "<group>"; };
 		27DB7BF90DB778E200481CC5 /* ASDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASDataSource.m; path = Source/Plugins/AS/ASDataSource.m; sourceTree = "<group>"; };
@@ -367,7 +311,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				27B58C2D0BCD19850011B993 /* WebKit.framework in Frameworks */,
 				277A0CC00BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */,
-				279377B1141C3264000925F6 /* libsqlite3.dylib in Frameworks */,
+				277A0CF10BE1AF8900C17EBA /* libsqlite3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,196 +473,6 @@
 			name = PHP;
 			sourceTree = "<group>";
 		};
-		279377B8141C3500000925F6 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				279377B9141C3500000925F6 /* fmdb */,
-			);
-			name = Vendor;
-			path = Source/Vendor;
-			sourceTree = "<group>";
-		};
-		279377B9141C3500000925F6 /* fmdb */ = {
-			isa = PBXGroup;
-			children = (
-				279377BA141C3500000925F6 /* .git */,
-				279377DF141C3500000925F6 /* .gitignore */,
-				279377E0141C3500000925F6 /* CHANGES_AND_TODO_LIST.txt */,
-				279377E1141C3500000925F6 /* CONTRIBUTORS.txt */,
-				279377E2141C3500000925F6 /* fmdb.1 */,
-				279377E3141C3500000925F6 /* fmdb.xcodeproj */,
-				279377E6141C3500000925F6 /* fmdb_Prefix.pch */,
-				279377E7141C3500000925F6 /* LICENSE.txt */,
-				279377E8141C3500000925F6 /* README.markdown */,
-				279377E9141C3500000925F6 /* src */,
-			);
-			path = fmdb;
-			sourceTree = "<group>";
-		};
-		279377BA141C3500000925F6 /* .git */ = {
-			isa = PBXGroup;
-			children = (
-				279377BB141C3500000925F6 /* branches */,
-				279377BC141C3500000925F6 /* config */,
-				279377BD141C3500000925F6 /* description */,
-				279377BE141C3500000925F6 /* HEAD */,
-				279377BF141C3500000925F6 /* hooks */,
-				279377CA141C3500000925F6 /* index */,
-				279377CB141C3500000925F6 /* info */,
-				279377CD141C3500000925F6 /* logs */,
-				279377D2141C3500000925F6 /* objects */,
-				279377D7141C3500000925F6 /* packed-refs */,
-				279377D8141C3500000925F6 /* refs */,
-			);
-			path = .git;
-			sourceTree = "<group>";
-		};
-		279377BB141C3500000925F6 /* branches */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = branches;
-			sourceTree = "<group>";
-		};
-		279377BF141C3500000925F6 /* hooks */ = {
-			isa = PBXGroup;
-			children = (
-				279377C0141C3500000925F6 /* applypatch-msg.sample */,
-				279377C1141C3500000925F6 /* commit-msg.sample */,
-				279377C2141C3500000925F6 /* post-commit.sample */,
-				279377C3141C3500000925F6 /* post-receive.sample */,
-				279377C4141C3500000925F6 /* post-update.sample */,
-				279377C5141C3500000925F6 /* pre-applypatch.sample */,
-				279377C6141C3500000925F6 /* pre-commit.sample */,
-				279377C7141C3500000925F6 /* pre-rebase.sample */,
-				279377C8141C3500000925F6 /* prepare-commit-msg.sample */,
-				279377C9141C3500000925F6 /* update.sample */,
-			);
-			path = hooks;
-			sourceTree = "<group>";
-		};
-		279377CB141C3500000925F6 /* info */ = {
-			isa = PBXGroup;
-			children = (
-				279377CC141C3500000925F6 /* exclude */,
-			);
-			path = info;
-			sourceTree = "<group>";
-		};
-		279377CD141C3500000925F6 /* logs */ = {
-			isa = PBXGroup;
-			children = (
-				279377CE141C3500000925F6 /* HEAD */,
-				279377CF141C3500000925F6 /* refs */,
-			);
-			path = logs;
-			sourceTree = "<group>";
-		};
-		279377CF141C3500000925F6 /* refs */ = {
-			isa = PBXGroup;
-			children = (
-				279377D0141C3500000925F6 /* heads */,
-			);
-			path = refs;
-			sourceTree = "<group>";
-		};
-		279377D0141C3500000925F6 /* heads */ = {
-			isa = PBXGroup;
-			children = (
-				279377D1141C3500000925F6 /* master */,
-			);
-			path = heads;
-			sourceTree = "<group>";
-		};
-		279377D2141C3500000925F6 /* objects */ = {
-			isa = PBXGroup;
-			children = (
-				279377D3141C3500000925F6 /* info */,
-				279377D4141C3500000925F6 /* pack */,
-			);
-			path = objects;
-			sourceTree = "<group>";
-		};
-		279377D3141C3500000925F6 /* info */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = info;
-			sourceTree = "<group>";
-		};
-		279377D4141C3500000925F6 /* pack */ = {
-			isa = PBXGroup;
-			children = (
-				279377D5141C3500000925F6 /* pack-8482e60cbf79ba27c7e56d8d427ff3d6a1302738.idx */,
-				279377D6141C3500000925F6 /* pack-8482e60cbf79ba27c7e56d8d427ff3d6a1302738.pack */,
-			);
-			path = pack;
-			sourceTree = "<group>";
-		};
-		279377D8141C3500000925F6 /* refs */ = {
-			isa = PBXGroup;
-			children = (
-				279377D9141C3500000925F6 /* heads */,
-				279377DB141C3500000925F6 /* remotes */,
-				279377DE141C3500000925F6 /* tags */,
-			);
-			path = refs;
-			sourceTree = "<group>";
-		};
-		279377D9141C3500000925F6 /* heads */ = {
-			isa = PBXGroup;
-			children = (
-				279377DA141C3500000925F6 /* master */,
-			);
-			path = heads;
-			sourceTree = "<group>";
-		};
-		279377DB141C3500000925F6 /* remotes */ = {
-			isa = PBXGroup;
-			children = (
-				279377DC141C3500000925F6 /* origin */,
-			);
-			path = remotes;
-			sourceTree = "<group>";
-		};
-		279377DC141C3500000925F6 /* origin */ = {
-			isa = PBXGroup;
-			children = (
-				279377DD141C3500000925F6 /* HEAD */,
-			);
-			path = origin;
-			sourceTree = "<group>";
-		};
-		279377DE141C3500000925F6 /* tags */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = tags;
-			sourceTree = "<group>";
-		};
-		279377E4141C3500000925F6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				279377F8141C3500000925F6 /* fmdb */,
-				279377FA141C3500000925F6 /* libFMDB.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		279377E9141C3500000925F6 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				279377EA141C3500000925F6 /* FMDatabase.h */,
-				279377EB141C3500000925F6 /* FMDatabase.m */,
-				279377EC141C3500000925F6 /* FMDatabaseAdditions.h */,
-				279377ED141C3500000925F6 /* FMDatabaseAdditions.m */,
-				279377EE141C3500000925F6 /* fmdb.m */,
-				279377EF141C3500000925F6 /* FMResultSet.h */,
-				279377F0141C3500000925F6 /* FMResultSet.m */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
 		27B58CB90BCD1F4A0011B993 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,14 +488,6 @@
 				27B58D010BCD21AF0011B993 /* SplitBar.tiff */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		27BB0288137573A00050FBD8 /* Python Modules */ = {
-			isa = PBXGroup;
-			children = (
-				27BB027F137573970050FBD8 /* BeautifulSoup.py */,
-			);
-			name = "Python Modules";
 			sourceTree = "<group>";
 		};
 		27BFB63A0BCBC56500E7B173 /* Controller */ = {
@@ -822,7 +568,6 @@
 		29B97314FDCFA39411CA2CEA /* PyHelp */ = {
 			isa = PBXGroup;
 			children = (
-				279377B8141C3500000925F6 /* Vendor */,
 				276755C90C4A8288009BC88B /* Plugins */,
 				27046B1F0C0A5C5900430E1B /* PluginSupport */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -847,7 +592,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				27BB0288137573A00050FBD8 /* Python Modules */,
 				274467680F0D51910059E529 /* EncryptedScripts */,
 				274467670F0D517D0059E529 /* Interface */,
 				27674D880C447750009BC88B /* empty_plugin.html */,
@@ -861,7 +605,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				279377B0141C3264000925F6 /* libsqlite3.dylib */,
+				277A0CF00BE1AF8900C17EBA /* libsqlite3.a */,
 				277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */,
 				27B58C2C0BCD19850011B993 /* WebKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -1038,12 +782,6 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* PyHelp */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 279377E4141C3500000925F6 /* Products */;
-					ProjectRef = 279377E3141C3500000925F6 /* fmdb.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* PyHelp */,
@@ -1057,23 +795,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		279377F8141C3500000925F6 /* fmdb */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = fmdb;
-			remoteRef = 279377F7141C3500000925F6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		279377FA141C3500000925F6 /* libFMDB.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libFMDB.a;
-			remoteRef = 279377F9141C3500000925F6 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2725A8820F11953700B3BE06 /* Resources */ = {
@@ -1136,7 +857,6 @@
 				271BC1C10C5E3717004FB6C5 /* Find.nib in Resources */,
 				279608690FD984E400FB72BE /* buildindex.py in Resources */,
 				279608AF0FD9879100FB72BE /* Kohana-Info.plist in Resources */,
-				27BB0280137573970050FBD8 /* BeautifulSoup.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1155,7 +875,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$BUILD_DIR/$CONFIGURATION/EncryptTool $SRCROOT/Source/Plugins/Python/buildindex.py $BUILD_DIR/py_index slitherypython\n$BUILD_DIR/$CONFIGURATION/EncryptTool $SRCROOT/Source/Plugins/CSS/buildindex.py $BUILD_DIR/css_index sneakycss\n$BUILD_DIR/$CONFIGURATION/EncryptTool $SRCROOT/Source/Plugins/PHP/buildindex.py $BUILD_DIR/php_index poopyphp\n$BUILD_DIR/$CONFIGURATION/EncryptTool $SRCROOT/Source/Plugins/MT/buildindex.py $BUILD_DIR/mt_index moocow\n$BUILD_DIR/$CONFIGURATION/EncryptTool $SRCROOT/Source/Plugins/Kohana/buildindex.py $BUILD_DIR/kohana_index hokan\n$BUILD_DIR/$CONFIGURATION/EncryptTool $SRCROOT/Source/Plugins/AS/buildindex.py $BUILD_DIR/as_index scriptaction";
+			shellScript = "$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/Python//buildindex.py $BUILD_DIR/py_index slitherypython\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/CSS/buildindex.py $BUILD_DIR/css_index sneakycss\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/PHP/buildindex.py $BUILD_DIR/php_index poopyphp\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/MT/buildindex.py $BUILD_DIR/mt_index moocow\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/Kohana/buildindex.py $BUILD_DIR/kohana_index hokan\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/AS/buildindex.py $BUILD_DIR/as_index scriptaction";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1215,7 +935,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27BB0007137468D90050FBD8 /* PHPDataSource.h in Sources */,
 				27BB0008137468D90050FBD8 /* PHPDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1226,6 +945,10 @@
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				27BFB6260BCB35EF00E7B173 /* WHAppController.m in Sources */,
+				27BFB6490BCBC57200E7B173 /* FMDatabase.m in Sources */,
+				27BFB64A0BCBC57200E7B173 /* FMDatabaseAdditions.m in Sources */,
+				2725A9530F119A4300B3BE06 /* WHCommonFunctions.m in Sources */,
+				27BFB64B0BCBC57200E7B173 /* FMResultSet.m in Sources */,
 				27BFB6DE0BCC7FD600E7B173 /* WHOutlineDataSource.m in Sources */,
 				27BFB6F00BCC840300E7B173 /* MABSupportFolder.m in Sources */,
 				27B58C440BCD1CA10011B993 /* WHWebController.m in Sources */,
@@ -1240,12 +963,8 @@
 				275100C20C5D3EEA004C8CA9 /* WHToolbarController.m in Sources */,
 				275101110C5D4537004C8CA9 /* WHSearchController.m in Sources */,
 				2778154F0C5F8FC20044FDB1 /* NSString+SearchAdditions.m in Sources */,
-				2725A9530F119A4300B3BE06 /* WHCommonFunctions.m in Sources */,
 				27F4DF090FD1A39200EABF46 /* WHPluginBase.m in Sources */,
 				279607440FD9536800FB72BE /* WHPluginXMLParser.m in Sources */,
-				27937805141C35A4000925F6 /* FMDatabase.m in Sources */,
-				27937806141C35A4000925F6 /* FMDatabaseAdditions.m in Sources */,
-				27937807141C35A4000925F6 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1361,15 +1080,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/Python/Python-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -1389,14 +1104,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/Python/Python-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -1423,7 +1134,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/CSS/CSS-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1449,7 +1159,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/CSS/CSS-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1471,15 +1180,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/MT/MooTools-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -1491,7 +1197,6 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = MooTools;
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
@@ -1500,14 +1205,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/MT/MooTools-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -1519,7 +1221,6 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = MooTools;
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = NO;
 			};
@@ -1535,7 +1236,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/Kohana/Kohana-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1561,7 +1261,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/Kohana/Kohana-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1589,7 +1288,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/AS/ActionScript-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1615,7 +1313,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/AS/ActionScript-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1643,7 +1340,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/PHP/PHP-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1669,7 +1365,6 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/PHP/PHP-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
@@ -1713,10 +1408,8 @@
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -1735,12 +1428,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_VERSION = .5;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				GCC_VERSION = 4.0;
+				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
@@ -1748,12 +1439,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_VERSION = .5;
-				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
-				GCC_VERSION = 4.0;
+				GCC_VERSION = 4.2;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
-				SDKROOT = macosx;
 			};
 			name = Release;
 		};

@@ -10,8 +10,9 @@
 
 #import "NSString+SearchAdditions.h"
 #import "WHHelpNode.h"
-#import "WHCommonFunctions.h"
 #import "WHPluginXMLParser.h"
+#import "WHCommonFunctions.h"
+#import "WHShared.h"
 
 @implementation PHPDataSource
 - (id) init {

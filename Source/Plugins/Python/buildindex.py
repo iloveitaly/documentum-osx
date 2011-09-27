@@ -13,7 +13,7 @@ if len(sys.argv) > 1:
 else:
 	sys.path.append("/Users/Mike/Library/Application Support/PyHelp/pymodules")
 
-from pysqlite2 import dbapi2 as sqlite3
+import sqlite3
 import xml.etree.cElementTree as xmlTree
 from BeautifulSoup import BeautifulSoup
 
