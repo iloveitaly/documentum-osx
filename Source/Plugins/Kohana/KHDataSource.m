@@ -36,6 +36,7 @@
 	}
 }
 
+/*
 - (NSArray *) searchResultsForString:(NSString *)searchString withAllPages:(NSArray *)allPages {
 	if(!_searchDatabase) {
 		_searchDatabase = [[FMDatabase alloc] initWithPath:KHKeywordDBPath];
@@ -57,4 +58,5 @@
 	
 	return results;
 }
+ */
 @end
