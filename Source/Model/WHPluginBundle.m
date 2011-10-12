@@ -36,7 +36,7 @@
 }
 
 - (NSString *) packageName {
-	return [_bundleInfo valueForKey:@"name"];
+	return [[_bundleInfo valueForKey:@"name"] lowercaseString];
 }
 
 - (NSString *) packageFullName {

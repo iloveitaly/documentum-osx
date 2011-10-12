@@ -296,7 +296,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 442}, {227, 1221}}</string>
+							<string>{{0, 486}, {227, 1221}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -345,7 +345,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>271BB8B1144623BE0036AE71</string>
+										<string>271BB8C71446286E0036AE71</string>
 										<key>history</key>
 										<array>
 											<string>277AC2E70F0D59FF002B1A7E</string>
@@ -400,7 +400,6 @@
 											<string>271BB789144614260036AE71</string>
 											<string>271BB78A144614260036AE71</string>
 											<string>271BB78B144614260036AE71</string>
-											<string>271BB799144614650036AE71</string>
 											<string>271BB7A0144614C20036AE71</string>
 											<string>271BB7AC144616560036AE71</string>
 											<string>271BB7AD144616560036AE71</string>
@@ -413,12 +412,13 @@
 											<string>271BB7E514461B260036AE71</string>
 											<string>271BB7E614461B260036AE71</string>
 											<string>271BB82214461C8B0036AE71</string>
-											<string>271BB882144622260036AE71</string>
-											<string>271BB89C144623000036AE71</string>
 											<string>271BB89D144623000036AE71</string>
 											<string>271BB89E144623000036AE71</string>
 											<string>271BB8AF144623BE0036AE71</string>
-											<string>271BB8B0144623BE0036AE71</string>
+											<string>271BB8BA144627510036AE71</string>
+											<string>271BB8BC144627510036AE71</string>
+											<string>271BB8C51446286E0036AE71</string>
+											<string>271BB8C61446286E0036AE71</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -612,13 +612,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>271BB8B2144623BE0036AE71</string>
 		<string>271BB75F144612890036AE71</string>
 		<string>271BB760144612890036AE71</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>274279270EA771FC000550C0</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Mike/Projects/documentum/PyHelp.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -854,12 +853,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>WHPluginBase.m</string>
+										<string>WHSupportFolder.m</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -880,8 +881,6 @@
 							<string>815pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -995,7 +994,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

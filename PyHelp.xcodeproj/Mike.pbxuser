@@ -19,7 +19,7 @@
 	27046CC70C0B2DC300430E1B /* WHSupportFolder.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1378, 760}}";
-			sepNavSelRange = "{811, 0}";
+			sepNavSelRange = "{609, 0}";
 			sepNavVisRange = "{0, 930}";
 			sepNavVisRect = "{{0, 0}, {1066, 375}}";
 		};
@@ -1720,9 +1720,9 @@
 	};
 	271BB6CF144610E70036AE71 /* WHPluginBundle.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1397, 1060}}";
-			sepNavSelRange = "{1286, 0}";
-			sepNavVisRange = "{0, 1864}";
+			sepNavIntBoundsRect = "{{0, 0}, {1397, 1083}}";
+			sepNavSelRange = "{1074, 0}";
+			sepNavVisRange = "{0, 1882}";
 		};
 	};
 	271BB6D71446116F0036AE71 /* PBXTextBookmark */ = {
@@ -2648,7 +2648,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 57";
 		rLen = 0;
-		rLoc = 1741;
+		rLoc = 1759;
 		rType = 0;
 		vrLen = 1259;
 		vrLoc = 0;
@@ -2658,7 +2658,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 45";
 		rLen = 0;
-		rLoc = 1389;
+		rLoc = 1407;
 		rType = 0;
 		vrLen = 1322;
 		vrLoc = 0;
@@ -2668,7 +2668,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 37";
 		rLen = 0;
-		rLoc = 1057;
+		rLoc = 1075;
 		rType = 0;
 		vrLen = 1364;
 		vrLoc = 0;
@@ -2678,7 +2678,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 37";
 		rLen = 0;
-		rLoc = 1057;
+		rLoc = 1075;
 		rType = 0;
 		vrLen = 1364;
 		vrLoc = 0;
@@ -3017,7 +3017,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 62";
 		rLen = 0;
-		rLoc = 1857;
+		rLoc = 1875;
 		rType = 0;
 		vrLen = 1421;
 		vrLoc = 0;
@@ -3027,7 +3027,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 61";
 		rLen = 0;
-		rLoc = 1817;
+		rLoc = 1835;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 0;
@@ -3057,7 +3057,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 61";
 		rLen = 0;
-		rLoc = 1817;
+		rLoc = 1835;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 0;
@@ -3067,7 +3067,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 61";
 		rLen = 0;
-		rLoc = 1817;
+		rLoc = 1835;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 0;
@@ -3157,7 +3157,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 64";
 		rLen = 0;
-		rLoc = 1859;
+		rLoc = 1877;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 0;
@@ -3167,7 +3167,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 59";
 		rLen = 0;
-		rLoc = 1744;
+		rLoc = 1762;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 0;
@@ -3177,7 +3177,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 59";
 		rLen = 0;
-		rLoc = 1744;
+		rLoc = 1762;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 0;
@@ -3187,7 +3187,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 59";
 		rLen = 0;
-		rLoc = 1744;
+		rLoc = 1762;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 0;
@@ -3247,7 +3247,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 59";
 		rLen = 0;
-		rLoc = 1744;
+		rLoc = 1762;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 0;
@@ -3257,7 +3257,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 50";
 		rLen = 0;
-		rLoc = 1615;
+		rLoc = 1633;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 0;
@@ -3287,7 +3287,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 50";
 		rLen = 0;
-		rLoc = 1615;
+		rLoc = 1633;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 0;
@@ -3297,7 +3297,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 50";
 		rLen = 0;
-		rLoc = 1615;
+		rLoc = 1633;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 0;
@@ -3327,7 +3327,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 44";
 		rLen = 25;
-		rLoc = 1305;
+		rLoc = 1323;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 0;
@@ -3457,7 +3457,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 44";
 		rLen = 25;
-		rLoc = 1305;
+		rLoc = 1323;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 0;
@@ -3467,7 +3467,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 45";
 		rLen = 26;
-		rLoc = 1368;
+		rLoc = 1386;
 		rType = 0;
 		vrLen = 1484;
 		vrLoc = 0;
@@ -3497,7 +3497,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 53";
 		rLen = 0;
-		rLoc = 1704;
+		rLoc = 1722;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 0;
@@ -3507,7 +3507,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 53";
 		rLen = 0;
-		rLoc = 1704;
+		rLoc = 1722;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 0;
@@ -3517,7 +3517,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 53";
 		rLen = 0;
-		rLoc = 1704;
+		rLoc = 1722;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 0;
@@ -3527,7 +3527,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 53";
 		rLen = 0;
-		rLoc = 1704;
+		rLoc = 1722;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 0;
@@ -3537,7 +3537,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 53";
 		rLen = 0;
-		rLoc = 1704;
+		rLoc = 1722;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 0;
@@ -3587,7 +3587,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 53";
 		rLen = 0;
-		rLoc = 1704;
+		rLoc = 1722;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 0;
@@ -3597,7 +3597,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 49";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1586;
 		rType = 0;
 		vrLen = 1619;
 		vrLoc = 0;
@@ -3607,7 +3607,7 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 49";
 		rLen = 0;
-		rLoc = 1568;
+		rLoc = 1586;
 		rType = 0;
 		vrLen = 1619;
 		vrLoc = 0;
@@ -3804,9 +3804,166 @@
 		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
 		name = "WHPluginBundle.m: 44";
 		rLen = 0;
-		rLoc = 1286;
+		rLoc = 1304;
 		rType = 0;
 		vrLen = 1864;
+		vrLoc = 0;
+	};
+	271BB8B3144626080036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
+		name = "WHPluginBundle.m: 26";
+		rLen = 0;
+		rLoc = 760;
+		rType = 0;
+		vrLen = 330;
+		vrLoc = 0;
+	};
+	271BB8B4144626080036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27F4DF080FD1A39200EABF46 /* WHPluginBase.m */;
+		name = "WHPluginBase.m: 96";
+		rLen = 0;
+		rLoc = 3062;
+		rType = 0;
+		vrLen = 2311;
+		vrLoc = 2507;
+	};
+	271BB8B51446261D0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
+		name = "WHPluginBundle.m: 26";
+		rLen = 0;
+		rLoc = 760;
+		rType = 0;
+		vrLen = 330;
+		vrLoc = 0;
+	};
+	271BB8B61446261D0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27F4DF080FD1A39200EABF46 /* WHPluginBase.m */;
+		name = "WHPluginBase.m: 96";
+		rLen = 0;
+		rLoc = 3062;
+		rType = 0;
+		vrLen = 2311;
+		vrLoc = 2507;
+	};
+	271BB8B71446261D0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27046CC70C0B2DC300430E1B /* WHSupportFolder.m */;
+		rLen = 7;
+		rLoc = 730;
+		rType = 0;
+	};
+	271BB8B81446261D0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27046CC70C0B2DC300430E1B /* WHSupportFolder.m */;
+		name = "WHSupportFolder.m: 28";
+		rLen = 0;
+		rLoc = 609;
+		rType = 0;
+		vrLen = 930;
+		vrLoc = 0;
+	};
+	271BB8B9144626200036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
+		name = "WHPluginBundle.m: 47";
+		rLen = 0;
+		rLoc = 1350;
+		rType = 0;
+		vrLen = 1864;
+		vrLoc = 0;
+	};
+	271BB8BA144627510036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27BFB6250BCB35EF00E7B173 /* WHAppController.m */;
+		name = "WHAppController.m: 13";
+		rLen = 0;
+		rLoc = 239;
+		rType = 0;
+		vrLen = 2553;
+		vrLoc = 417;
+	};
+	271BB8BB144627510036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
+		name = "WHPluginBundle.m: 47";
+		rLen = 0;
+		rLoc = 1350;
+		rType = 0;
+		vrLen = 1864;
+		vrLoc = 0;
+	};
+	271BB8BC144627510036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27F4DF070FD1A39200EABF46 /* WHPluginBase.h */;
+		name = "WHPluginBase.h: 25";
+		rLen = 31;
+		rLoc = 489;
+		rType = 0;
+		vrLen = 835;
+		vrLoc = 0;
+	};
+	271BB8BD144627510036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27F4DF080FD1A39200EABF46 /* WHPluginBase.m */;
+		name = "WHPluginBase.m: 109";
+		rLen = 0;
+		rLoc = 3656;
+		rType = 0;
+		vrLen = 2927;
+		vrLoc = 2413;
+	};
+	271BB8C21446277E0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27F4DF080FD1A39200EABF46 /* WHPluginBase.m */;
+		name = "WHPluginBase.m: 109";
+		rLen = 0;
+		rLoc = 3656;
+		rType = 0;
+		vrLen = 2927;
+		vrLoc = 2413;
+	};
+	271BB8C4144627BD0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27F4DF080FD1A39200EABF46 /* WHPluginBase.m */;
+		name = "WHPluginBase.m: 109";
+		rLen = 0;
+		rLoc = 3656;
+		rType = 0;
+		vrLen = 2947;
+		vrLoc = 2377;
+	};
+	271BB8C51446286E0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 27F4DF080FD1A39200EABF46 /* WHPluginBase.m */;
+		name = "WHPluginBase.m: 109";
+		rLen = 0;
+		rLoc = 3656;
+		rType = 0;
+		vrLen = 2947;
+		vrLoc = 2377;
+	};
+	271BB8C61446286E0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
+		name = "WHPluginBundle.m: 47";
+		rLen = 0;
+		rLoc = 1350;
+		rType = 0;
+		vrLen = 1864;
+		vrLoc = 0;
+	};
+	271BB8C71446286E0036AE71 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */;
+		name = "WHPluginBundle.m: 39";
+		rLen = 0;
+		rLoc = 1074;
+		rType = 0;
+		vrLen = 1882;
 		vrLoc = 0;
 	};
 	272171F80BDD832900ECBC6C /* MABEncrypt.h */ = {
@@ -5014,9 +5171,9 @@
 	};
 	27BFB6250BCB35EF00E7B173 /* WHAppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1443, 1365}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1397, 1365}}";
 			sepNavSelRange = "{239, 0}";
-			sepNavVisRange = "{417, 2559}";
+			sepNavVisRange = "{417, 2553}";
 			sepNavVisRect = "{{0, 1030}, {1154, 440}}";
 			sepNavWindowFrame = "{{15, 96}, {1228, 777}}";
 		};
@@ -5184,9 +5341,9 @@
 	};
 	27F4DF080FD1A39200EABF46 /* WHPluginBase.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1552, 2028}}";
-			sepNavSelRange = "{3062, 0}";
-			sepNavVisRange = "{2376, 2213}";
+			sepNavIntBoundsRect = "{{0, 0}, {1552, 2067}}";
+			sepNavSelRange = "{3656, 0}";
+			sepNavVisRange = "{2377, 2947}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -5296,7 +5453,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					1225,
+					1179,
 					60,
 					20,
 					48,
@@ -5683,6 +5840,22 @@
 			271BB8AF144623BE0036AE71 /* PBXTextBookmark */ = 271BB8AF144623BE0036AE71 /* PBXTextBookmark */;
 			271BB8B0144623BE0036AE71 /* PBXTextBookmark */ = 271BB8B0144623BE0036AE71 /* PBXTextBookmark */;
 			271BB8B1144623BE0036AE71 /* PBXTextBookmark */ = 271BB8B1144623BE0036AE71 /* PBXTextBookmark */;
+			271BB8B3144626080036AE71 /* PBXTextBookmark */ = 271BB8B3144626080036AE71 /* PBXTextBookmark */;
+			271BB8B4144626080036AE71 /* PBXTextBookmark */ = 271BB8B4144626080036AE71 /* PBXTextBookmark */;
+			271BB8B51446261D0036AE71 /* PBXTextBookmark */ = 271BB8B51446261D0036AE71 /* PBXTextBookmark */;
+			271BB8B61446261D0036AE71 /* PBXTextBookmark */ = 271BB8B61446261D0036AE71 /* PBXTextBookmark */;
+			271BB8B71446261D0036AE71 /* PBXTextBookmark */ = 271BB8B71446261D0036AE71 /* PBXTextBookmark */;
+			271BB8B81446261D0036AE71 /* PBXTextBookmark */ = 271BB8B81446261D0036AE71 /* PBXTextBookmark */;
+			271BB8B9144626200036AE71 /* PBXTextBookmark */ = 271BB8B9144626200036AE71 /* PBXTextBookmark */;
+			271BB8BA144627510036AE71 /* PBXTextBookmark */ = 271BB8BA144627510036AE71 /* PBXTextBookmark */;
+			271BB8BB144627510036AE71 /* PBXTextBookmark */ = 271BB8BB144627510036AE71 /* PBXTextBookmark */;
+			271BB8BC144627510036AE71 /* PBXTextBookmark */ = 271BB8BC144627510036AE71 /* PBXTextBookmark */;
+			271BB8BD144627510036AE71 /* PBXTextBookmark */ = 271BB8BD144627510036AE71 /* PBXTextBookmark */;
+			271BB8C21446277E0036AE71 /* PBXTextBookmark */ = 271BB8C21446277E0036AE71 /* PBXTextBookmark */;
+			271BB8C4144627BD0036AE71 /* PBXTextBookmark */ = 271BB8C4144627BD0036AE71 /* PBXTextBookmark */;
+			271BB8C51446286E0036AE71 /* PBXTextBookmark */ = 271BB8C51446286E0036AE71 /* PBXTextBookmark */;
+			271BB8C61446286E0036AE71 /* PBXTextBookmark */ = 271BB8C61446286E0036AE71 /* PBXTextBookmark */;
+			271BB8C71446286E0036AE71 /* PBXTextBookmark */ = 271BB8C71446286E0036AE71 /* PBXTextBookmark */;
 			2724591813BE523E00512D1C = 2724591813BE523E00512D1C /* PBXTextBookmark */;
 			2724591913BE523E00512D1C = 2724591913BE523E00512D1C /* PlistBookmark */;
 			2724591A13BE523E00512D1C = 2724591A13BE523E00512D1C /* PBXTextBookmark */;
