@@ -15,21 +15,22 @@
 	return [super sharedController];
 }
 
-- (NSString *) pythonSupportFolder {
-	return [[self supportFolder] stringByAppendingPathComponent:PYTHON_SUPPORT_FOLDER_NAME];
+- (NSString *) bundleFolder {
+	return [self _createSupportFolder:[[self supportFolder] stringByAppendingFormat:@"Bundles"]];
 }
 
 - (NSString *) supportFolderForPlugin:(id <WHDataSource>)plugin {
-	NSString *folderPath = [[self supportFolder] stringByAppendingPathComponent:[plugin packageName]];
-	
-	// create the plugin support folder if it doesn't already exist
-	if(![_fileManager fileExistsAtPath:folderPath]) {
-		if(![_fileManager createDirectoryAtPath:folderPath
+	return [self _createSupportFolder:[[self supportFolder] stringByAppendingPathComponent:[plugin packageName]]];
+}
+
+- (NSString *) _createSupportFolder:(NSString *) path {
+	if(![_fileManager fileExistsAtPath:path]) {
+		if(![_fileManager createDirectoryAtPath:path
 									 attributes:nil]) {
-			NSLog(@"Error creating app-support sub-folder %@", folderPath);	
+			NSLog(@"Error creating support sub-folder %@", folderPath);	
 		}
 	}
 	
-	return folderPath;
+	return path;
 }
 @end

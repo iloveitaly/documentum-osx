@@ -14,6 +14,6 @@
 @interface WHSupportFolder : MABSupportFolder {}
 
 + (WHSupportFolder *) sharedController;
-- (NSString *) pythonSupportFolder;
+- (NSString *) bundleFolder;
 - (NSString *) supportFolderForPlugin:(id <WHDataSource>)plugin;
 @end
