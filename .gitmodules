@@ -1,3 +1,6 @@
 [submodule "Source/Vendor/fmdb"]
 	path = Source/Vendor/fmdb
 	url = https://github.com/ccgus/fmdb.git
+[submodule "Source/Vendor/JSONKit"]
+	path = Source/Vendor/JSONKit
+	url = https://github.com/johnezang/JSONKit.git
