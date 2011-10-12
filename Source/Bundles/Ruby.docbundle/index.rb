@@ -17,18 +17,31 @@ class DocIndexHelper
   def fix_asset_references
     asset_converter = Hash.new
     
-    Dir.glob("docs/**/*.*").reject {|fn| File.directory?(fn) }.each do |f|
-      absoluteFilePath = File.join($plugin_directory, f)
-      
+    Dir.chdir("docs")
+    file_list = Dir.glob("**/*.*").reject {|fn| File.directory?(fn) }
+    
+    # generate the converter list
+    file_list.each do |f|
       case File.extname(f)
-      # when ".html"
-      #   doc = Nokogiri::HTML(File.open(absoluteFilePath))
-      #   doc.xpath("//script").remove
-      #   doc.xpath("//link").each do |link|
-      #     puts link
-      #   end
+      when ".js"
       when ".css"
-        puts f
+        asset_converter[File.basename(f)] = f
+      end
+    end
+    
+    file_list.each do |f|
+      absoluteFilePath = File.join($plugin_directory, "docs", f)
+      
+      if File.extname(f) == ".html"
+          doc = Nokogiri::HTML(File.open(absoluteFilePath))
+          doc.xpath("//script").remove
+          doc.xpath("//link").each do |link|
+            # convert the link paths
+            link["href"] = asset_converter[File.basename(link["href"])]
+          end
+          
+          # write the converted file
+          File.open(absoluteFilePath, "w") { |file| file.puts doc }
       end
     end
   end
