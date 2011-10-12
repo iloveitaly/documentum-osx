@@ -10,6 +10,8 @@
 #import "WHHelpIndexer.h"
 #import "WHOutlineDataSource.h"
 #import "WHWebController.h"
+#import "WHSupportFolder.h"
+#import "WHPluginBundle.h"
 #import "WHShared.h"
 
 static WHPluginList *_sharedController;
@@ -46,11 +48,13 @@ static WHPluginList *_sharedController;
 
 - (void) findAvailablePlugins {
 	NSMutableArray *list = [NSMutableArray array];
-	NSString* folderPath = [[NSBundle mainBundle] builtInPlugInsPath];
+	
+	// load native plugins
+	NSString* nativePluginsFolder = [[NSBundle mainBundle] builtInPlugInsPath];
 	Class pluginClass;
 	
-	if (folderPath) {
-		NSEnumerator* enumerator = [[NSBundle pathsForResourcesOfType:@"plugin" inDirectory:folderPath] objectEnumerator];
+	if (nativePluginsFolder) {
+		NSEnumerator* enumerator = [[NSBundle pathsForResourcesOfType:@"plugin" inDirectory:nativePluginsFolder] objectEnumerator];
 		NSString* pluginPath;
 		
 		while(pluginPath = [enumerator nextObject]) {
@@ -61,6 +65,18 @@ static WHPluginList *_sharedController;
 				// error
 				NSLog(@"Error loading plugin");
 			}
+		}
+	}
+	
+	// load 'proxy' or 'light' plugins
+	NSString *bundleFolder = [[WHSupportFolder sharedController] bundleFolder], *bundleName;
+	NSDirectoryEnumerator *simplePluginEnum = [[NSFileManager defaultManager] enumeratorAtPath:bundleFolder];
+	WHPluginBundle *newBundle;
+	
+	while ((bundleName = [simplePluginEnum nextObject] )) {
+		if ([bundleName hasSuffix:@".docbundle"]) {
+			newBundle = [[WHPluginBundle alloc] initBundleWithPath:[bundleFolder stringByAppendingPathComponent:bundleName]];
+			[list addObject:newBundle];
 		}
 	}
 	
@@ -93,6 +109,10 @@ static WHPluginList *_sharedController;
 	}
 	
 	return nil;
+}
+
+- (void) findAvailableBundles {
+	
 }
 
 #pragma mark -

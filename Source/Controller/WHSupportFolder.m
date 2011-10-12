@@ -12,25 +12,25 @@
 
 @implementation WHSupportFolder
 + (WHSupportFolder *) sharedController {
-	return [super sharedController];
-}
-
-- (NSString *) bundleFolder {
-	return [self _createSupportFolder:[[self supportFolder] stringByAppendingFormat:@"Bundles"]];
-}
-
-- (NSString *) supportFolderForPlugin:(id <WHDataSource>)plugin {
-	return [self _createSupportFolder:[[self supportFolder] stringByAppendingPathComponent:[plugin packageName]]];
+	return (WHSupportFolder*) [super sharedController];
 }
 
 - (NSString *) _createSupportFolder:(NSString *) path {
 	if(![_fileManager fileExistsAtPath:path]) {
 		if(![_fileManager createDirectoryAtPath:path
 									 attributes:nil]) {
-			NSLog(@"Error creating support sub-folder %@", folderPath);	
+			NSLog(@"Error creating support sub-folder %@", path);	
 		}
 	}
 	
 	return path;
+}
+
+- (NSString *) bundleFolder {
+	return [self _createSupportFolder:[[self supportFolder] stringByAppendingPathComponent:@"Bundles"]];
+}
+
+- (NSString *) supportFolderForPlugin:(id <WHDataSource>)plugin {
+	return [self _createSupportFolder:[[self supportFolder] stringByAppendingPathComponent:[plugin packageName]]];
 }
 @end

@@ -41,7 +41,7 @@ enum {
 - (BOOL) isTreeStructure;
 
 // optional information
-- (NSString *) customCSSFilePathPath;
+- (NSString *) customCSSFilePath;
 - (NSString *) indexFileName;
 
 // installation related methods

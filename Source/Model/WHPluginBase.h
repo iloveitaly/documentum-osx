@@ -13,15 +13,16 @@
 
 @interface WHPluginBase : NSObject {
 	WHHelpNode *_rootNode;
-	
+	BOOL _hasBundle;
 }
 
 - (NSString *) packageName;
 - (NSString *) packageFullName;
 - (NSString *) documentationDownloadPath;
 - (NSString *) pluginStructurePath;
-- (NSString *) customCSSFilePathPath;
+- (NSString *) customCSSFilePath;
 - (NSString *) indexFileName;
+- (NSString *) indexScriptPath;
 
 - (BOOL) isInstalled;
 - (BOOL) containsSections;

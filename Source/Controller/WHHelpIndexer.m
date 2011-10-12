@@ -82,7 +82,7 @@ static WHHelpIndexer *_sharedController;
 	_task = [NSTask new];
 	[_task setCurrentDirectoryPath:[[WHSupportFolder sharedController] supportFolderForPlugin:_indexerInfo]];
 	[_task setLaunchPath:command];
-	[_task setArguments:args];
+	if(!isEmpty(args)) [_task setArguments:args];
 	[_task launch];
 }
 

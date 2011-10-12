@@ -8,6 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		27046CC80C0B2DC300430E1B /* WHSupportFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 27046CC70C0B2DC300430E1B /* WHSupportFolder.m */; };
+		271BB6D0144610E70036AE71 /* WHPluginBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = 271BB6CF144610E70036AE71 /* WHPluginBundle.m */; };
+		271BB718144611B10036AE71 /* config in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6F1144611B00036AE71 /* config */; };
+		271BB719144611B10036AE71 /* description in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6F2144611B10036AE71 /* description */; };
+		271BB71A144611B10036AE71 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6F3144611B10036AE71 /* HEAD */; };
+		271BB71B144611B10036AE71 /* applypatch-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6F5144611B10036AE71 /* applypatch-msg.sample */; };
+		271BB71C144611B10036AE71 /* commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6F6144611B10036AE71 /* commit-msg.sample */; };
+		271BB71D144611B10036AE71 /* post-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6F7144611B10036AE71 /* post-commit.sample */; };
+		271BB71E144611B10036AE71 /* post-receive.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6F8144611B10036AE71 /* post-receive.sample */; };
+		271BB71F144611B10036AE71 /* post-update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6F9144611B10036AE71 /* post-update.sample */; };
+		271BB720144611B10036AE71 /* pre-applypatch.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6FA144611B10036AE71 /* pre-applypatch.sample */; };
+		271BB721144611B10036AE71 /* pre-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6FB144611B10036AE71 /* pre-commit.sample */; };
+		271BB722144611B10036AE71 /* pre-rebase.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6FC144611B10036AE71 /* pre-rebase.sample */; };
+		271BB723144611B10036AE71 /* prepare-commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6FD144611B10036AE71 /* prepare-commit-msg.sample */; };
+		271BB724144611B10036AE71 /* update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6FE144611B10036AE71 /* update.sample */; };
+		271BB725144611B10036AE71 /* index in Resources */ = {isa = PBXBuildFile; fileRef = 271BB6FF144611B10036AE71 /* index */; };
+		271BB726144611B10036AE71 /* exclude in Resources */ = {isa = PBXBuildFile; fileRef = 271BB701144611B10036AE71 /* exclude */; };
+		271BB727144611B10036AE71 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 271BB703144611B10036AE71 /* HEAD */; };
+		271BB728144611B10036AE71 /* master in Resources */ = {isa = PBXBuildFile; fileRef = 271BB706144611B10036AE71 /* master */; };
+		271BB729144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.idx in Resources */ = {isa = PBXBuildFile; fileRef = 271BB70A144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.idx */; };
+		271BB72A144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.pack in Resources */ = {isa = PBXBuildFile; fileRef = 271BB70B144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.pack */; };
+		271BB72B144611B10036AE71 /* packed-refs in Resources */ = {isa = PBXBuildFile; fileRef = 271BB70C144611B10036AE71 /* packed-refs */; };
+		271BB72C144611B10036AE71 /* master in Resources */ = {isa = PBXBuildFile; fileRef = 271BB70F144611B10036AE71 /* master */; };
+		271BB72D144611B10036AE71 /* HEAD in Resources */ = {isa = PBXBuildFile; fileRef = 271BB712144611B10036AE71 /* HEAD */; };
+		271BB72E144611B10036AE71 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 271BB714144611B10036AE71 /* CHANGELOG.md */; };
+		271BB72F144611B10036AE71 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 271BB716144611B10036AE71 /* JSONKit.m */; };
+		271BB730144611B10036AE71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 271BB717144611B10036AE71 /* README.md */; };
 		271BC1C10C5E3717004FB6C5 /* Find.nib in Resources */ = {isa = PBXBuildFile; fileRef = 271BC1BF0C5E3717004FB6C5 /* Find.nib */; };
 		272171FA0BDD832900ECBC6C /* MABEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 272171F90BDD832900ECBC6C /* MABEncrypt.m */; };
 		272172E40BDE2C5400ECBC6C /* encrypt_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 272172D90BDE2C2300ECBC6C /* encrypt_main.m */; };
@@ -157,6 +183,34 @@
 		2711B9F50C0DEA4600B5A7C8 /* PHDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHDataSource.h; path = Source/Plugins/Python/PHDataSource.h; sourceTree = "<group>"; };
 		2711B9F60C0DEA4600B5A7C8 /* PHDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHDataSource.m; path = Source/Plugins/Python/PHDataSource.m; sourceTree = "<group>"; };
 		2711BB400C0F4A2500B5A7C8 /* WHIndexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHIndexer.h; path = Source/Plugin/WHIndexer.h; sourceTree = "<group>"; };
+		271BB6CE144610E70036AE71 /* WHPluginBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginBundle.h; path = Source/Model/WHPluginBundle.h; sourceTree = "<group>"; };
+		271BB6CF144610E70036AE71 /* WHPluginBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginBundle.m; path = Source/Model/WHPluginBundle.m; sourceTree = "<group>"; };
+		271BB6F1144611B00036AE71 /* config */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config; sourceTree = "<group>"; };
+		271BB6F2144611B10036AE71 /* description */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = description; sourceTree = "<group>"; };
+		271BB6F3144611B10036AE71 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		271BB6F5144611B10036AE71 /* applypatch-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "applypatch-msg.sample"; sourceTree = "<group>"; };
+		271BB6F6144611B10036AE71 /* commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "commit-msg.sample"; sourceTree = "<group>"; };
+		271BB6F7144611B10036AE71 /* post-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-commit.sample"; sourceTree = "<group>"; };
+		271BB6F8144611B10036AE71 /* post-receive.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-receive.sample"; sourceTree = "<group>"; };
+		271BB6F9144611B10036AE71 /* post-update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "post-update.sample"; sourceTree = "<group>"; };
+		271BB6FA144611B10036AE71 /* pre-applypatch.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-applypatch.sample"; sourceTree = "<group>"; };
+		271BB6FB144611B10036AE71 /* pre-commit.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-commit.sample"; sourceTree = "<group>"; };
+		271BB6FC144611B10036AE71 /* pre-rebase.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "pre-rebase.sample"; sourceTree = "<group>"; };
+		271BB6FD144611B10036AE71 /* prepare-commit-msg.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "prepare-commit-msg.sample"; sourceTree = "<group>"; };
+		271BB6FE144611B10036AE71 /* update.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = update.sample; sourceTree = "<group>"; };
+		271BB6FF144611B10036AE71 /* index */ = {isa = PBXFileReference; lastKnownFileType = file; path = index; sourceTree = "<group>"; };
+		271BB701144611B10036AE71 /* exclude */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = exclude; sourceTree = "<group>"; };
+		271BB703144611B10036AE71 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		271BB706144611B10036AE71 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
+		271BB70A144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.idx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.idx"; sourceTree = "<group>"; };
+		271BB70B144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.pack */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.pack"; sourceTree = "<group>"; };
+		271BB70C144611B10036AE71 /* packed-refs */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "packed-refs"; sourceTree = "<group>"; };
+		271BB70F144611B10036AE71 /* master */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = master; sourceTree = "<group>"; };
+		271BB712144611B10036AE71 /* HEAD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HEAD; sourceTree = "<group>"; };
+		271BB714144611B10036AE71 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		271BB715144611B10036AE71 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		271BB716144611B10036AE71 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		271BB717144611B10036AE71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		271BC1C00C5E3717004FB6C5 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = Resources/English.lproj/Find.nib; sourceTree = "<group>"; };
 		272171F80BDD832900ECBC6C /* MABEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MABEncrypt.h; sourceTree = "<group>"; };
 		272171F90BDD832900ECBC6C /* MABEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = MABEncrypt.m; sourceTree = "<group>"; };
@@ -360,6 +414,160 @@
 			name = Python;
 			sourceTree = "<group>";
 		};
+		271BB6EC144611AA0036AE71 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				271BB6EF144611B00036AE71 /* JSONKit */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		271BB6EF144611B00036AE71 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				271BB6F0144611B00036AE71 /* .git */,
+				271BB714144611B10036AE71 /* CHANGELOG.md */,
+				271BB715144611B10036AE71 /* JSONKit.h */,
+				271BB716144611B10036AE71 /* JSONKit.m */,
+				271BB717144611B10036AE71 /* README.md */,
+			);
+			name = JSONKit;
+			path = Source/Vendor/JSONKit;
+			sourceTree = "<group>";
+		};
+		271BB6F0144611B00036AE71 /* .git */ = {
+			isa = PBXGroup;
+			children = (
+				271BB6F1144611B00036AE71 /* config */,
+				271BB6F2144611B10036AE71 /* description */,
+				271BB6F3144611B10036AE71 /* HEAD */,
+				271BB6F4144611B10036AE71 /* hooks */,
+				271BB6FF144611B10036AE71 /* index */,
+				271BB700144611B10036AE71 /* info */,
+				271BB702144611B10036AE71 /* logs */,
+				271BB707144611B10036AE71 /* objects */,
+				271BB70C144611B10036AE71 /* packed-refs */,
+				271BB70D144611B10036AE71 /* refs */,
+			);
+			path = .git;
+			sourceTree = "<group>";
+		};
+		271BB6F4144611B10036AE71 /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				271BB6F5144611B10036AE71 /* applypatch-msg.sample */,
+				271BB6F6144611B10036AE71 /* commit-msg.sample */,
+				271BB6F7144611B10036AE71 /* post-commit.sample */,
+				271BB6F8144611B10036AE71 /* post-receive.sample */,
+				271BB6F9144611B10036AE71 /* post-update.sample */,
+				271BB6FA144611B10036AE71 /* pre-applypatch.sample */,
+				271BB6FB144611B10036AE71 /* pre-commit.sample */,
+				271BB6FC144611B10036AE71 /* pre-rebase.sample */,
+				271BB6FD144611B10036AE71 /* prepare-commit-msg.sample */,
+				271BB6FE144611B10036AE71 /* update.sample */,
+			);
+			path = hooks;
+			sourceTree = "<group>";
+		};
+		271BB700144611B10036AE71 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				271BB701144611B10036AE71 /* exclude */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		271BB702144611B10036AE71 /* logs */ = {
+			isa = PBXGroup;
+			children = (
+				271BB703144611B10036AE71 /* HEAD */,
+				271BB704144611B10036AE71 /* refs */,
+			);
+			path = logs;
+			sourceTree = "<group>";
+		};
+		271BB704144611B10036AE71 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				271BB705144611B10036AE71 /* heads */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		271BB705144611B10036AE71 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				271BB706144611B10036AE71 /* master */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		271BB707144611B10036AE71 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				271BB708144611B10036AE71 /* info */,
+				271BB709144611B10036AE71 /* pack */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		271BB708144611B10036AE71 /* info */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		271BB709144611B10036AE71 /* pack */ = {
+			isa = PBXGroup;
+			children = (
+				271BB70A144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.idx */,
+				271BB70B144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.pack */,
+			);
+			path = pack;
+			sourceTree = "<group>";
+		};
+		271BB70D144611B10036AE71 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				271BB70E144611B10036AE71 /* heads */,
+				271BB710144611B10036AE71 /* remotes */,
+				271BB713144611B10036AE71 /* tags */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		271BB70E144611B10036AE71 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				271BB70F144611B10036AE71 /* master */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		271BB710144611B10036AE71 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				271BB711144611B10036AE71 /* origin */,
+			);
+			path = remotes;
+			sourceTree = "<group>";
+		};
+		271BB711144611B10036AE71 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				271BB712144611B10036AE71 /* HEAD */,
+			);
+			path = origin;
+			sourceTree = "<group>";
+		};
+		271BB713144611B10036AE71 /* tags */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tags;
+			sourceTree = "<group>";
+		};
 		272171F70BDD832900ECBC6C /* Util */ = {
 			isa = PBXGroup;
 			children = (
@@ -530,6 +738,8 @@
 			children = (
 				27B06BD00BE6AF430088EA5B /* WHHelpNode.h */,
 				27B06BD10BE6AF430088EA5B /* WHHelpNode.m */,
+				271BB6CE144610E70036AE71 /* WHPluginBundle.h */,
+				271BB6CF144610E70036AE71 /* WHPluginBundle.m */,
 				27F4DF070FD1A39200EABF46 /* WHPluginBase.h */,
 				27F4DF080FD1A39200EABF46 /* WHPluginBase.m */,
 				279607420FD9536800FB72BE /* WHPluginXMLParser.h */,
@@ -605,6 +815,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				271BB6EC144611AA0036AE71 /* Vendor */,
 				277A0CF00BE1AF8900C17EBA /* libsqlite3.a */,
 				277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */,
 				27B58C2C0BCD19850011B993 /* WebKit.framework */,
@@ -857,6 +1068,30 @@
 				271BC1C10C5E3717004FB6C5 /* Find.nib in Resources */,
 				279608690FD984E400FB72BE /* buildindex.py in Resources */,
 				279608AF0FD9879100FB72BE /* Kohana-Info.plist in Resources */,
+				271BB718144611B10036AE71 /* config in Resources */,
+				271BB719144611B10036AE71 /* description in Resources */,
+				271BB71A144611B10036AE71 /* HEAD in Resources */,
+				271BB71B144611B10036AE71 /* applypatch-msg.sample in Resources */,
+				271BB71C144611B10036AE71 /* commit-msg.sample in Resources */,
+				271BB71D144611B10036AE71 /* post-commit.sample in Resources */,
+				271BB71E144611B10036AE71 /* post-receive.sample in Resources */,
+				271BB71F144611B10036AE71 /* post-update.sample in Resources */,
+				271BB720144611B10036AE71 /* pre-applypatch.sample in Resources */,
+				271BB721144611B10036AE71 /* pre-commit.sample in Resources */,
+				271BB722144611B10036AE71 /* pre-rebase.sample in Resources */,
+				271BB723144611B10036AE71 /* prepare-commit-msg.sample in Resources */,
+				271BB724144611B10036AE71 /* update.sample in Resources */,
+				271BB725144611B10036AE71 /* index in Resources */,
+				271BB726144611B10036AE71 /* exclude in Resources */,
+				271BB727144611B10036AE71 /* HEAD in Resources */,
+				271BB728144611B10036AE71 /* master in Resources */,
+				271BB729144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.idx in Resources */,
+				271BB72A144611B10036AE71 /* pack-2a3f6937922a61151f247e5e1bfc5de95ea14924.pack in Resources */,
+				271BB72B144611B10036AE71 /* packed-refs in Resources */,
+				271BB72C144611B10036AE71 /* master in Resources */,
+				271BB72D144611B10036AE71 /* HEAD in Resources */,
+				271BB72E144611B10036AE71 /* CHANGELOG.md in Resources */,
+				271BB730144611B10036AE71 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -875,7 +1110,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/Python//buildindex.py $BUILD_DIR/py_index slitherypython\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/CSS/buildindex.py $BUILD_DIR/css_index sneakycss\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/PHP/buildindex.py $BUILD_DIR/php_index poopyphp\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/MT/buildindex.py $BUILD_DIR/mt_index moocow\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/Kohana/buildindex.py $BUILD_DIR/kohana_index hokan\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/AS/buildindex.py $BUILD_DIR/as_index scriptaction";
+			shellScript = "$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/Python//buildindex.py $BUILD_DIR/py_index slitherypython\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/CSS/buildindex.py $BUILD_DIR/css_index sneakycss\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/PHP/buildindex.py $BUILD_DIR/php_index poopyphp\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/MT/buildindex.py $BUILD_DIR/mt_index moocow\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/Kohana/buildindex.py $BUILD_DIR/kohana_index hokan\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/AS/buildindex.py $BUILD_DIR/as_index scriptaction\n\n# also link the bundles for testing\nBUNDLE_PATH=\"/Users/Mike/Library/Application Support/PyHelp/Bundles\" \nrm -R \"$BUNDLE_PATH\"\nmkdir \"$BUNDLE_PATH\"\n\nfind \"$SOURCE_ROOT/Source/Bundles\" -type d -name \"*.docbundle\" | while read line; do\n\tcp -R \"$line\" \"$BUNDLE_PATH\"\ndone";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -965,6 +1200,8 @@
 				2778154F0C5F8FC20044FDB1 /* NSString+SearchAdditions.m in Sources */,
 				27F4DF090FD1A39200EABF46 /* WHPluginBase.m in Sources */,
 				279607440FD9536800FB72BE /* WHPluginXMLParser.m in Sources */,
+				271BB6D0144610E70036AE71 /* WHPluginBundle.m in Sources */,
+				271BB72F144611B10036AE71 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

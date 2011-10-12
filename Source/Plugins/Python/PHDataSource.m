@@ -58,9 +58,11 @@
 			[controller runCommand:@"/usr/bin/unzip" withArgs:[NSArray arrayWithObjects:@"-qo", [controller archivePath], nil]];
 			break;
 		case WHUncompressHelpDocs: {
+			/*
 			NSData *commandData = INDEX_CMD_DATA;
 			[controller runCommand:PYTHON_CMD_PATH withArgs:[NSArray arrayWithObjects:@"-c", [NSString stringWithCString:[commandData bytes] encoding:NSASCIIStringEncoding], [[WHSupportFolder sharedController] pythonSupportFolder], nil]];				
 			[controller setCurrentStep:WHIndexHelpDocs];
+			 */
 			break;
 		}
 		case WHIndexHelpDocs:
