@@ -15,17 +15,20 @@ class DocIndexHelper
   end
 
   def fix_asset_references
+    asset_converter = Hash.new
+    
     Dir.glob("docs/**/*.*").reject {|fn| File.directory?(fn) }.each do |f|
       absoluteFilePath = File.join($plugin_directory, f)
       
       case File.extname(f)
-      when ".html"
-        doc = Nokogiri::HTML(File.open(absoluteFilePath))
-        doc.xpath("//script").remove
-        doc.xpath("//link").each do |link|
-          puts link
-        end
+      # when ".html"
+      #   doc = Nokogiri::HTML(File.open(absoluteFilePath))
+      #   doc.xpath("//script").remove
+      #   doc.xpath("//link").each do |link|
+      #     puts link
+      #   end
       when ".css"
+        puts f
       end
     end
   end
