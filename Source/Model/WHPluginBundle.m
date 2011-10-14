@@ -27,8 +27,10 @@
 			_bundleInfo = [[decoder objectWithData:jsonData] retain];
 			
 			NSLog(@"Loaded Bundle Info: %@", _bundleInfo);
+			NSLog(@"Loaded? %i", [self isInstalled]);
 		} else {
 			// TODO: error reporting
+			NSLog(@"Error loading bundle: %@", bundlePath);
 		}
 	}
 	
@@ -64,8 +66,8 @@
 		
 }
 
-- (NSString *) _supportFilePath:(NSString *) name {
-	return [_bundlePath stringByAppendingPathComponent:name];
-}
+//- (NSString *) _supportFilePath:(NSString *) name {
+//	return [_bundlePath stringByAppendingPathComponent:name];
+//}
 
 @end

@@ -75,7 +75,7 @@ static WHPluginList *_sharedController;
 	
 	while ((bundleName = [simplePluginEnum nextObject] )) {
 		if ([bundleName hasSuffix:@".docbundle"]) {
-			newBundle = [[WHPluginBundle alloc] initBundleWithPath:[bundleFolder stringByAppendingPathComponent:bundleName]];
+			newBundle = [[[WHPluginBundle alloc] initBundleWithPath:[bundleFolder stringByAppendingPathComponent:bundleName]] autorelease];
 			[list addObject:newBundle];
 		}
 	}

@@ -58,6 +58,7 @@
 		275118C510D43F33007815B2 /* kohana_index in Resources */ = {isa = PBXBuildFile; fileRef = 275118C410D43F33007815B2 /* kohana_index */; };
 		27674D890C447750009BC88B /* empty_plugin.html in Resources */ = {isa = PBXBuildFile; fileRef = 27674D880C447750009BC88B /* empty_plugin.html */; };
 		276753C00C499065009BC88B /* WHPluginList.m in Sources */ = {isa = PBXBuildFile; fileRef = 276753BF0C499065009BC88B /* WHPluginList.m */; };
+		276A6DB21448B19A0092F0EC /* WHPluginStructureParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 276A6DB11448B19A0092F0EC /* WHPluginStructureParser.m */; };
 		2778154F0C5F8FC20044FDB1 /* NSString+SearchAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2778154D0C5F8FC20044FDB1 /* NSString+SearchAdditions.m */; };
 		277A0CC00BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */; };
 		277A0CC10BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */; };
@@ -69,6 +70,7 @@
 		279608C80FD9881100FB72BE /* KHDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 279607C50FD9806800FB72BE /* KHDataSource.m */; };
 		279608DF0FD988B700FB72BE /* Kohana.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 279608A10FD9875C00FB72BE /* Kohana.plugin */; };
 		279609590FD98DEF00FB72BE /* override.css in Resources */ = {isa = PBXBuildFile; fileRef = 279609580FD98DEF00FB72BE /* override.css */; };
+		2796ABBF144894CB005E09FE /* WHPluginJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2796ABBE144894CB005E09FE /* WHPluginJSONParser.m */; };
 		27B06BD20BE6AF430088EA5B /* WHHelpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B06BD10BE6AF430088EA5B /* WHHelpNode.m */; };
 		27B58C2D0BCD19850011B993 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27B58C2C0BCD19850011B993 /* WebKit.framework */; };
 		27B58C440BCD1CA10011B993 /* WHWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B58C430BCD1CA10011B993 /* WHWebController.m */; };
@@ -243,6 +245,8 @@
 		27674D880C447750009BC88B /* empty_plugin.html */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.html; name = empty_plugin.html; path = Resources/empty_plugin.html; sourceTree = "<group>"; };
 		276753BE0C499065009BC88B /* WHPluginList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginList.h; path = Source/Controller/WHPluginList.h; sourceTree = "<group>"; };
 		276753BF0C499065009BC88B /* WHPluginList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginList.m; path = Source/Controller/WHPluginList.m; sourceTree = "<group>"; };
+		276A6DB01448B19A0092F0EC /* WHPluginStructureParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginStructureParser.h; path = StructureParsers/WHPluginStructureParser.h; sourceTree = "<group>"; };
+		276A6DB11448B19A0092F0EC /* WHPluginStructureParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginStructureParser.m; path = StructureParsers/WHPluginStructureParser.m; sourceTree = "<group>"; };
 		277814250C5E674A0044FDB1 /* CSSDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CSSDataSource.h; path = Source/Plugins/CSS/CSSDataSource.h; sourceTree = "<group>"; };
 		277814260C5E674A0044FDB1 /* CSSDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CSSDataSource.m; path = Source/Plugins/CSS/CSSDataSource.m; sourceTree = "<group>"; };
 		277814480C5E6AB60044FDB1 /* py_index */ = {isa = PBXFileReference; lastKnownFileType = text; name = py_index; path = build/py_index; sourceTree = "<group>"; };
@@ -255,8 +259,8 @@
 		277A0CF00BE1AF8900C17EBA /* libsqlite3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlite3.a; path = Frameworks/libsqlite3.a; sourceTree = "<group>"; };
 		277A0D8B0BE2366F00C17EBA /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/Python/buildindex.py; sourceTree = "<group>"; };
 		277C749F10EAF1E200BAA961 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/AS/buildindex.py; sourceTree = "<group>"; };
-		279607420FD9536800FB72BE /* WHPluginXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginXMLParser.h; path = Source/Model/WHPluginXMLParser.h; sourceTree = "<group>"; };
-		279607430FD9536800FB72BE /* WHPluginXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginXMLParser.m; path = Source/Model/WHPluginXMLParser.m; sourceTree = "<group>"; };
+		279607420FD9536800FB72BE /* WHPluginXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginXMLParser.h; path = ../Model/WHPluginXMLParser.h; sourceTree = "<group>"; };
+		279607430FD9536800FB72BE /* WHPluginXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginXMLParser.m; path = ../Model/WHPluginXMLParser.m; sourceTree = "<group>"; };
 		279607C40FD9806800FB72BE /* KHDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHDataSource.h; path = Source/Plugins/Kohana/KHDataSource.h; sourceTree = "<group>"; };
 		279607C50FD9806800FB72BE /* KHDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KHDataSource.m; path = Source/Plugins/Kohana/KHDataSource.m; sourceTree = "<group>"; };
 		279607E40FD983F600FB72BE /* KHHelpNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KHHelpNode.h; path = Source/Plugins/Kohana/KHHelpNode.h; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 		279608A10FD9875C00FB72BE /* Kohana.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Kohana.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		279608AE0FD9879100FB72BE /* Kohana-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Kohana-Info.plist"; path = "Source/Plugins/Kohana/Kohana-Info.plist"; sourceTree = "<group>"; };
 		279609580FD98DEF00FB72BE /* override.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = override.css; path = Source/Plugins/Kohana/override.css; sourceTree = "<group>"; };
+		2796ABBD144894CB005E09FE /* WHPluginJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginJSONParser.h; path = StructureParsers/WHPluginJSONParser.h; sourceTree = "<group>"; };
+		2796ABBE144894CB005E09FE /* WHPluginJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHPluginJSONParser.m; path = StructureParsers/WHPluginJSONParser.m; sourceTree = "<group>"; };
 		27B06BD00BE6AF430088EA5B /* WHHelpNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHHelpNode.h; path = Source/Model/WHHelpNode.h; sourceTree = "<group>"; };
 		27B06BD10BE6AF430088EA5B /* WHHelpNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHHelpNode.m; path = Source/Model/WHHelpNode.m; sourceTree = "<group>"; };
 		27B58C2C0BCD19850011B993 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
@@ -571,6 +577,7 @@
 		272171F70BDD832900ECBC6C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2796ABB71448948A005E09FE /* Structure Parsers */,
 				27046CC60C0B2DC300430E1B /* WHSupportFolder.h */,
 				27046CC70C0B2DC300430E1B /* WHSupportFolder.m */,
 				272173430BDE451E00ECBC6C /* AMURLLoader.h */,
@@ -681,6 +688,19 @@
 			name = PHP;
 			sourceTree = "<group>";
 		};
+		2796ABB71448948A005E09FE /* Structure Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				279607420FD9536800FB72BE /* WHPluginXMLParser.h */,
+				279607430FD9536800FB72BE /* WHPluginXMLParser.m */,
+				2796ABBD144894CB005E09FE /* WHPluginJSONParser.h */,
+				2796ABBE144894CB005E09FE /* WHPluginJSONParser.m */,
+				276A6DB01448B19A0092F0EC /* WHPluginStructureParser.h */,
+				276A6DB11448B19A0092F0EC /* WHPluginStructureParser.m */,
+			);
+			name = "Structure Parsers";
+			sourceTree = "<group>";
+		};
 		27B58CB90BCD1F4A0011B993 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,8 +762,6 @@
 				271BB6CF144610E70036AE71 /* WHPluginBundle.m */,
 				27F4DF070FD1A39200EABF46 /* WHPluginBase.h */,
 				27F4DF080FD1A39200EABF46 /* WHPluginBase.m */,
-				279607420FD9536800FB72BE /* WHPluginXMLParser.h */,
-				279607430FD9536800FB72BE /* WHPluginXMLParser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1202,6 +1220,8 @@
 				279607440FD9536800FB72BE /* WHPluginXMLParser.m in Sources */,
 				271BB6D0144610E70036AE71 /* WHPluginBundle.m in Sources */,
 				271BB72F144611B10036AE71 /* JSONKit.m in Sources */,
+				2796ABBF144894CB005E09FE /* WHPluginJSONParser.m in Sources */,
+				276A6DB21448B19A0092F0EC /* WHPluginStructureParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
