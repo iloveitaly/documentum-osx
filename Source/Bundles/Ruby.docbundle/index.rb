@@ -14,6 +14,7 @@ class DocIndexHelper
   def initialize
     @docs_dir = "docs"
     @docs_path = File.join($plugin_directory, @docs_dir)
+    @structure_path = File.join($plugin_directory, "structure.json")
     @process_element_name = :process_element_name
   end
   
@@ -116,7 +117,8 @@ class DocIndexHelper
       end      
     end
     
-    puts JSON.pretty_generate(heiarchicalElements)
+    # save the structure json
+    File.open(@structure_path, "w") { |file| file.puts JSON.pretty_generate(heiarchicalElements) }
   end
 end
 
