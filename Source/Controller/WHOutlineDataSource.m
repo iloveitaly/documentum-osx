@@ -58,8 +58,6 @@ static WHOutlineDataSource *_sharedController;
 		_rootNode = nil;
 	} else {
 		_rootNode = [[[[WHPluginList sharedController] selectedPlugin] generateRootNode] retain];
-		NSLog(@"Root Node %@", _rootNode);
-		NSLog(@"Children? %@", [_rootNode allChildren]);
 	}
 	
 	[[WHWebController sharedController] setAllPages:[_rootNode allChildren]];

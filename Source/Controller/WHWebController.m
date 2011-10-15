@@ -180,9 +180,16 @@ static WHWebController *_sharedController;
 			[[oWebView mainFrame] loadRequest:[NSURLRequest requestWithURL:emptyPageURL]];
 		} else {
 			NSString *overrideCSSPath = [[object selectedPlugin] customCSSFilePath];
-
-			if(!isEmpty(overrideCSSPath))
-				[self setStyleSheet:[NSURL URLWithString:overrideCSSPath]];
+			
+			if(!isEmpty(overrideCSSPath)) {
+				NSURL *cssURLReference = [NSURL URLWithString:overrideCSSPath];
+				
+				if(isEmpty(cssURLReference)) {
+					cssURLReference = [NSURL fileURLWithPath:overrideCSSPath];
+				}
+				
+				[self setStyleSheet:cssURLReference];
+			}
 		}
 	}
 }

@@ -20,6 +20,7 @@
 	if(self = [super init]) {
 		_rootNode = nil;
 		_hasBundle = ![[NSBundle bundleForClass:[self class]] isEqual:[NSBundle mainBundle]];
+		_parserStructureHint = NO;
 		
 		// NSLog(@"PATH :: %@", [[NSBundle bundleForClass:[self class]] objectForInfoDictionaryKey:WHDocumentationDownloadLink]);
 	}
@@ -70,7 +71,7 @@
 	NSFileManager *fm = [NSFileManager defaultManager];
 	NSString *structure = [self pluginStructurePath],
 			 *keywords = [self pluginKeywordDatabasePath];
-	NSLog(@"Structure Path %@", structure);
+
 	return !isEmpty(keywords) ? [fm fileExistsAtPath:structure] && [fm fileExistsAtPath:keywords] : [fm fileExistsAtPath:structure];
 }
 
@@ -79,8 +80,11 @@
 }
 
 - (BOOL) isTreeStructure {
-	return true;
-	return [[NSBundle bundleForClass:[self class]] objectForInfoDictionaryKey:WHPluginHasTreeStructure];
+	if(_hasBundle) {
+		return [[NSBundle bundleForClass:[self class]] objectForInfoDictionaryKey:WHPluginHasTreeStructure];
+	}
+	
+	return _parserStructureHint;
 }
 
 - (NSString *) _supportFilePath:(NSString *) name {
@@ -100,11 +104,14 @@
 		// we accept two types of structures: json & xml
 		// determine which teh plugin is using
 		NSString *structureFileName = [self pluginStructurePath];
+		WHPluginStructureParser *parser;
 		
 		if([[structureFileName pathExtension] isEqualToString:@"xml"]) {
 			_rootNode = [[WHPluginXMLParser nodeWithXMLFile:structureFileName withNodeClass:[WHHelpNode class]] retain];
 		} else if ([[structureFileName pathExtension] isEqualToString:@"json"]) {
-			_rootNode = [[WHPluginJSONParser nodeWithJSONData:[NSData dataWithContentsOfFile:structureFileName] withNodeClass:[WHHelpNode class]] retain];
+			parser = [[[WHPluginJSONParser alloc] initWithJSONData:[NSData dataWithContentsOfFile:structureFileName] withNodeClass:[WHHelpNode class]] autorelease];
+			_rootNode = [parser.rootNode retain];
+			_parserStructureHint = [parser isStructured];
 		} else {
 			NSLog(@"Error: uncaught structure type");
 		}

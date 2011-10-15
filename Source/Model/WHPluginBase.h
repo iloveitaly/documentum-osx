@@ -13,7 +13,7 @@
 
 @interface WHPluginBase : NSObject {
 	WHHelpNode *_rootNode;
-	BOOL _hasBundle;
+	BOOL _hasBundle, _parserStructureHint;
 }
 
 - (NSString *) packageName;

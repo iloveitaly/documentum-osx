@@ -8,11 +8,14 @@ class DocIndexHelper
   require 'nokogiri'
   require 'json'
   
-  @docs_dir = "docs"
-  @strip_javascript = true
+  attr_accessor :anchor_locator
+  attr_accessor :structure_path
   
   def initialize
+    @strip_javascript = true
     @docs_dir = "docs"
+    @anchor_locator = nil
+    
     @docs_path = File.join($plugin_directory, @docs_dir)
     @structure_path = File.join($plugin_directory, "structure.json")
     @process_element_name = :process_element_name
@@ -29,13 +32,15 @@ class DocIndexHelper
     rootName
   end
   
+  # when the doc download is uncompressed it still has the old name... we want to rename it to /docs
   def rename_uncompressed_docs
     docs = Dir['ruby_?_?_?_core']
     if not docs.empty?
       FileUtils.mv(File.join(Dir.pwd, docs), File.join(Dir.pwd, "docs"))
     end
   end
-
+  
+  # often downloadable documentation references CSS / JS incorrectly
   def fix_asset_references
     asset_converter = Hash.new
     
@@ -57,13 +62,16 @@ class DocIndexHelper
       if File.extname(f) == ".html"
           doc = Nokogiri::HTML(File.open(absoluteFilePath))
           
-          # http://stackoverflow.com/questions/1980845/removing-the-script-elements-of-an-html
-          @strip_javascript ? doc.xpath("//script").remove : nil
+          # remove javascript if desired
+          doc.xpath("//script").remove if @strip_javascript
           
+          # relink css
           doc.xpath("//link").each do |link|
             # convert the link paths
             link["href"] = ("../" * (f.count "/")) + asset_converter[File.basename(link["href"])]
           end
+          
+          # relink images
           
           # write the converted file
           File.open(absoluteFilePath, "w") { |file| file.puts doc }
@@ -91,6 +99,7 @@ class DocIndexHelper
         # find current heiarchy position & set empty hashs
         # note that this only works for 2 levels deep currently
         # to work with more levels there would have to be a 'find parent match' method
+        
         currentHeiarchyReference = heiarchicalElements
         heiarchyDepth = index
         while heiarchyDepth > 0
@@ -106,10 +115,11 @@ class DocIndexHelper
           # skip empty entries
           next unless not (helpElementName.nil? || helpElementName.empty?)
           
-          currentHeiarchyReference[helpElementName] = {:path => absoluteFilePath, :title => helpElementName}
-          
           # find associated anchor
+          anchor = @anchor_locator.call(helpElement, index, helpDoc) if not @anchor_locator.nil?
           
+          currentHeiarchyReference[helpElementName] = {:path => absoluteFilePath, :title => helpElementName, :anchor => anchor}
+
           lastHeiarchyKey = helpElementName
         end
         
@@ -125,4 +135,8 @@ end
 ih = DocIndexHelper.new
 # ih.rename_uncompressed_docs
 # ih.fix_asset_references
+ih.anchor_locator = proc do |element, index, document|
+  return "" if index == 0
+  return element.parent.parent.css("a[name*=method]").first["name"]
+end
 ih.generate_structure "h1.class, h1.module", "div.method-heading span.method-callseq"

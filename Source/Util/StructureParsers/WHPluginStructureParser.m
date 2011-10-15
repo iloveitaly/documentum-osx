@@ -13,4 +13,18 @@
 
 @synthesize isStructured, rootNode;
 
+- (WHPluginStructureParser *) initWithNodeClass:(Class) nodeClass {
+	if(self = [self init]) {
+		_nodeClass = nodeClass;
+		
+		self.rootNode = [[nodeClass new] autorelease];
+	}
+	
+	return self;
+}
+
+- (void) dealloc {
+	[self setRootNode:nil];
+	[super dealloc];
+}
 @end

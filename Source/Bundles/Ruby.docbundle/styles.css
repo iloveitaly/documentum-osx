@@ -1,0 +1,15 @@
+
+#actionbar, #metadata {
+	display:none;
+}
+
+.class #documentation, .file #documentation, .module #documentation {
+	margin: 0 !important;
+	padding:0 !important;
+}
+
+.wrapper {
+	width:100% !important;
+	padding:0 !important;
+	margin:15px !important;
+}

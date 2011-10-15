@@ -59,7 +59,8 @@
 //}
 
 - (NSString *) customCSSFilePath {
-	return [_bundleInfo valueForKey:@"overide_css"];
+	NSLog(@"%@", [_bundlePath stringByAppendingPathComponent:[_bundleInfo valueForKey:@"overide_css"]]);
+	return [_bundlePath stringByAppendingPathComponent:[_bundleInfo valueForKey:@"overide_css"]];
 }
 
 - (NSString *) indexFileName {

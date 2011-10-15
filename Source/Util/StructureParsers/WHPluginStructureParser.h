@@ -12,10 +12,12 @@
 
 @interface WHPluginStructureParser : NSObject {
 	BOOL isStructured;
-	WHHelpNode *rootNode
+	WHHelpNode *rootNode;
 	Class _nodeClass;
 }
 
 @property BOOL isStructured;
-@property WHHelpNode rootNode;
+@property WHHelpNode *rootNode;
+
+- (WHPluginStructureParser *) initWithNodeClass:(Class) nodeClass;
 @end

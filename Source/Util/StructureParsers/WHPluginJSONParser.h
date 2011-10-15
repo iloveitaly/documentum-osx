@@ -16,5 +16,5 @@
 	int _level;		
 }
 
-+ (WHHelpNode *) nodeWithJSONData:(NSData *)data withNodeClass:(Class) nodeClass;
+- (WHPluginJSONParser *) initWithJSONData:(NSData *)data withNodeClass:(Class) nodeClass;
 @end
