@@ -8,9 +8,16 @@ ih = DocumentationIndexHelper.new
 ih.content_holder_selector = "#content"
 ih.rename_uncompressed_docs
 ih.fix_asset_references
-ih.process_name = proc do |name, level|
+ih.process_name = proc do |name, *args|
   if name.include? "Class" or name.include? "Module"
     name.strip.gsub(/[Mm]odule[\s\n]+|[Cc]lass[\s\n]+/, "").match(/^[^ ]+/)[0]
+  elsif File.basename(args.last).include? "README"
+    begin
+      args[1].css('.banner').remove
+      "Readme::" + args[1].css("h1").first.content.strip
+    rescue
+      "Readme::" + args[1].css("h2").first.content.strip
+    end
   else
     name.strip
   end

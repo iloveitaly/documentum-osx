@@ -195,7 +195,7 @@ class DocumentationIndexHelper
           if @process_name.class == Symbol
             helpElementName = self.send(@process_name, helpElement.content, index)
           elsif @process_name.class == Proc
-            helpElementName = @process_name.call(helpElement.content, index)
+            helpElementName = @process_name.call(helpElement.content, index, helpDoc, absoluteFilePath)
           end
           
           # skip empty entries
