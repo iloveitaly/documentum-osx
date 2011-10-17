@@ -9,11 +9,15 @@ class DocIndexHelper
   require 'json'
   
   attr_accessor :anchor_locator
+  attr_accessor :anchor_strip_prefix
   attr_accessor :structure_path
+  attr_accessor :structure
   
   def initialize
     @strip_javascript = true
     @docs_dir = "docs"
+    
+    @anchor_strip_prefix = ""
     @anchor_locator = nil
     
     @docs_path = File.join($plugin_directory, @docs_dir)
@@ -94,6 +98,19 @@ class DocIndexHelper
       currentHeiarchyReference = heiarchicalElements
       lastHeiarchyKey = nil
       
+      if @anchor_locator.nil?
+        # there has got to be a better way to handle this...
+        anchor_list = []
+        helpDoc.css("a[name]").each do |a|
+          if @anchor_strip_prefix.empty?
+            anchor_list << a["name"]
+          else
+            # sometimes docs have anchor prefixes that can be stripped out for easy matching
+            anchor_list << a["name"].gsub(/#{@anchor_strip_prefix}/, '')
+          end
+        end
+      end
+      
       # move through the heiarchy for this page
       heiarchy.each_index do |index|
         # find current heiarchy position & set empty hashs
@@ -113,10 +130,32 @@ class DocIndexHelper
           helpElementName = self.send(@process_element_name, helpElement.content, index)
           
           # skip empty entries
-          next unless not (helpElementName.nil? || helpElementName.empty?)
+          next if helpElementName.nil? || helpElementName.empty?
           
           # find associated anchor
-          anchor = @anchor_locator.call(helpElement, index, helpDoc) if not @anchor_locator.nil?
+          if @anchor_locator.nil?
+            # TODO: this needs to be fixed
+            # grab all the anchors 
+            anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
+            anchorMatches = anchor_list.select do |i|
+              i == anchorText
+            end
+            
+            if anchorMatches.length == 0
+              puts "::" + helpElementName
+              # anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
+              # i =~ /^#{Regexp.escape(anchorText)}|#{Regexp.escape(anchorText)}$/
+              
+            end
+            
+            if anchorMatches.length > 1
+              # puts "---------"
+              # puts helpElementName.gsub(/[^a-zA-Z]/, '')
+              # puts anchorMatches
+            end
+          else
+            anchor = @anchor_locator.call(helpElement, index, helpDoc)
+          end
           
           currentHeiarchyReference[helpElementName] = {:path => absoluteFilePath, :title => helpElementName, :anchor => anchor}
 
@@ -127,8 +166,12 @@ class DocIndexHelper
       end      
     end
     
-    # save the structure json
-    File.open(@structure_path, "w") { |file| file.puts JSON.pretty_generate(heiarchicalElements) }
+    @structure = heiarchicalElements
+  end
+  
+  def write_structure
+    @structure.keys.sort_by {|s| s.to_s }.map{|key| [key, @structure[key]] }
+    File.open(@structure_path, "w") { |file| file.puts JSON.pretty_generate(@structure) }
   end
 end
 
@@ -136,7 +179,21 @@ ih = DocIndexHelper.new
 # ih.rename_uncompressed_docs
 # ih.fix_asset_references
 ih.anchor_locator = proc do |element, index, document|
-  return "" if index == 0
-  return element.parent.parent.css("a[name*=method]").first["name"]
+  if index == 0
+    ""
+  else
+    element.parent.parent.css("a[name*=method]").first["name"]
+  end
 end
+# ih.anchor_strip_prefix = "method-[ic]-"
 ih.generate_structure "h1.class, h1.module", "div.method-heading span.method-callseq"
+structure = ih.structure
+structure["Errors"] = {"children" => {}, "title" => "Error"}
+structure.each do |key, value|
+  # in ruby core errors are stored on the root, remove them and throw them into an errors section
+  if /Error$/ =~ key
+    structure["Errors"]["children"][key] = value
+    structure.delete(key)
+  end
+end
+ih.write_structure
