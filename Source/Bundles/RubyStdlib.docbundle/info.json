@@ -1,0 +1,6 @@
+{
+    "name":"ruby_stdlib",
+    "documentation_download_url":"http://www.ruby-doc.org/downloads/ruby_1_9_2_stdlib_rdocs.tgz",
+    "index_script":"index.rb",
+    "overide_css": "styles.css"
+}
