@@ -15,6 +15,20 @@
 #import "WHCommonFunctions.h"
 #import "WHShared.h"
 
+static int searchSort(id ob1, id ob2, void *searchString) {
+	// the shorter string is a better match, but exact match is best
+	
+	// try for exact match
+	if([[ob1 name] isEqualToString:searchString]) return NSOrderedAscending;
+	if([[ob2 name] isEqualToString:searchString]) return NSOrderedDescending;
+	
+	// sort by shortest string
+	int l1 = [[ob1 name] length], l2 = [[ob2 name] length];
+	if(l1 < l2) return NSOrderedAscending;
+	else if(l1 > l2) return NSOrderedDescending;
+	else return NSOrderedSame;
+}
+
 @implementation WHPluginBase
 - (id) init {
 	if(self = [super init]) {
@@ -174,18 +188,31 @@
 
 // automatic 'best attempt' help function
 - (NSArray *) searchResultsForString:(NSString *)searchString withAllPages:(NSArray *)allPages {
-	NSMutableArray *results = [NSMutableArray array];
+	// use distance algorithm: http://weblog.wanderingmango.com/articles/14/fuzzy-string-matching-and-the-principle-of-pleasant-surprises?commented=0
 	
+	NSMutableArray *results = [NSMutableArray array], *firstPassContents = [NSMutableArray array];
 	int a = 0, l = [allPages count];
 	WHHelpNode *tempNode;
+	
+	// run through the array being case sensative
 	for(; a < l; a++) {
 		tempNode = [allPages objectAtIndex:a];
 		
-		if([[tempNode name] containsString:searchString ignoringCase:YES]) {
+		if([[tempNode name] containsString:searchString ignoringCase:NO]) {
+			[results addObject:tempNode];
+			[firstPassContents addObject:tempNode];
+		}
+	}
+	
+	// run through the array disregarding case
+	a = 0, l = [allPages count];
+	for(; a < l; a++) {
+		tempNode = [allPages objectAtIndex:a];
+		if(![firstPassContents containsObject:tempNode] && [[tempNode name] containsString:searchString ignoringCase:YES]) {
 			[results addObject:tempNode];
 		}
 	}
 	
-	return [results sortedArrayUsingFunction:lengthSort context:NULL];	
+	return [results sortedArrayUsingFunction:searchSort context:searchString];	
 }
 @end
