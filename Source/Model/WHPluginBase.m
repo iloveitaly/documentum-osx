@@ -164,12 +164,23 @@ static int searchSort(id ob1, id ob2, void *searchString) {
 			// eventually there will be three options: encrypted index script, decrypted index script, and some pre-wrapped commands for common use cases
 			NSString *indexScriptPath = [self indexScriptPath];
 			NSFileManager *fm = [NSFileManager defaultManager];
+			
 			NSLog(@"Index Script %@", indexScriptPath);
+			
 			if(!isEmpty(indexScriptPath)) {
 				if([fm isExecutableFileAtPath:indexScriptPath]) {
 					[controller runCommand:indexScriptPath withArgs:nil];
 				} else {
-					// determine the file extensive
+					// determine the file extension
+					NSString *indexExtension = [indexScriptPath pathExtension];
+					
+					// TODO: detect shebang 
+					if([indexScriptPath isEqualToString:@"rb"]) {
+						[controller runCommand:@"/usr/bin/ruby" withArgs:[NSArray arrayWithObject:indexScriptPath]];
+					} else if([indexScriptPath isEqualToString:@"py"]) {
+						
+					}
+					
 				}
 			} else {
 				NSString *scriptString = [NSString stringWithCString:[[self indexScriptData] bytes] length:[[self indexScriptData] length]];

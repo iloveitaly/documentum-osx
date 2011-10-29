@@ -64,6 +64,7 @@ class DocumentationIndexHelper
   private :process_element_name
   
   # when the doc download is uncompressed it still has the old name... we want to rename it to /docs
+  # this assumes we are in the original PWD
   def rename_uncompressed_docs
     docs = Dir[File.basename(@plugin_directory) + '*']
     
@@ -77,7 +78,7 @@ class DocumentationIndexHelper
       end
     end
     
-    if docs.empty? or File.basename(docs) == @docs_dir
+    if docs.empty? or (docs.class == String and File.basename(docs) == @docs_dir)
       puts "Error finding docs directory or already exists"
     else
       FileUtils.mv(File.join(Dir.pwd, docs), File.join(Dir.pwd, @docs_dir))

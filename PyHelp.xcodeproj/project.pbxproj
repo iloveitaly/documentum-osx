@@ -1685,7 +1685,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_VERSION = .5;
-				GCC_VERSION = 4.2;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1696,7 +1696,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_VERSION = .5;
-				GCC_VERSION = 4.2;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;

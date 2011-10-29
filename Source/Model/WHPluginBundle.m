@@ -51,7 +51,7 @@
 }
 
 - (NSString *) indexScriptPath {
-	return !isEmpty([_bundleInfo valueForKey:@"index_script"]) ? [self _supportFilePath:[_bundleInfo valueForKey:@"index_script"]] : nil;
+	return !isEmpty([_bundleInfo valueForKey:@"index_script"]) ? [_bundlePath stringByAppendingPathComponent:[_bundleInfo valueForKey:@"index_script"]] : nil;
 }
 
 //- (NSString *) pluginStructurePath {
@@ -59,7 +59,6 @@
 //}
 
 - (NSString *) customCSSFilePath {
-	NSLog(@"%@", [_bundlePath stringByAppendingPathComponent:[_bundleInfo valueForKey:@"overide_css"]]);
 	return [_bundlePath stringByAppendingPathComponent:[_bundleInfo valueForKey:@"overide_css"]];
 }
 
