@@ -22,14 +22,11 @@
 	return 8.0;
 }
 
+// weird drawing issue, possible fix: https://github.com/osxync/xboxlivefriends/blob/b34c6c836a6e29703657a68bebd648772dea7825/src/XBSplitView.m
+// BWToolkit: https://bitbucket.org/bwalkin/bwtoolkit/src/590c12e68e7a/BWTransparentScroller.m
+
 - (void)drawDividerInRect:(NSRect)aRect {
-	[_splitImage setSize:aRect.size];
-	
-	NSSize barSize = [_splitImage size];
-	NSRect barRect = NSMakeRect(0, 0, barSize.width, barSize.height);
-	
-	[self lockFocus];
-	[_splitImage drawAtPoint:aRect.origin fromRect:barRect operation:NSCompositeSourceOver fraction:1.0];
-	[self unlockFocus];
+	NSImage *splitImage = [NSImage imageNamed:@"SplitBar"];
+	NSDrawThreePartImage(aRect, splitImage, splitImage, splitImage, YES, NSCompositeSourceOver, 1.0, NO);
 }
 @end

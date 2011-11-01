@@ -49,11 +49,15 @@ static WHWebController *_sharedController;
 	WHHelpNode *selected = [oHelpTree itemAtRow:[oHelpTree selectedRow]];
 	NSString *filePath = [selected valueForKey:@"filePath"];
 	NSURL *fileURL = [selected completeURL];
-	NSLog(@"FILE %@", filePath);
+	
 	// NSLog(@"Going to load %@", filePath);
 	
-	[self setSelectedNode:selected];
-	[[oWebView mainFrame] loadRequest:[NSURLRequest requestWithURL:fileURL]];
+	if(!isEmpty(filePath)) {
+		[oMainWindow setTitle:[NSString stringWithFormat:@"%@ – %@", [[[WHPluginList sharedController] selectedPlugin] packageFullName], [selected windowTitle], nil]];
+							   
+		[self setSelectedNode:selected];
+		[[oWebView mainFrame] loadRequest:[NSURLRequest requestWithURL:fileURL]];
+	}
 }
 
 #pragma mark -

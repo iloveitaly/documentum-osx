@@ -13,6 +13,7 @@
 @interface WHWebController : NSObject {
 	IBOutlet NSOutlineView *oHelpTree;
 	IBOutlet WebView *oWebView;
+	IBOutlet NSWindow *oMainWindow;
 	
 	NSArray *_allPages;
 	WebPreferences *_webPreferences;

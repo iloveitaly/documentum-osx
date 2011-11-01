@@ -11,6 +11,7 @@ class DocumentationIndexHelper
   attr_accessor :structure
   attr_accessor :process_name
   attr_accessor :unimportant_content_selectors
+  attr_accessor :file_list
   
   def initialize
     # set defaults
@@ -21,6 +22,7 @@ class DocumentationIndexHelper
     @content_holder_selector = nil
     @process_name = :process_element_name
     @unimportant_content_selectors = "h1,h2,h3,h4,h5"
+    @file_list = []   # define a list of files to process
     
     @plugin_directory = Dir.pwd
     @docs_path = File.join(@plugin_directory, @docs_dir)
@@ -140,15 +142,19 @@ class DocumentationIndexHelper
       absoluteFilePath = File.join(@docs_path, helpFile)
       helpDoc = Nokogiri::HTML(File.open(absoluteFilePath))
       
-      # check if we are dealing with a empty 
+      windowTitle = helpDoc.xpath("//title")[0].content
+      
+      # check if we are dealing with a empty page
+      # define content_holder_selector & unimportant_content_selectors
       if not @content_holder_selector.nil?
         isEmptyFile = false
         
         helpDoc.css(@content_holder_selector).each do |match|
+          # work with a copy of the doc since we are removing elements
           tempDocSubset = match.dup()
           tempDocSubset.css(@unimportant_content_selectors).remove
           if tempDocSubset.content.to_s.strip.empty?
-            puts "Length #{tempDocSubset.content.to_s.strip.length}"
+            # puts "Length #{tempDocSubset.content.to_s.strip.length}"
             # puts tempDocSubset.content.to_s.strip
             isEmptyFile = true
           end
@@ -164,6 +170,7 @@ class DocumentationIndexHelper
       currentHeiarchyReference = heiarchicalElements
       lastHeiarchyKey = nil
       
+      # default anchor wiring script
       if @anchor_locator.nil?
         # there has got to be a better way to handle this...
         anchor_list = []
@@ -228,7 +235,7 @@ class DocumentationIndexHelper
             anchor = @anchor_locator.call(helpElement, index, helpDoc)
           end
           
-          helpReference = {:path => absoluteFilePath, :title => helpElementName, :anchor => anchor}
+          helpReference = {:path => absoluteFilePath, :title => helpElementName, :window_title => "%s – %s" % [windowTitle, helpElementName], :anchor => anchor}
           currentHeiarchyReference[helpElementName] = helpReference
 
           lastHeiarchyKey = helpElementName

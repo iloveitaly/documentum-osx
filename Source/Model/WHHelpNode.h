@@ -11,11 +11,10 @@
 #define WHHelpNodeFileKey @"path"
 #define WHHelpNodeTitleKey @"title"
 #define WHHelpNodeAnchorKey @"anchor"
+#define WHHelpNodeWindowTitleKey @"window_title"
 
 @interface WHHelpNode : NSObject {
-	NSString *_filePath;
-	NSString *_anchor;
-	NSString *_name;
+	NSString *_filePath, *_anchor, *_name, *windowTitle;
 	NSMutableArray *_children;
 	NSURL *_completeURL;
 	WHHelpNode *_parentNode;
@@ -40,6 +39,8 @@
 
 - (NSString *) filePath;
 - (void) setFilePath:(NSString *)aValue;
+
+@property (readonly) NSString *windowTitle;
 
 // generated once called, call this only after the anchor & filePath have been set
 - (NSURL *) completeURL;

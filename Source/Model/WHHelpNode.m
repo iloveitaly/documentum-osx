@@ -10,6 +10,8 @@
 #import "WHShared.h"
 
 @implementation WHHelpNode
+@synthesize windowTitle;
+
 + (id) nodeWithDictionary:(NSDictionary *)attributes {
 	return [[[self alloc] initWithDictionary:attributes] autorelease];
 }
@@ -21,6 +23,12 @@
 		[self setName:[attributes valueForKey:WHHelpNodeTitleKey]];
 		[self setAnchor:[attributes valueForKey:WHHelpNodeAnchorKey]];
 		
+		windowTitle = [[attributes valueForKey:WHHelpNodeWindowTitleKey] retain];
+		
+		// use the standard name if no window title exists
+		if(isEmpty(windowTitle)) {
+			windowTitle = _name;
+		}
 	}
 	
 	return self;

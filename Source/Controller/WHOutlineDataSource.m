@@ -62,10 +62,7 @@ static WHOutlineDataSource *_sharedController;
 	
 	[[WHWebController sharedController] setAllPages:[_rootNode allChildren]];
 	
-	[oHelpTree reloadData];
-	//if(!isEmpty(overrideCSSPath))
-	//	[[WHWebController sharedController] setStyleSheet:[NSURL URLWithString:overrideCSSPath]];
-	
+	[oHelpTree reloadData];	
 	
 	[self didChangeValueForKey:@"helpSections"];
 	
