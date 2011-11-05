@@ -1,0 +1,7 @@
+{
+    "name":"php",
+	"full_name":"PHP",
+    "documentation_download_url":"http://us.php.net/distributions/manual/php_manual_en.tar.gz",
+    "index_script":"index.rb",
+    "overide_css": "styles.css"
+}

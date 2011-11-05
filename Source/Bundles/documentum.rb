@@ -15,22 +15,30 @@ class DocumentationIndexHelper
   attr_accessor :unimportant_content_selectors
   attr_accessor :file_list
   
+  attr_accessor :docs_dir
+  attr_accessor :docs_path
+  
   def initialize
     # set defaults
     @strip_javascript = true
-    @docs_dir = "docs"
     @anchor_strip_prefix = ""
     @anchor_locator = nil
-    @content_holder_selector = nil
     @process_name = :process_element_name
-    @unimportant_content_selectors = "h1,h2,h3,h4,h5"
     @file_list = []   # define a list of files to process
+    @structure = Hash.new
     
+    # these determine if the page is empty or not
+    @content_holder_selector = nil
+    @unimportant_content_selectors = "h1,h2,h3,h4,h5"
+    
+    @docs_dir = "docs"
     @plugin_directory = Dir.pwd
     @docs_path = File.join(@plugin_directory, @docs_dir)
     @structure_path = File.join(@plugin_directory, "structure.json")
   end
   
+  # this processed the raw HTML content inside of 'identifer' tag
+  # and strips it down to something that should be displayed in the app
   def process_element_name(name, level)
     name = name.strip
     rootName = name[/^[a-zA-Z_:]+/]
@@ -42,24 +50,28 @@ class DocumentationIndexHelper
     rootName
   end
   
+  # path is an ordered array, ex: ['errors', 'array', 'IndexError']
   def insert_tree_reference(path, insertion)
     currentReference = @structure
     
-    path.each do |index|
+    # use index and not the value, end of path detection with values causes problems with duplicate items in the path
+    path.each_index do |index|
+      levelName = path[index]
+      
       # puts "Path Level " + index
       currentReference = currentReference["children"] if currentReference != @structure
-      
-      if not currentReference.has_key? index
-        currentReference[index] = {"children" => {}, "title" => index}
-      elsif not currentReference[index].has_key? "children"
-          currentReference[index]["children"] = {}
+
+      if not currentReference.has_key? levelName
+        currentReference[levelName] = {"children" => {}, "title" => levelName}
+      elsif not currentReference[levelName].has_key? "children"
+          currentReference[levelName]["children"] = {}
       end
 
-      if path.last == index
-        currentReference[index] = insertion
+      if path.length == index + 1
+        currentReference[levelName] = insertion
       end
       
-      currentReference = currentReference[index]
+      currentReference = currentReference[levelName]
     end
     
     currentReference
@@ -140,15 +152,21 @@ class DocumentationIndexHelper
     currentHeiarchyReference = nil
     lastHeiarchyKey = nil
     
-    fileList = Dir.glob("**/*.html").reject {|fn| File.directory?(fn) }.each do |helpFile|
+    # sensible defaults, but all the dev to supply a specific file list
+    if @fileList.empty?
+      @fileList = Dir.glob("**/*.html").reject {|fn| File.directory?(fn) }
+    end
+    
+    @fileList.each do |helpFile|
       absoluteFilePath = File.join(@docs_path, helpFile)
       helpDoc = Nokogiri::HTML(File.open(absoluteFilePath))
       
+      # the window title is used for a peice of the heirarchy in the app's title
       windowTitle = helpDoc.xpath("//title")[0].content
       
       # check if we are dealing with a empty page
       # define content_holder_selector & unimportant_content_selectors
-      if not @content_holder_selector.nil?
+      if not @content_holder_selector.nil? and not @unimportant_content_selectors.nil?
         isEmptyFile = false
         
         helpDoc.css(@content_holder_selector).each do |match|
@@ -168,11 +186,7 @@ class DocumentationIndexHelper
         end
       end
       
-      # reset heirachical variables
-      currentHeiarchyReference = heiarchicalElements
-      lastHeiarchyKey = nil
-      
-      # default anchor wiring script
+      # default anchor wiring script: put all anchors in a list for future reference
       if @anchor_locator.nil?
         # there has got to be a better way to handle this...
         anchor_list = []
@@ -185,6 +199,10 @@ class DocumentationIndexHelper
           end
         end
       end
+      
+      # reset heirachical variables
+      currentHeiarchyReference = heiarchicalElements
+      lastHeiarchyKey = nil
       
       # move through the heiarchy for this page
       heiarchy.each_index do |index|
@@ -212,9 +230,9 @@ class DocumentationIndexHelper
           next if helpElementName.nil? || helpElementName.empty?
           
           # find associated anchor
+          # TODO: this is completely broken
           anchor = ""
           if @anchor_locator.nil?
-            # TODO: this needs to be fixed
             # grab all the anchors 
             anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
             anchorMatches = anchor_list.select do |i|
@@ -237,12 +255,19 @@ class DocumentationIndexHelper
             anchor = @anchor_locator.call(helpElement, index, helpDoc)
           end
           
-          helpReference = {:path => absoluteFilePath, :title => helpElementName, :window_title => "%s – %s" % [windowTitle, helpElementName], :anchor => anchor}
+          helpReference = {
+            :path => absoluteFilePath,
+            :title => helpElementName,
+            :window_title => "%s – %s" % [windowTitle, helpElementName],
+            :anchor => anchor
+          }
+          
           currentHeiarchyReference[helpElementName] = helpReference
 
           lastHeiarchyKey = helpElementName
           
           # for the first heiarchy level there really only be one header, first level is meant to be the title
+          # TODO: this should be a bit more flexible
           break if index == 0
         end
         
@@ -254,6 +279,7 @@ class DocumentationIndexHelper
   end
   
   def write_structure
+    # TODO: take another look at the sorting issue here
     @structure.keys.sort_by {|s| s.to_s }.map{|key| [key, @structure[key]] }
     File.open(@structure_path, "w") { |file| file.puts JSON.pretty_generate(@structure) }
   end

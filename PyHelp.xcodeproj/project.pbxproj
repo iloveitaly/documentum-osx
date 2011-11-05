@@ -81,7 +81,6 @@
 		27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 27B7555B0FE7F48E00A67786 /* ActionScript.plugin */; };
 		27BB0008137468D90050FBD8 /* PHPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 277816E30C60EC400044FDB1 /* PHPDataSource.m */; };
 		27BB009613746B570050FBD8 /* php_index in Resources */ = {isa = PBXBuildFile; fileRef = 27DB7B0B0DB5796B00481CC5 /* php_index */; };
-		27BBFFFA137468BE0050FBD8 /* PHP.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 27BBFFD8137468A00050FBD8 /* PHP.plugin */; };
 		27BFB6260BCB35EF00E7B173 /* WHAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6250BCB35EF00E7B173 /* WHAppController.m */; };
 		27BFB6490BCBC57200E7B173 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6440BCBC57200E7B173 /* FMDatabase.m */; };
 		27BFB64A0BCBC57200E7B173 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6460BCBC57200E7B173 /* FMDatabaseAdditions.m */; };
@@ -154,7 +153,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				27BBFFFA137468BE0050FBD8 /* PHP.plugin in Copy Plugins */,
 				27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */,
 				279608DF0FD988B700FB72BE /* Kohana.plugin in Copy Plugins */,
 				2725A9380F11991400B3BE06 /* CSS.plugin in Copy Plugins */,
