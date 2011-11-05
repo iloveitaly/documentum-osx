@@ -1,5 +1,159 @@
 # http://www.skorks.com/2009/07/how-to-write-a-web-crawler-in-ruby/
 
+require 'net/http'
+require 'uri'
+require 'open-uri'
+require 'rubygems'
+require 'hpricot'
+
+module UrlUtils
+  def relative?(url)
+    if url.match(/^http/)
+      return false
+    end
+    return true
+  end
+
+  def make_absolute(potential_base, relative_url)
+    absolute_url = nil;
+    if relative_url.match(/^\//)
+      absolute_url = create_absolute_url_from_base(potential_base, relative_url)
+    else
+      absolute_url = create_absolute_url_from_context(potential_base, relative_url)
+    end
+    return absolute_url
+  end
+
+  def urls_on_same_domain?(url1, url2)
+    return get_domain(url1) == get_domain(url2)
+  end
+
+  def get_domain(url)
+    return remove_extra_paths(url)
+  end
+
+  def create_absolute_url_from_base(potential_base, relative_url)
+    naked_base = remove_extra_paths(potential_base)
+    return naked_base + relative_url
+  end
+
+  def remove_extra_paths(potential_base)
+    index_to_start_slash_search = potential_base.index('://')+3
+    index_of_first_relevant_slash = potential_base.index('/', index_to_start_slash_search)
+    if index_of_first_relevant_slash != nil
+      return potential_base[0, index_of_first_relevant_slash]
+    end
+    return potential_base
+  end
+
+  def create_absolute_url_from_context(potential_base, relative_url)
+    absolute_url = nil;
+    if potential_base.match(/\/$/)
+      absolute_url = potential_base+relative_url
+    else
+      last_index_of_slash = potential_base.rindex('/')
+      if potential_base[last_index_of_slash-2, 2] == ':/'
+        absolute_url = potential_base+'/'+relative_url
+      else
+        last_index_of_dot = potential_base.rindex('.')
+        if last_index_of_dot < last_index_of_slash
+          absolute_url = potential_base+'/'+relative_url
+        else
+          absolute_url = potential_base[0, last_index_of_slash+1] + relative_url
+        end
+      end
+    end
+    return absolute_url
+  end
+
+  private :create_absolute_url_from_base, :remove_extra_paths, :create_absolute_url_from_context
+end
+
+class Spider
+  include UrlUtils
+  
+  def initialize
+    @already_visited = {}
+  end
+
+  def crawl_web(urls, depth=2, page_limit = 100)
+    depth.times do
+      next_urls = []
+      urls.each do |url|
+        url_object = open_url(url)
+        next if url_object == nil
+        url = update_url_if_redirected(url, url_object)
+        parsed_url = parse_url(url_object)
+        next if parsed_url == nil
+        @already_visited[url]=true if @already_visited[url] == nil
+        return if @already_visited.size == page_limit
+        next_urls += (find_urls_on_page(parsed_url, url)-@already_visited.keys)
+        next_urls.uniq!
+      end
+      urls = next_urls
+    end
+  end
+
+  def crawl_domain(url, page_limit = 100)
+    return if @already_visited.size == page_limit
+    url_object = open_url(url)
+    return if url_object == nil
+    parsed_url = parse_url(url_object)
+    return if parsed_url == nil
+    @already_visited[url]=true if @already_visited[url] == nil
+    page_urls = find_urls_on_page(parsed_url, url)
+    page_urls.each do |page_url|
+      if urls_on_same_domain?(url, page_url) and @already_visited[page_url] == nil
+        crawl_domain(page_url)
+      end
+    end
+  end
+
+  def open_url(url)
+    url_object = nil
+    begin
+      url_object = open(url)
+    rescue
+      puts "Unable to open url: " + url
+    end
+    return url_object
+  end
+
+  def update_url_if_redirected(url, url_object)
+    if url != url_object.base_uri.to_s
+      return url_object.base_uri.to_s
+    end
+    return url
+  end
+
+  def parse_url(url_object)
+    doc = nil
+    begin
+      doc = Hpricot(url_object)
+    rescue
+      puts 'Could not parse url: ' + url_object.base_uri.to_s
+    end
+    puts 'Crawling url ' + url_object.base_uri.to_s
+    return doc
+  end
+
+  def find_urls_on_page(parsed_url, current_url)
+    urls_list = []
+    parsed_url.search('a[@href]').map do |x|
+      new_url = x['href'].split('#')[0]
+      unless new_url == nil
+        if relative?(new_url)
+         new_url = make_absolute(current_url, new_url)
+        end
+        urls_list.push(new_url)
+      end
+    end
+    return urls_list
+  end
+
+  private :open_url, :update_url_if_redirected, :parse_url, :find_urls_on_page
+end
+
 class DocumentationIndexHelper
   require 'rubygems'
   require 'FileUtils'
