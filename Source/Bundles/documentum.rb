@@ -1,10 +1,17 @@
-# http://www.skorks.com/2009/07/how-to-write-a-web-crawler-in-ruby/
+require 'rubygems'
 
+# for documentum
+require 'FileUtils'
+require 'nokogiri'
+require 'json'
+
+# for spider
 require 'net/http'
 require 'uri'
 require 'open-uri'
-require 'rubygems'
 require 'hpricot'
+
+# http://www.skorks.com/2009/07/how-to-write-a-web-crawler-in-ruby/
 
 module UrlUtils
   def relative?(url)
@@ -72,8 +79,11 @@ end
 class Spider
   include UrlUtils
   
+  attr_accessor :output_dir
+  
   def initialize
     @already_visited = {}
+    @output_dir = nil
   end
 
   def crawl_web(urls, depth=2, page_limit = 100)
@@ -96,11 +106,16 @@ class Spider
 
   def crawl_domain(url, page_limit = 100)
     return if @already_visited.size == page_limit
+    
     url_object = open_url(url)
     return if url_object == nil
+    
     parsed_url = parse_url(url_object)
     return if parsed_url == nil
-    @already_visited[url]=true if @already_visited[url] == nil
+    
+    save_url(url, parsed_url) if not @output_dir.nil?
+    
+    @already_visited[url] = true if @already_visited[url] == nil
     page_urls = find_urls_on_page(parsed_url, url)
     page_urls.each do |page_url|
       if urls_on_same_domain?(url, page_url) and @already_visited[page_url] == nil
@@ -118,6 +133,22 @@ class Spider
     end
     return url_object
   end
+  
+  def save_url(url_object, page_content)
+    # convert slashes to hypens
+    convertedPath = URI.parse(url_object).path
+    convertedPath.gsub!(/^\/|\/$/, '')
+    convertedPath.gsub!('/', '-')
+    
+    # TODO: possible downcase here 
+    
+    convertedPath = "index" if convertedPath.empty?
+    convertedPath += ".html"
+    
+    Dir.mkdir(@output_dir) if not File.exists? @output_dir
+    
+    File.open(File.join(@output_dir, convertedPath), "w") { |file| file.puts page_content}
+  end
 
   def update_url_if_redirected(url, url_object)
     if url != url_object.base_uri.to_s
@@ -128,11 +159,13 @@ class Spider
 
   def parse_url(url_object)
     doc = nil
+    
     begin
       doc = Hpricot(url_object)
     rescue
       puts 'Could not parse url: ' + url_object.base_uri.to_s
     end
+    
     puts 'Crawling url ' + url_object.base_uri.to_s
     return doc
   end
@@ -154,12 +187,7 @@ class Spider
   private :open_url, :update_url_if_redirected, :parse_url, :find_urls_on_page
 end
 
-class DocumentationIndexHelper
-  require 'rubygems'
-  require 'FileUtils'
-  require 'nokogiri'
-  require 'json'
-  
+class DocumentationIndexHelper  
   attr_accessor :anchor_locator
   attr_accessor :anchor_strip_prefix
   attr_accessor :content_holder_selector
