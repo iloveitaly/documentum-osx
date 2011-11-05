@@ -2,11 +2,13 @@
 
 require File.dirname(__FILE__) + '/../documentum'
 
+# man page numbers: http://www.december.com/unix/ref/mansec.html
+
 ih = DocumentationIndexHelper.new
 
 man_paths = ["/usr/share/man", "/usr/local/man", "/usr/share/man", "/opt/local/share/man"]
 man_file_glob = "man[0-9,a-z,A-Z]/*"
-man_exclude_list = ["/usr/share/man/man3/"]
+man_exclude_list = ["/man3/"]
 man_file_list = []
 
 # possibly organize the man files into 1,2,3,4... and fork the process, wait on all the pids, then generate structure
@@ -15,7 +17,7 @@ man_file_list = []
 count = 100
 man_paths.reject{|man_dir| not File.exists? man_dir }.each do |man_dir|
   Dir[File.join man_dir, man_file_glob].each do |man_file|
-    next if man_exclude_list.collect{|exclude_dir| man_file.start_with? exclude_dir}.include? true
+    next if man_exclude_list.collect{|exclude_dir| man_file.include? exclude_dir}.include? true
     
     puts "Original: #{man_file}"
     man_save_name = File.basename(man_file.sub(/\.gz$/, '')) + ".html"

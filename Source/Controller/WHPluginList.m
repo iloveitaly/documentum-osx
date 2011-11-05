@@ -75,8 +75,16 @@ static WHPluginList *_sharedController;
 	
 	while ((bundleName = [simplePluginEnum nextObject] )) {
 		if ([bundleName hasSuffix:@".docbundle"]) {
-			newBundle = [[[WHPluginBundle alloc] initBundleWithPath:[bundleFolder stringByAppendingPathComponent:bundleName]] autorelease];
-			[list addObject:newBundle];
+			@try {
+				newBundle = [[[WHPluginBundle alloc] initBundleWithPath:[bundleFolder stringByAppendingPathComponent:bundleName]] autorelease];
+				[list addObject:newBundle];
+			}
+			@catch (NSException *exception) {
+				NSLog(@"Error loading bundle: %@. Reason: %@", bundleName, [exception reason]);
+			}
+			@finally {
+				
+			}
 		}
 	}
 	

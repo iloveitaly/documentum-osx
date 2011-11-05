@@ -21,6 +21,8 @@
 		NSString *jsonInfoFile = [bundlePath stringByAppendingPathComponent:@"info.json"];
 
 		if([fm fileExistsAtPath:jsonInfoFile isDirectory:NO]) {
+			NSLog(@"Parsing JSON: %@", jsonInfoFile);
+			
 			// TODO: better error handling, i.e. misformed json
 			NSData *jsonData = [NSData dataWithContentsOfFile:jsonInfoFile];
 			JSONDecoder* decoder = [[[JSONDecoder alloc] initWithParseOptions:JKParseOptionNone] autorelease];
