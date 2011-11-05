@@ -217,6 +217,9 @@ class DocumentationIndexHelper
     @plugin_directory = Dir.pwd
     @docs_path = File.join(@plugin_directory, @docs_dir)
     @structure_path = File.join(@plugin_directory, "structure.json")
+    
+    # create the docs dir
+    Dir.mkdir @docs_path if not File.exists? @docs_path and File.exists? @plugin_directory
   end
   
   # this processed the raw HTML content inside of 'identifer' tag
@@ -264,6 +267,7 @@ class DocumentationIndexHelper
   # when the doc download is uncompressed it still has the old name... we want to rename it to /docs
   # this assumes we are in the original PWD
   def rename_uncompressed_docs
+    # TODO: handle the doc dir already existing
     docs = Dir[File.basename(@plugin_directory) + '*']
     
     if docs.empty?
@@ -335,11 +339,11 @@ class DocumentationIndexHelper
     lastHeiarchyKey = nil
     
     # sensible defaults, but all the dev to supply a specific file list
-    if @fileList.empty?
-      @fileList = Dir.glob("**/*.html").reject {|fn| File.directory?(fn) }
+    if @file_list.empty?
+      @file_list = Dir.glob("**/*.html").reject {|fn| File.directory?(fn) }
     end
     
-    @fileList.each do |helpFile|
+    @file_list.each do |helpFile|
       absoluteFilePath = File.join(@docs_path, helpFile)
       helpDoc = Nokogiri::HTML(File.open(absoluteFilePath))
       
@@ -440,7 +444,7 @@ class DocumentationIndexHelper
           helpReference = {
             :path => absoluteFilePath,
             :title => helpElementName,
-            :window_title => "%s – %s" % [windowTitle, helpElementName],
+            :window_title => windowTitle.downcase == helpElementName.downcase ? windowTitle : "%s – %s" % [windowTitle, helpElementName],
             :anchor => anchor
           }
           

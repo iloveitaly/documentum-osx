@@ -1,0 +1,6 @@
+{
+    "name":"manpages",
+	"full_name":"ManPages",
+    "index_script":"index.rb",
+    "overide_css": "styles.css"
+}
