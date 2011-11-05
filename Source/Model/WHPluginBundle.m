@@ -23,7 +23,7 @@
 		if([fm fileExistsAtPath:jsonInfoFile isDirectory:NO]) {
 			// TODO: better error handling, i.e. misformed json
 			NSData *jsonData = [NSData dataWithContentsOfFile:jsonInfoFile];
-			JSONDecoder* decoder = [[JSONDecoder alloc] initWithParseOptions:JKParseOptionNone];
+			JSONDecoder* decoder = [[[JSONDecoder alloc] initWithParseOptions:JKParseOptionNone] autorelease];
 			_bundleInfo = [[decoder objectWithData:jsonData] retain];
 			
 			NSLog(@"Loaded Bundle Info: %@", _bundleInfo);
