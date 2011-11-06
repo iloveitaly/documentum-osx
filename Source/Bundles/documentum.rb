@@ -183,6 +183,11 @@ class Spider
     end
     return urls_list
   end
+  
+  # TODO: 
+  def find_assets_on_page(parsed_url, current_url)
+    
+  end
 
   private :open_url, :update_url_if_redirected, :parse_url, :find_urls_on_page
 end
@@ -267,7 +272,9 @@ class DocumentationIndexHelper
   # when the doc download is uncompressed it still has the old name... we want to rename it to /docs
   # this assumes we are in the original PWD
   def rename_uncompressed_docs
-    # TODO: handle the doc dir already existing
+    # if the docs dir is empty, remove it
+    Dir.rmdir(@docs_path) if Dir[File.join @docs_path, '*'].empty?
+    
     docs = Dir[File.basename(@plugin_directory) + '*']
     
     if docs.empty?
