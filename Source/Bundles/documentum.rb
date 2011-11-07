@@ -84,6 +84,7 @@ class Spider
   def initialize
     @already_visited = {}
     @output_dir = nil
+    @assets = {}
   end
 
   def crawl_web(urls, depth=2, page_limit = 100)
@@ -113,6 +114,10 @@ class Spider
     parsed_url = parse_url(url_object)
     return if parsed_url == nil
     
+    # pull assets off page onto disk, rewrite assets references
+    find_assets_on_page(parsed_url, url)
+    
+    # save to disk
     save_url(url, parsed_url) if not @output_dir.nil?
     
     @already_visited[url] = true if @already_visited[url] == nil
@@ -134,16 +139,25 @@ class Spider
     return url_object
   end
   
-  def save_url(url_object, page_content)
-    # convert slashes to hypens
-    convertedPath = URI.parse(url_object).path
-    convertedPath.gsub!(/^\/|\/$/, '')
-    convertedPath.gsub!('/', '-')
-    
+  def flatten_url(url)
     # TODO: possible downcase here 
     
-    convertedPath = "index" if convertedPath.empty?
-    convertedPath += ".html"
+    # convert slashes to hypens
+    convertedPath = URI.parse(url).path
+    convertedPath.gsub!(/^\/|\/$/, '')
+    
+    # remove beginning / ending hyphens
+    convertedPath.gsub!('/', '-')
+    convertedPath
+  end
+  
+  def save_url(url, page_content, html=true)
+    convertedPath = flatten_url(url)
+
+    if html
+      convertedPath = "index" if convertedPath.empty?
+      convertedPath += ".html"
+    end
     
     Dir.mkdir(@output_dir) if not File.exists? @output_dir
     
@@ -173,20 +187,54 @@ class Spider
   def find_urls_on_page(parsed_url, current_url)
     urls_list = []
     parsed_url.search('a[@href]').map do |x|
-      new_url = x['href'].split('#')[0]
+      new_url, anchor = x['href'].split('#')
       unless new_url == nil
         if relative?(new_url)
          new_url = make_absolute(current_url, new_url)
         end
+        
         urls_list.push(new_url)
+        
+        # fix URL reference for local consumption
+        x["href"] = flatten_url(new_url) + (anchor ? "#" + anchor : "")
       end
     end
+    
     return urls_list
   end
   
-  # TODO: 
+  # TODO: pull images as well
   def find_assets_on_page(parsed_url, current_url)
+    # find CSS
+    parsed_url.search('link[@rel="stylesheet"]').map do |link|
+      flattened_name = flatten_url(link["href"])
+      
+      download_url = link["href"]
+      if not download_url.start_with? 'http'
+        url_peices = URI.parse(current_url)
+        
+        if download_url.start_with? '//'
+          download_url = url_peices.scheme + ":" + download_url
+        else
+          download_url = url_peices.scheme + '://' + File.join(url_peices.host, download_url)
+        end
+      end
+      
+      if not @assets[flattened_name]
+        begin
+          # TODO: doesn't handle query string correctly
+          puts "Downloading: " + download_url
+          save_url(download_url, open_url(download_url).read, false)
+          @assets[flattened_name] = true
+        rescue Exception => e
+          puts "Error downloading #{e}"
+        end
+      end
+      
+      link["href"] = download_url
+    end
     
+    # find images
   end
 
   private :open_url, :update_url_if_redirected, :parse_url, :find_urls_on_page

@@ -56,4 +56,6 @@ man_paths.reject{|man_dir| not File.exists? man_dir }.each do |man_dir|
   end
 end
 
+# TODO: remove 0 byte PNGs
+
 ih.write_structure
