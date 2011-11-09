@@ -10,7 +10,9 @@ ih = DocumentationIndexHelper.new
 man_paths = ["/usr/share/man", "/usr/local/man", "/usr/share/man", "/opt/local/share/man"]
 man_file_glob = "man[0-9,a-z,A-Z]/*"
 man_exclude_list = ["/man3/"]
+
 man_file_list = []
+man_view_list = []
 
 # TODO:
 # possibly organize the man files into 1,2,3,4... and fork the process, wait on all the pids, then generate structure
@@ -22,11 +24,15 @@ man_paths.reject{|man_dir| not File.exists? man_dir }.each do |man_dir|
     next if man_exclude_list.collect{|exclude_dir| man_file.include? exclude_dir}.include? true
     
     puts "Original: #{man_file}"
-    man_view_name = File.basename(man_file.sub(/\.gz$/, ''))
-    man_save_name = man_view_name + ".html"
-    man_view_name.sub!(/\.[1-9n]$/, '')
+    man_normalized_name = File.basename(man_file.sub(/\.gz$/, ''))
+    man_save_name = man_normalized_name + ".html"
+    man_view_name = man_normalized_name.sub(/\.[1-9n]$/, '')
     
-    next if man_file_list.include? man_save_name
+    next if man_file_list.include? man_normalized_name
+    
+    if man_view_list.include? man_view_name
+      man_view_name = man_normalized_name
+    end
     
     if File.extname(man_file) == ".gz"
       man_html = %x[gunzip -cd "#{man_file}" | groff -t -man -Thtml 2>/dev/null]
@@ -49,7 +55,8 @@ man_paths.reject{|man_dir| not File.exists? man_dir }.each do |man_dir|
       :title => man_view_name
     })
     
-    man_file_list << man_save_name
+    man_file_list << man_normalized_name
+    man_view_list << man_view_name
     
     # count += 1
     # break if count > 100
