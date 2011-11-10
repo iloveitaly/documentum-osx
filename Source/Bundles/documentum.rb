@@ -106,26 +106,30 @@ class Spider
   end
 
   def crawl_domain(url, page_limit = 100)
-    return if @already_visited.size == page_limit
+    begin
+      return if @already_visited.size == page_limit
     
-    url_object = open_url(url)
-    return if url_object == nil
+      url_object = open_url(url)
+      return if url_object == nil
     
-    parsed_url = parse_url(url_object)
-    return if parsed_url == nil
+      parsed_url = parse_url(url_object)
+      return if parsed_url == nil
     
-    # pull assets off page onto disk, rewrite assets references
-    find_assets_on_page(parsed_url, url)
+      # pull assets off page onto disk, rewrite assets references
+      find_assets_on_page(parsed_url, url)
     
-    # save to disk
-    save_url(url, parsed_url) if not @output_dir.nil?
+      # save to disk
+      save_url(url, parsed_url) if not @output_dir.nil?
     
-    @already_visited[url] = true if @already_visited[url] == nil
-    page_urls = find_urls_on_page(parsed_url, url)
-    page_urls.each do |page_url|
-      if urls_on_same_domain?(url, page_url) and @already_visited[page_url] == nil
-        crawl_domain(page_url)
+      @already_visited[url] = true if @already_visited[url] == nil
+      page_urls = find_urls_on_page(parsed_url, url)
+      page_urls.each do |page_url|
+        if urls_on_same_domain?(url, page_url) and @already_visited[page_url] == nil
+          crawl_domain(page_url)
+        end
       end
+    rescue Exception => e
+      puts "Error loading url #{url} with message #{e}"
     end
   end
 
@@ -195,8 +199,12 @@ class Spider
         
         urls_list.push(new_url)
         
-        # fix URL reference for local consumption
-        x["href"] = flatten_url(new_url) + (anchor ? "#" + anchor : "")
+        begin
+          # fix URL reference for local consumption
+          x["href"] = flatten_url(new_url) + (anchor ? "#" + anchor : "")
+        rescue Exception => e
+          puts "Error flattening URL #{new_url}"
+        end        
       end
     end
     
@@ -340,6 +348,12 @@ class DocumentationIndexHelper
     else
       FileUtils.mv(File.join(Dir.pwd, docs), File.join(Dir.pwd, @docs_dir))
     end
+  end
+  
+  def crawl(domain)
+    @spider = Spider.new
+    @spider.output_dir = @docs_path
+    @spider.crawl_domain(domain, 200)
   end
   
   # often downloadable documentation references CSS / JS incorrectly

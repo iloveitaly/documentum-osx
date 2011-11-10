@@ -28,9 +28,14 @@ man_paths.reject{|man_dir| not File.exists? man_dir }.each do |man_dir|
     man_save_name = man_normalized_name + ".html"
     man_view_name = man_normalized_name.sub(/\.[1-9n]$/, '')
     
+    # we want to avoid duplicates, and avoid extra numbers on the end of the view names
+    # to do this we have to have two lists - one for the name of the file, and one for the name of the view item
+    # if the view item is already taken, we use the number appended to the end of the name
+    
     next if man_file_list.include? man_normalized_name
     
     if man_view_list.include? man_view_name
+      # TODO: transform name from ls.1 to ls(1)
       man_view_name = man_normalized_name
     end
     
