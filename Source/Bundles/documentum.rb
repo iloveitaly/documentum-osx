@@ -80,11 +80,14 @@ class Spider
   include UrlUtils
   
   attr_accessor :output_dir
+  attr_accessor :restrict_crawl
   
   def initialize
     @already_visited = {}
     @output_dir = nil
     @assets = {}
+    @page_limit = 500
+    @restrict_crawl = nil
   end
 
   def crawl_web(urls, depth=2, page_limit = 100)
@@ -105,9 +108,9 @@ class Spider
     end
   end
 
-  def crawl_domain(url, page_limit = 100)
+  def crawl_domain(url)
     begin
-      return if @already_visited.size == page_limit
+      return if @already_visited.size == @page_limit
     
       url_object = open_url(url)
       return if url_object == nil
@@ -118,16 +121,22 @@ class Spider
       # pull assets off page onto disk, rewrite assets references
       find_assets_on_page(parsed_url, url)
     
-      # save to disk
-      save_url(url, parsed_url) if not @output_dir.nil?
-    
       @already_visited[url] = true if @already_visited[url] == nil
-      page_urls = find_urls_on_page(parsed_url, url)
-      page_urls.each do |page_url|
-        if urls_on_same_domain?(url, page_url) and @already_visited[page_url] == nil
+      
+      # grab URL list (also rewrites URLs to local references)
+      url_list = find_urls_on_page(parsed_url, url)
+      
+      # save to disk after links are rewritten
+      save_url(url, parsed_url) if not @output_dir.nil?
+      
+      url_object = nil, parsed_url = nil
+      
+      url_list.each do |page_url|
+        if urls_on_same_domain?(url, page_url) and @already_visited[page_url] == nil and (@restrict_crawl.nil? or page_url.include?(@restrict_crawl))
+          puts "Going to crawl: #{page_url}"
           crawl_domain(page_url)
         end
-      end
+      end      
     rescue Exception => e
       puts "Error loading url #{url} with message #{e}"
     end
@@ -151,8 +160,7 @@ class Spider
     convertedPath.gsub!(/^\/|\/$/, '')
     
     # remove beginning / ending hyphens
-    convertedPath.gsub!('/', '-')
-    convertedPath
+    convertedPath.gsub('/', '-')
   end
   
   def save_url(url, page_content, html=true)
@@ -165,7 +173,9 @@ class Spider
     
     Dir.mkdir(@output_dir) if not File.exists? @output_dir
     
-    File.open(File.join(@output_dir, convertedPath), "w") { |file| file.puts page_content}
+    file_path = File.join(@output_dir, convertedPath)
+    File.open(file_path, "w") { |file| file.puts page_content}
+    file_path
   end
 
   def update_url_if_redirected(url, url_object)
@@ -191,20 +201,29 @@ class Spider
   def find_urls_on_page(parsed_url, current_url)
     urls_list = []
     parsed_url.search('a[@href]').map do |x|
+      # TODO: validate URL, with some documentation sites there are invalid URLs laying around
+      
+      # skip anchor links
+      next if x["href"].start_with? "#" or x["href"].downcase.start_with? "javascript:"
+      
       new_url, anchor = x['href'].split('#')
       unless new_url == nil
         if relative?(new_url)
          new_url = make_absolute(current_url, new_url)
         end
         
+        # puts "Found: " + new_url
+        
         urls_list.push(new_url)
         
         begin
           # fix URL reference for local consumption
-          x["href"] = flatten_url(new_url) + (anchor ? "#" + anchor : "")
+          x["href"] = flatten_url(new_url) + ".html" + (anchor ? "#" + anchor : "")
         rescue Exception => e
           puts "Error flattening URL #{new_url}"
         end        
+      else
+        # puts "Nil URL: #{x['href']}"
       end
     end
     
@@ -244,7 +263,7 @@ class Spider
         end
       end
       
-      link["href"] = download_url
+      link["href"] = flattened_name
     end
     
     # find images
@@ -293,8 +312,6 @@ class DocumentationHierarchy
     if @parent.nil?
       @relative_root = @element
     else
-      @relative_root = @element.parent
-      
       # check for relative group hinting
       if @@hierarchy_hints[@distance - 1].class == Array
         # then we have hints!
@@ -304,7 +321,14 @@ class DocumentationHierarchy
           @relative_root = @path.first.element
         else
           # TODO: fine grained parent hinting
+          @relative_root = @element
+          for i in 1..@@hierarchy_hints[@distance - 1].last
+            @relative_root = @relative_root.parent
+          end
         end
+      else
+        # move up one
+        @relative_root = @element.parent
       end
     end
   end
@@ -312,7 +336,6 @@ end
 
 class DocumentationIndexHelper  
   attr_accessor :anchor_locator
-  attr_accessor :anchor_strip_prefix
   attr_accessor :content_holder_selector
   attr_accessor :structure_path
   attr_accessor :structure
@@ -326,7 +349,6 @@ class DocumentationIndexHelper
   def initialize
     # set defaults
     @strip_javascript = true
-    @anchor_strip_prefix = ""
     @anchor_locator = nil
     @process_name = :process_element_name
     @file_list = []   # define a list of files to process
@@ -349,7 +371,7 @@ class DocumentationIndexHelper
   # and strips it down to something that should be displayed in the app
   def process_element_name(name, level)
     name = name.strip
-    rootName = name[/^[a-zA-Z_:]+/]
+    rootName = name[/^[0-9a-zA-Z_:]+/]
     
     if rootName.nil?
       puts "No match for #{name}"
@@ -412,10 +434,11 @@ class DocumentationIndexHelper
     end
   end
   
-  def crawl(domain)
+  def crawl(domain, options = {})
     @spider = Spider.new
+    @spider.restrict_crawl = (options[:restrict] === true) ? domain : options[:restrict]
     @spider.output_dir = @docs_path
-    @spider.crawl_domain(domain, 200)
+    @spider.crawl_domain(domain)
   end
   
   # often downloadable documentation references CSS / JS incorrectly
@@ -482,6 +505,7 @@ class DocumentationIndexHelper
     
     DocumentationHierarchy.hierarchy_hints = heiarchy
     @structure = heiarchicalElements = Hash.new
+    file_changed = false
     
     # sensible defaults, but allow the dev to supply a specific file list
     if @file_list.empty?
@@ -517,17 +541,13 @@ class DocumentationIndexHelper
         end
       end
       
+      anchor_list = {}
+      
       # default anchor wiring script: put all anchors in a list for future reference
       if @anchor_locator.nil?
-        # there has got to be a better way to handle this...
-        anchor_list = []
         helpDoc.css("a[name]").each do |a|
-          if @anchor_strip_prefix.empty?
-            anchor_list << a["name"]
-          else
-            # sometimes docs have anchor prefixes that can be stripped out for easy matching
-            anchor_list << a["name"].gsub(/#{@anchor_strip_prefix}/, '')
-          end
+          # strip down the anchor for easy matching
+          anchor_list[a["name"].gsub(/[^a-zA-Z]/, '')] = a["name"]
         end
       end
       
@@ -559,26 +579,28 @@ class DocumentationIndexHelper
             next if helpElementName.nil? || helpElementName.empty?
           
             # find associated anchor
-            # TODO: this is completely broken
             anchor = ""
             if @anchor_locator.nil?
-              # grab all the anchors 
-              anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
-              anchorMatches = anchor_list.select do |i|
-                i == anchorText
-              end
-            
-              if anchorMatches.length == 0
-                # puts "::" + helpElementName
-                # anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
-                # i =~ /^#{Regexp.escape(anchorText)}|#{Regexp.escape(anchorText)}$/
+              # TODO: if there is two anchors with the same name this will break
+              stripped_name = helpElementName.gsub(/[^a-zA-Z]/, '')
               
+              if anchor_list.has_key? stripped_name
+                anchor = anchor_list[stripped_name]
               end
-            
-              if anchorMatches.length > 1
-                # puts "---------"
-                # puts helpElementName.gsub(/[^a-zA-Z]/, '')
-                # puts anchorMatches
+              
+              if anchor.empty?
+                # try for loose match
+                matches = anchor_list.each_key.select { |key| key.include? stripped_name }
+                anchor = anchor_list[matches.first] if matches.length > 0
+              end
+              
+              if anchor.empty?
+                # then write in an anchor link
+                new_anchor = Nokogiri::XML::Node.new('a', helpDoc)
+                new_anchor["name"] = stripped_name
+                anchor = stripped_name
+                helpElement.before(new_anchor)
+                file_changed = true
               end
             else
               anchor = @anchor_locator.call(helpElement, index, helpDoc)
@@ -593,7 +615,7 @@ class DocumentationIndexHelper
             }
           
             puts "Adding with Title #{helpElementName}"
-            currentHeiarchyReference[helpElementName] = helpReference
+            currentHeiarchyReference[helpElementName] = helpReference if not currentHeiarchyReference.has_key? helpElementName
             
             # TODO: add children
             new_element_stack << DocumentationHierarchy.new(:name => helpElementName, :element => helpElement, :parent => relative_hierarchy)
@@ -617,6 +639,9 @@ class DocumentationIndexHelper
           # new_element_stack = []
         end
       end
+      
+      File.open(absoluteFilePath, "w") { |file| file.puts helpDoc } if file_changed
+      file_changed = false
     end
     
     @structure = heiarchicalElements

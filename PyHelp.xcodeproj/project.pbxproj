@@ -43,7 +43,6 @@
 		272173450BDE451E00ECBC6C /* AMURLLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 272173440BDE451E00ECBC6C /* AMURLLoader.m */; };
 		272173490BDE453500ECBC6C /* NSString_AMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 272173480BDE453500ECBC6C /* NSString_AMAdditions.m */; };
 		2725A7DA0F0D6A7800B3BE06 /* override.css in Resources */ = {isa = PBXBuildFile; fileRef = 2725A7D90F0D6A7800B3BE06 /* override.css */; };
-		2725A8920F11958200B3BE06 /* Python.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 2725A8860F11953700B3BE06 /* Python.plugin */; };
 		2725A8B00F11965D00B3BE06 /* PHDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 2711B9F60C0DEA4600B5A7C8 /* PHDataSource.m */; };
 		2725A8B10F11966C00B3BE06 /* py_index in Resources */ = {isa = PBXBuildFile; fileRef = 277814480C5E6AB60044FDB1 /* py_index */; };
 		2725A9240F1198DB00B3BE06 /* CSSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 277814260C5E674A0044FDB1 /* CSSDataSource.m */; };
@@ -51,7 +50,6 @@
 		2725A9380F11991400B3BE06 /* CSS.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 2725A91B0F1198C800B3BE06 /* CSS.plugin */; };
 		2725A9530F119A4300B3BE06 /* WHCommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2725A9470F1199DD00B3BE06 /* WHCommonFunctions.m */; };
 		274466DC0F0D4ADD0059E529 /* MTDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 274466B50F0D496C0059E529 /* MTDataSource.m */; };
-		274467320F0D4DD70059E529 /* MooTools.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 274466D20F0D4AAE0059E529 /* MooTools.plugin */; };
 		274467560F0D515A0059E529 /* mt_index in Resources */ = {isa = PBXBuildFile; fileRef = 274467550F0D515A0059E529 /* mt_index */; };
 		275100C20C5D3EEA004C8CA9 /* WHToolbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275100C10C5D3EEA004C8CA9 /* WHToolbarController.m */; };
 		275101110C5D4537004C8CA9 /* WHSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275101100C5D4537004C8CA9 /* WHSearchController.m */; };
@@ -68,7 +66,6 @@
 		279608AF0FD9879100FB72BE /* Kohana-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279608AE0FD9879100FB72BE /* Kohana-Info.plist */; };
 		279608C70FD9881100FB72BE /* KHHelpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 279607E50FD983F600FB72BE /* KHHelpNode.m */; };
 		279608C80FD9881100FB72BE /* KHDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 279607C50FD9806800FB72BE /* KHDataSource.m */; };
-		279608DF0FD988B700FB72BE /* Kohana.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 279608A10FD9875C00FB72BE /* Kohana.plugin */; };
 		279609590FD98DEF00FB72BE /* override.css in Resources */ = {isa = PBXBuildFile; fileRef = 279609580FD98DEF00FB72BE /* override.css */; };
 		2796ABBF144894CB005E09FE /* WHPluginJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2796ABBE144894CB005E09FE /* WHPluginJSONParser.m */; };
 		27B06BD20BE6AF430088EA5B /* WHHelpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27B06BD10BE6AF430088EA5B /* WHHelpNode.m */; };
@@ -154,10 +151,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */,
-				279608DF0FD988B700FB72BE /* Kohana.plugin in Copy Plugins */,
 				2725A9380F11991400B3BE06 /* CSS.plugin in Copy Plugins */,
-				2725A8920F11958200B3BE06 /* Python.plugin in Copy Plugins */,
-				274467320F0D4DD70059E529 /* MooTools.plugin in Copy Plugins */,
 			);
 			name = "Copy Plugins";
 			runOnlyForDeploymentPostprocessing = 0;
