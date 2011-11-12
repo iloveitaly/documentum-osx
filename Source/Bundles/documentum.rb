@@ -293,7 +293,6 @@ class DocumentationHierarchy
     if @parent.nil?
       @relative_root = @element
     else
-      # TODO: parent hinting
       @relative_root = @element.parent
       
       # check for relative group hinting
@@ -304,7 +303,7 @@ class DocumentationHierarchy
           # this indicates the root node
           @relative_root = @path.first.element
         else
-          
+          # TODO: fine grained parent hinting
         end
       end
     end
@@ -476,67 +475,6 @@ class DocumentationIndexHelper
     end
     
     return hierarchy_reference
-    
-    distance_to_top = 0
-    parent = relative_hierarchy
-    
-    while true
-      relative_parent = parent
-      parent = parent.parent
-      break if parent.nil?
-      
-      distance_to_top += 1
-    end
-    
-    puts "Distance " + distance_to_top.to_s
-    
-    parent = relative_hierarchy
-    hierarchy_reference = @structure
-    
-    for i in 1..(distance_to_top * (distance_to_top + 1) / 2)
-      previous_parent = parent
-      parent = parent.parent
-      
-      # reset the pointer when we hit the top
-      if parent == relative_parent
-        unless relative_parent == nil
-          puts "Digging #{previous_parent.name}"
-          hierarchy_reference[previous_parent.name]["children"] = Hash.new unless hierarchy_reference[previous_parent.name].has_key? "children"
-          hierarchy_reference = hierarchy_reference[previous_parent.name]["children"]
-        end
-        
-        puts "Relative Root #{previous_parent.name}"
-        relative_parent = previous_parent
-        parent = relative_hierarchy
-      end
-    end
-    
-    return hierarchy_reference
-    # 
-    # currentHeiarchyReference = @structure
-    # 
-    # return currentHeiarchyReference if @hierarchy_key_stack.empty?
-    # 
-    # puts @hierarchy_key_stack.inspect
-    # puts "========================"
-    # for i in 1..options[:hierarchy_index]
-    #     # sometimes we may not find an item at a particular level and there may not exist a reference
-    #     # in the case the children deeper down in the heiarchy become a child of the parent that exists in the heiarchy
-    #     break unless @hierarchy_key_stack.length >= i
-    #     lastHeiarchyKey = @hierarchy_key_stack[i - 1][options[:relative_index]]
-    # 
-    #     # since the keys are stored by index, there may be a level in the heirarchy that wasn't found
-    #     # this enables the generate_structure to handle many different page structures. If one level of heiarchy isn't found the next level can takes its place
-    #     break if lastHeiarchyKey.nil?
-    #     
-    #     # puts "KEY" + lastHeiarchyKey
-    #     # puts currentHeiarchyReference.inspect
-    #     
-    #     currentHeiarchyReference[lastHeiarchyKey]["children"] = Hash.new unless currentHeiarchyReference[lastHeiarchyKey].has_key? "children"
-    #     currentHeiarchyReference = currentHeiarchyReference[lastHeiarchyKey]["children"]
-    # end
-    # 
-    # currentHeiarchyReference
   end
   
   def generate_structure(*heiarchy)
