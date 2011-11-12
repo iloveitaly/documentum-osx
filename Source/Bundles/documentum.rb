@@ -215,12 +215,17 @@ class Spider
   def find_assets_on_page(parsed_url, current_url)
     # find CSS
     parsed_url.search('link[@rel="stylesheet"]').map do |link|
-      flattened_name = flatten_url(link["href"])
+      begin
+        flattened_name = flatten_url(link["href"])
+      rescue Exception => e
+        puts "Error converting URL #{current_url}, #{e}"
+        next
+      end
       
       download_url = link["href"]
       if not download_url.start_with? 'http'
         url_peices = URI.parse(current_url)
-        
+      
         if download_url.start_with? '//'
           download_url = url_peices.scheme + ":" + download_url
         else
@@ -246,6 +251,64 @@ class Spider
   end
 
   private :open_url, :update_url_if_redirected, :parse_url, :find_urls_on_page
+end
+
+class DocumentationHierarchy
+  def self.hierarchy_hints=(hints)
+    @@hierarchy_hints = hints
+  end
+  
+  attr_accessor :children
+  attr_accessor :name
+  attr_accessor :parent
+  attr_accessor :element
+  attr_accessor :relative_root
+  attr_accessor :path
+  attr_reader   :distance
+  
+  def initialize(options = {})
+    @children = options[:children] || []
+    @parent = options[:parent] || nil
+    @element = options[:element] || nil
+    @name = options[:name] || nil
+    
+    # determine distance to the top
+    @distance = 0
+    @path = []
+    
+    unless @parent.nil?
+      current = self
+    
+      while true
+        @path << current
+        current = current.parent
+        break if current.nil?
+        
+        @distance += 1
+      end
+    end
+    
+    @path.reverse!
+    
+    if @parent.nil?
+      @relative_root = @element
+    else
+      # TODO: parent hinting
+      @relative_root = @element.parent
+      
+      # check for relative group hinting
+      if @@hierarchy_hints[@distance - 1].class == Array
+        # then we have hints!
+        case @@hierarchy_hints[@distance - 1].last
+        when -1
+          # this indicates the root node
+          @relative_root = @path.first.element
+        else
+          
+        end
+      end
+    end
+  end
 end
 
 class DocumentationIndexHelper  
@@ -400,14 +463,89 @@ class DocumentationIndexHelper
     end
   end
   
+  def get_hierarchy_reference(relative_hierarchy)
+    return @structure if relative_hierarchy.distance == 0
+    
+    hierarchy_reference = @structure
+    
+    for p in relative_hierarchy.path
+      next if p.distance == 0
+      
+      hierarchy_reference[p.name]["children"] = Hash.new unless hierarchy_reference[p.name].has_key? "children"
+      hierarchy_reference = hierarchy_reference[p.name]["children"]
+    end
+    
+    return hierarchy_reference
+    
+    distance_to_top = 0
+    parent = relative_hierarchy
+    
+    while true
+      relative_parent = parent
+      parent = parent.parent
+      break if parent.nil?
+      
+      distance_to_top += 1
+    end
+    
+    puts "Distance " + distance_to_top.to_s
+    
+    parent = relative_hierarchy
+    hierarchy_reference = @structure
+    
+    for i in 1..(distance_to_top * (distance_to_top + 1) / 2)
+      previous_parent = parent
+      parent = parent.parent
+      
+      # reset the pointer when we hit the top
+      if parent == relative_parent
+        unless relative_parent == nil
+          puts "Digging #{previous_parent.name}"
+          hierarchy_reference[previous_parent.name]["children"] = Hash.new unless hierarchy_reference[previous_parent.name].has_key? "children"
+          hierarchy_reference = hierarchy_reference[previous_parent.name]["children"]
+        end
+        
+        puts "Relative Root #{previous_parent.name}"
+        relative_parent = previous_parent
+        parent = relative_hierarchy
+      end
+    end
+    
+    return hierarchy_reference
+    # 
+    # currentHeiarchyReference = @structure
+    # 
+    # return currentHeiarchyReference if @hierarchy_key_stack.empty?
+    # 
+    # puts @hierarchy_key_stack.inspect
+    # puts "========================"
+    # for i in 1..options[:hierarchy_index]
+    #     # sometimes we may not find an item at a particular level and there may not exist a reference
+    #     # in the case the children deeper down in the heiarchy become a child of the parent that exists in the heiarchy
+    #     break unless @hierarchy_key_stack.length >= i
+    #     lastHeiarchyKey = @hierarchy_key_stack[i - 1][options[:relative_index]]
+    # 
+    #     # since the keys are stored by index, there may be a level in the heirarchy that wasn't found
+    #     # this enables the generate_structure to handle many different page structures. If one level of heiarchy isn't found the next level can takes its place
+    #     break if lastHeiarchyKey.nil?
+    #     
+    #     # puts "KEY" + lastHeiarchyKey
+    #     # puts currentHeiarchyReference.inspect
+    #     
+    #     currentHeiarchyReference[lastHeiarchyKey]["children"] = Hash.new unless currentHeiarchyReference[lastHeiarchyKey].has_key? "children"
+    #     currentHeiarchyReference = currentHeiarchyReference[lastHeiarchyKey]["children"]
+    # end
+    # 
+    # currentHeiarchyReference
+  end
+  
   def generate_structure(*heiarchy)
     Dir.chdir(@docs_path)
     
-    heiarchicalElements = Hash.new
-    currentHeiarchyReference = nil
-    lastHeiarchyKey = nil
+    DocumentationHierarchy.hierarchy_hints = heiarchy
+    @structure = heiarchicalElements = Hash.new
     
-    # sensible defaults, but all the dev to supply a specific file list
+    # sensible defaults, but allow the dev to supply a specific file list
     if @file_list.empty?
       @file_list = Dir.glob("**/*.html").reject {|fn| File.directory?(fn) }
     end
@@ -457,77 +595,90 @@ class DocumentationIndexHelper
       
       # reset heirachical variables
       currentHeiarchyReference = heiarchicalElements
-      lastHeiarchyKey = nil
+      element_stack = [DocumentationHierarchy.new(:element => helpDoc, :parent => nil)]
+      new_element_stack = []
+      previous_element_stack = []
       
       # move through the heiarchy for this page
       heiarchy.each_index do |index|
-        # find current heiarchy position & set empty hashs
-        # note that this only works for 2 levels deep currently
-        # to work with more levels there would have to be a 'find parent match' method
-        
-        currentHeiarchyReference = heiarchicalElements
-        heiarchyDepth = index
-        while heiarchyDepth > 0
-            break unless not lastHeiarchyKey.nil?
-            currentHeiarchyReference = currentHeiarchyReference[lastHeiarchyKey]["children"] = Hash.new
-            heiarchyDepth -= 1
-        end
         
         # find all the elements corresponding to this depth level
-        helpDoc.css(heiarchy[index]).each do |helpElement|
-          if @process_name.class == Symbol
-            helpElementName = self.send(@process_name, helpElement.content, index)
-          elsif @process_name.class == Proc
-            helpElementName = @process_name.call(helpElement.content, index, helpDoc, absoluteFilePath)
-          end
+        element_stack.each do |relative_hierarchy|
+          currentHeiarchyReference = get_hierarchy_reference(relative_hierarchy)
+          before_count = new_element_stack.length
+          current_selector = heiarchy[index].class == Array ? heiarchy[index].first : heiarchy[index]
           
-          # skip empty entries
-          next if helpElementName.nil? || helpElementName.empty?
+          puts "Relative Hierarchy: #{relative_hierarchy.name}: #{current_selector}"
           
-          # find associated anchor
-          # TODO: this is completely broken
-          anchor = ""
-          if @anchor_locator.nil?
-            # grab all the anchors 
-            anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
-            anchorMatches = anchor_list.select do |i|
-              i == anchorText
+          relative_hierarchy.relative_root.css(current_selector).each do |helpElement|
+            if @process_name.class == Symbol
+              helpElementName = self.send(@process_name, helpElement.content, index)
+            elsif @process_name.class == Proc
+              helpElementName = @process_name.call(helpElement.content, index, helpDoc, absoluteFilePath, helpElement)
             end
+          
+            # skip empty entries
+            next if helpElementName.nil? || helpElementName.empty?
+          
+            # find associated anchor
+            # TODO: this is completely broken
+            anchor = ""
+            if @anchor_locator.nil?
+              # grab all the anchors 
+              anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
+              anchorMatches = anchor_list.select do |i|
+                i == anchorText
+              end
             
-            if anchorMatches.length == 0
-              # puts "::" + helpElementName
-              # anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
-              # i =~ /^#{Regexp.escape(anchorText)}|#{Regexp.escape(anchorText)}$/
+              if anchorMatches.length == 0
+                # puts "::" + helpElementName
+                # anchorText = helpElementName.gsub(/[^a-zA-Z]/, '')
+                # i =~ /^#{Regexp.escape(anchorText)}|#{Regexp.escape(anchorText)}$/
               
-            end
+              end
             
-            if anchorMatches.length > 1
-              # puts "---------"
-              # puts helpElementName.gsub(/[^a-zA-Z]/, '')
-              # puts anchorMatches
+              if anchorMatches.length > 1
+                # puts "---------"
+                # puts helpElementName.gsub(/[^a-zA-Z]/, '')
+                # puts anchorMatches
+              end
+            else
+              anchor = @anchor_locator.call(helpElement, index, helpDoc)
             end
-          else
-            anchor = @anchor_locator.call(helpElement, index, helpDoc)
+          
+            helpReference = {
+              "path" => absoluteFilePath,
+              "title" => helpElementName,
+              "window_title" => windowTitle.downcase == helpElementName.downcase ? windowTitle : "%s – %s" % [windowTitle, helpElementName],
+              "anchor" => anchor,
+              "children" => {}
+            }
+          
+            puts "Adding with Title #{helpElementName}"
+            currentHeiarchyReference[helpElementName] = helpReference
+            
+            # TODO: add children
+            new_element_stack << DocumentationHierarchy.new(:name => helpElementName, :element => helpElement, :parent => relative_hierarchy)
+          
+            # for the first heiarchy level there really only be one header, first level is meant to be the title
+            # TODO: this should be a bit more flexible
+            break if index == 0
           end
           
-          helpReference = {
-            :path => absoluteFilePath,
-            :title => helpElementName,
-            :window_title => windowTitle.downcase == helpElementName.downcase ? windowTitle : "%s – %s" % [windowTitle, helpElementName],
-            :anchor => anchor
-          }
-          
-          currentHeiarchyReference[helpElementName] = helpReference
-
-          lastHeiarchyKey = helpElementName
-          
-          # for the first heiarchy level there really only be one header, first level is meant to be the title
-          # TODO: this should be a bit more flexible
-          break if index == 0
-        end
+          # if we didn't find any for this level, add the current level of hierarchy so we can keep digging further
+          new_element_stack << relative_hierarchy if before_count == new_element_stack.length
+        end      
         
-        # search for matching elements
-      end      
+        # reset the element stack
+        if new_element_stack.length > 0
+          previous_element_stack << element_stack
+          element_stack = new_element_stack
+          new_element_stack = []
+        else
+          # element_stack = previous_element_stack.pop
+          # new_element_stack = []
+        end
+      end
     end
     
     @structure = heiarchicalElements

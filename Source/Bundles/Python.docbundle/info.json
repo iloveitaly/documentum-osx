@@ -1,0 +1,6 @@
+{
+    "name":"python",
+    "documentation_download_url":"http://docs.python.org/archives/python-2.7.2-docs-html.zip",
+    "index_script":"index.rb",
+    "overide_css": "styles.css"
+}
