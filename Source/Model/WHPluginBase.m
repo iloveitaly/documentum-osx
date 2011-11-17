@@ -174,11 +174,12 @@ static int searchSort(id ob1, id ob2, void *searchString) {
 					// determine the file extension
 					NSString *indexExtension = [indexScriptPath pathExtension];
 					
-					// TODO: detect shebang 
-					if([indexScriptPath isEqualToString:@"rb"]) {
+					// TODO: detect shebang / executable bit
+					if([indexExtension isEqualToString:@"rb"]) {
 						[controller runCommand:@"/usr/bin/ruby" withArgs:[NSArray arrayWithObject:indexScriptPath]];
-					} else if([indexScriptPath isEqualToString:@"py"]) {
-						
+					} else if([indexExtension isEqualToString:@"py"]) {
+						NSLog(@"Runing PYTHON");
+						[controller runCommand:@"/usr/bin/python" withArgs:[NSArray arrayWithObject:indexScriptPath]];
 					}
 					
 				}

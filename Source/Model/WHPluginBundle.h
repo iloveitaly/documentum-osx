@@ -15,4 +15,5 @@
 }
 
 - (WHPluginBundle *) initBundleWithPath:(NSString *)path;
+- (NSString *) bundlePath;
 @end

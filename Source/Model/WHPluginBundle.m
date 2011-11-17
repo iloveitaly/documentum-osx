@@ -68,6 +68,10 @@
 		
 }
 
+- (NSString *) bundlePath {
+	return _bundlePath;
+}
+
 //- (NSString *) _supportFilePath:(NSString *) name {
 //	return [_bundlePath stringByAppendingPathComponent:name];
 //}

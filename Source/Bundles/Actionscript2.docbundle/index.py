@@ -1,24 +1,9 @@
-import os, sys, user, re
+import os, sys, re
 
-# ====== CONFIGS DIR REFERENCES =======
-
-PLUGIN_NAME = 'actionscript'
-APP_NAME = 'PyHelp'
-APP_SUPPORT_DIR = user.home + '/Library/Application Support/' + APP_NAME + '/'
-PLUGIN_SUPPORT_DIR = APP_SUPPORT_DIR + PLUGIN_NAME + '/'
-XML_STRUCTURE_FILE = PLUGIN_SUPPORT_DIR + 'structure.xml'
-
-if len(sys.argv) > 2:
-	sys.path.append(sys.argv[1])
-	FLASH_HELP_DIR = sys.argv[2]
-else:
-	sys.path.append(APP_SUPPORT_DIR + "pymodules")
-	os.chdir(PLUGIN_SUPPORT_DIR)
-	FLASH_HELP_DIR = sys.argv[1]
-
-# ====================================
-
-#FLASH_HELP_DIR = user.home + '/Library/Application Support/Adobe/Flash CS3/en/Configuration/HelpPanel/Help/'
+# DC_BUNDLE + DC_FOLDER
+DC_FOLDER = os.getenv("DC_FOLDER")
+XML_STRUCTURE_FILE = os.path.join(DC_FOLDER, 'structure.xml')
+FLASH_HELP_DIR = os.path.join(DC_FOLDER, "docs")
 FLASH_HELP_TOC = "help_toc.xml"
 
 titleFinder = re.compile(r'<book[^<]title="([^"]*)"')
@@ -32,14 +17,14 @@ xmlOutput = '<?xml version="1.0" encoding="UTF-8"?><index>'
 
 for fileName in os.listdir(FLASH_HELP_DIR):
 	if not fileName.startswith("."):
-		tocReference = FLASH_HELP_DIR + fileName + '/' + FLASH_HELP_TOC
+		tocReference = os.path.join(FLASH_HELP_DIR, fileName, FLASH_HELP_TOC)
 		
 		# we are only concerned with directories, but checking if a file exists 'inside' a file will do the same thing
 		if os.path.exists(tocReference):
 			tocData = open(tocReference, 'r').read()
 			
 			title = titleFinder.search(tocData).group(1)
-			sectionPath = FLASH_HELP_DIR + fileName + '/'
+			sectionPath = os.path.join(FLASH_HELP_DIR, fileName)
 			
 			# we are going to manual XML since most of it is already done
 			# maybe in the future add a home link here

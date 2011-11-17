@@ -78,11 +78,26 @@ static WHHelpIndexer *_sharedController;
 	NSLog(@"%@", args);
 	// convience function for running commands
 	// the CWD is the support folder for the current plugin
+	
+	// NSProcessInfo envoirnment mutableCopy?
+	NSString *pluginSupportFolder = [[WHSupportFolder sharedController] supportFolderForPlugin:_indexerInfo];
+	NSDictionary *env = [NSMutableDictionary dictionaryWithObject:pluginSupportFolder forKey:@"DC_FOLDER"];
 
 	_task = [NSTask new];
-	[_task setCurrentDirectoryPath:[[WHSupportFolder sharedController] supportFolderForPlugin:_indexerInfo]];
+	[_task setCurrentDirectoryPath:pluginSupportFolder];
 	[_task setLaunchPath:command];
-	if(!isEmpty(args)) [_task setArguments:args];
+	
+	// set arguments if applicable
+	if(!isEmpty(args)) {
+		[_task setArguments:args];	
+	}
+		
+	// set custom envoirnment variables
+	if([_indexerInfo respondsToSelector:@selector(bundlePath)]) {
+		[env setValue:[_indexerInfo bundlePath] forKey:@"DC_BUNDLE"];
+	}
+	
+	[_task setEnvironment:env];
 	[_task launch];
 }
 

@@ -7,7 +7,7 @@ ih = DocumentationIndexHelper.new
 ih.rename_uncompressed_docs
 Dir.chdir(ih.docs_path)
 ih.file_list = Dir.glob("**/*.html").reject {|fn| File.directory?(fn) or fn.start_with?("genindex-") or fn == "search.html" or fn == "download.html" }
-ih.file_list = ["library/stdtypes.html", "library/base64.html"]
+# ih.file_list = ["library/stdtypes.html", "library/base64.html"]
 # puts ih.file_list
 # Process.exit
 # ih.fix_asset_references
