@@ -1,0 +1,6 @@
+{
+    "name":"actionscript2",
+    "documentation_download_url":"http://download.macromedia.com/pub/documentation/en/flash/fl8/flash_as2lr.zip",
+    "index_script":"index.py",
+    "overide_css": "styles.css"
+}

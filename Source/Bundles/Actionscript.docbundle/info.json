@@ -1,0 +1,6 @@
+{
+    "name":"actionscript",
+    "documentation_download_url":"http://ruby-doc.org/downloads/ruby_1_9_2_core_rdocs.tgz",
+    "index_script":"index.rb",
+    "overide_css": "styles.css"
+}
