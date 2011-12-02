@@ -138,8 +138,14 @@ static int searchSort(id ob1, id ob2, void *searchString) {
 	switch(step) {
 		case WHNothing: {
 			NSString *downloadPath = [self documentationDownloadPath];
-			[controller downloadHelpArchiveAtURL:[NSURL URLWithString:downloadPath]];
-			[controller setCurrentStep:WHDownloadHelpDocs];
+			
+			if(isEmpty(downloadPath)) {
+				[self performActionForStep:WHUncompressHelpDocs withController:controller];
+			} else {
+				[controller downloadHelpArchiveAtURL:[NSURL URLWithString:downloadPath]];
+				[controller setCurrentStep:WHDownloadHelpDocs];
+			}
+			
 			break;
 		}
 			

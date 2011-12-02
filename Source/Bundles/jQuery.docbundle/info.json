@@ -1,0 +1,5 @@
+{
+    "name":"jquery",
+    "index_script":"index.rb",
+    "overide_css": "styles.css"
+}

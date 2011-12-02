@@ -47,7 +47,6 @@
 		2725A8B10F11966C00B3BE06 /* py_index in Resources */ = {isa = PBXBuildFile; fileRef = 277814480C5E6AB60044FDB1 /* py_index */; };
 		2725A9240F1198DB00B3BE06 /* CSSDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 277814260C5E674A0044FDB1 /* CSSDataSource.m */; };
 		2725A9280F1198E700B3BE06 /* css_index in Resources */ = {isa = PBXBuildFile; fileRef = 277814800C5F76B40044FDB1 /* css_index */; };
-		2725A9380F11991400B3BE06 /* CSS.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 2725A91B0F1198C800B3BE06 /* CSS.plugin */; };
 		2725A9530F119A4300B3BE06 /* WHCommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2725A9470F1199DD00B3BE06 /* WHCommonFunctions.m */; };
 		274466DC0F0D4ADD0059E529 /* MTDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 274466B50F0D496C0059E529 /* MTDataSource.m */; };
 		274467560F0D515A0059E529 /* mt_index in Resources */ = {isa = PBXBuildFile; fileRef = 274467550F0D515A0059E529 /* mt_index */; };
@@ -153,7 +152,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */,
-				2725A9380F11991400B3BE06 /* CSS.plugin in Copy Plugins */,
 			);
 			name = "Copy Plugins";
 			runOnlyForDeploymentPostprocessing = 0;

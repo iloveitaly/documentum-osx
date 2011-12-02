@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "WHDataSource.h"
 
+@class WHHelpIndexer;
+
 @interface WHPluginList : NSObject {
 	NSMutableArray *_pluginList;
 	id <WHDataSource> _selectedPlugin;
@@ -28,4 +30,8 @@
 
 - (id <WHDataSource>) selectedPlugin;
 - (void) setSelectedPlugin:(id <NSObject, WHDataSource>)aValue;
+
+// delegate methods
+- (void) indexingOperationComplete:(WHHelpIndexer *)indexer;
+
 @end

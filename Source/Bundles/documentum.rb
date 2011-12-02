@@ -204,7 +204,7 @@ class Spider
       # TODO: validate URL, with some documentation sites there are invalid URLs laying around
       
       # skip anchor links
-      next if x["href"].start_with? "#" or x["href"].downcase.start_with? "javascript:"
+      next if x["href"].start_with? "#" or x["href"].downcase.start_with? "javascript:" or x["href"].downcase.start_with? "mailto:"
       
       new_url, anchor = x['href'].split('#')
       unless new_url == nil

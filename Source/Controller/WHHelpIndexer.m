@@ -35,7 +35,6 @@ static WHHelpIndexer *_sharedController;
 
 - (void) awakeFromNib {
 	[oProgress setUsesThreadedAnimation:YES];
-	[oProgress setAnimationDelay:2];
 }
 
 #pragma mark -
@@ -144,6 +143,12 @@ static WHHelpIndexer *_sharedController;
 			[self setStatus:@"Uncompressing files..."];
 			break;
 		case WHIndexHelpDocs:
+			// note that the spinner will start after a download is complete
+			// however alot of documentation is downloaded from the web, so here we set the spinner again just in case it hasn't been started
+			
+			[oProgress setIndeterminate:YES];
+			[oProgress startAnimation:self];
+			
 			[self setStatus:@"Indexing Documentation..."];
 			break;
 		case WHComplete:
