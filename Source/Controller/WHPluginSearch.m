@@ -36,10 +36,6 @@
 	}
 }
 
-- (void) setIsSearching:(BOOL)aValue {
-	_isSearching = aValue;
-}
-
 - (NSArray *) searchResults {
 	return _searchResults;
 }
@@ -71,18 +67,20 @@
 		NSMutableArray *results = [NSMutableArray array];
 		
 		for (id plugin in [[WHPluginList sharedController] pluginList]) {
-			// levenshtein algorithm
-			float score = [[plugin packageFullName] compareWithString:_searchString];
+			// modified levenshtein algorithm
+			int score = [_searchString compareWithWord:[plugin packageFullName] matchGain:10 missingCost:1];
 			
-			[results addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:score], @"score", plugin, @"plugin", nil]];
+			[results addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:score], @"score", plugin, @"plugin", nil]];
 		}
 		
 		// sort list
-		[results sortedArrayUsingComparator: (NSComparator)^(id obj1, id obj2) {
+		results = [results sortedArrayUsingComparator: (NSComparator)^(id obj1, id obj2) {
 			float f1 = [[obj1 valueForKey:@"score"] floatValue], f2 = [[obj2 valueForKey:@"score"] floatValue];
 			if(f1 == f2) return NSOrderedSame;
 			return f1 < f2 ? NSOrderedAscending : NSOrderedDescending;
 		}];
+		
+		// NSLog(@"Results %@", results);
 		
 		// possibly display a limited number of results?
 		
