@@ -151,7 +151,7 @@ static int searchSort(id ob1, id ob2, void *searchString) {
 			
 			if([extension isEqualToString:@"zip"]) {
 				// TODO: handle unzip
-				[controller runCommand:@"/usr/bin/unzip" withArgs:[NSArray arrayWithObjects:@"-d", @"docs", [controller archivePath], nil]];
+				[controller runCommand:@"/usr/bin/unzip" withArgs:[NSArray arrayWithObjects:@"-o", @"-d", @"docs", [controller archivePath], nil]];
 			} else if([fileName hasSuffix:@".tar.gz"] || [fileName hasSuffix:@".tgz"]) {
 				[controller runCommand:@"/usr/bin/tar" withArgs:[NSArray arrayWithObjects:@"xzf", [controller archivePath], nil]];
 			} else {

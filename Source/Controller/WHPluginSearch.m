@@ -17,23 +17,36 @@
 - (id) init {
 	if(self = [super init]) {
 		[self setSearchString:@""];
+		
+		_defaultResults = nil;
 	}
 	
 	return self;
 }
 
-- (IBAction) switchPlugin:(id)sender {
+- (NSArray *) defaultPluginList {
+	if(isEmpty(_defaultResults)) {
+		NSArray *availablePlugins = [[WHPluginList sharedController] pluginList];
+		_defaultResults = [[NSMutableArray alloc] initWithCapacity:[availablePlugins count]];
+		
+		for (WHPluginBase *plugin in [[WHPluginList sharedController] pluginList]) {
+			[_defaultResults addObject:[NSDictionary dictionaryWithObject:plugin forKey:@"plugin"]];
+		}
+	}
 	
+	return _defaultResults;
 }
 
 - (IBAction) quickSearchReturn:(id)sender {
 	if(![sender currentEditor]) {//then they pressed enter
-		[oPluginTable selectRow:0 byExtendingSelection:NO];
-		//[[oPluginTable target] performSelector:[oHelpTree action] withObject:self];
-		
-		// focus on the search field after text is typed in
-		//[[[WHAppController sharedController] mainWindow] makeFirstResponder:oHelpTree];
+		[oPluginListController setSelectionIndex:0];
+		[self selectPlugin:self];
+		[oPluginSearchWindow close];
 	}
+}
+
+- (IBAction)selectPlugin:(id)sender {
+	[[WHPluginList sharedController] setSelectedPlugin:[[[oPluginListController selectedObjects] lastObject] valueForKey:@"plugin"]];
 }
 
 - (NSArray *) searchResults {
@@ -62,7 +75,7 @@
 	
 	if(isEmpty(_searchString)) {
 		[oPluginTable reloadData];
-		[self setSearchResults:nil];
+		[self setSearchResults:[self defaultPluginList]];
 	} else {
 		NSMutableArray *results = [NSMutableArray array];
 		
@@ -75,7 +88,7 @@
 		
 		// sort list
 		results = [results sortedArrayUsingComparator: (NSComparator)^(id obj1, id obj2) {
-			float f1 = [[obj1 valueForKey:@"score"] floatValue], f2 = [[obj2 valueForKey:@"score"] floatValue];
+			float f1 = [[obj1 valueForKey:@"score"] intValue], f2 = [[obj2 valueForKey:@"score"] intValue];
 			if(f1 == f2) return NSOrderedSame;
 			return f1 < f2 ? NSOrderedAscending : NSOrderedDescending;
 		}];

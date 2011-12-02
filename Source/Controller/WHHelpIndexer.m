@@ -12,6 +12,7 @@
 #import "WHSupportFolder.h"
 #import "WHOutlineDataSource.h"
 #import "WHWebController.h"
+#import "WHPluginList.h"
 #import "WHShared.h"
 
 static WHHelpIndexer *_sharedController;
@@ -71,7 +72,7 @@ static WHHelpIndexer *_sharedController;
 	
 	// sent to the plugin list
 	// so it knows when to reload the plugin
-	[_pluginList indexingOperationComplete:self];
+	[[WHPluginList sharedController] indexingOperationComplete:self];
 }
 
 - (void) runCommand:(NSString *)command withArgs:(NSArray *)args {
@@ -117,12 +118,6 @@ static WHHelpIndexer *_sharedController;
 
 #pragma mark -
 #pragma mark Accessors
-
-- (void) setPluginList:(WHPluginList *)aValue {
-	[aValue retain];
-	[_pluginList release]; 
-	_pluginList = aValue;
-}
 
 - (NSString *) status {
 	return _status;

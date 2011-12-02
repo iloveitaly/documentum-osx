@@ -18,6 +18,8 @@
 
 - (id) initWithDictionary:(NSDictionary *)attributes {
 	if(self = [self init]) {
+		_completeURL = nil;
+		
 		// NSLog(@"Attributes %@", attributes);
 		[self setFilePath:[attributes valueForKey:WHHelpNodeFileKey]];
 		[self setName:[attributes valueForKey:WHHelpNodeTitleKey]];
@@ -126,7 +128,7 @@
 		if(!isEmpty(_anchor)) {
 			// remove the # in the anchor (allows the creator of a plugin to not worry about the format in which he stores the anchor)
 			_completeURL = [[NSURL URLWithString:[NSString stringWithFormat:@"#%@", [_anchor stringByReplacingOccurrencesOfString:@"#" withString:@""]] relativeToURL:[NSURL fileURLWithPath:_filePath]] retain];
-		} else {
+		} else if(!isEmpty(_filePath)) {
 			_completeURL = [[NSURL fileURLWithPath:_filePath] retain];
 		}
 	}

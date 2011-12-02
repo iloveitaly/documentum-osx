@@ -39,10 +39,6 @@ static WHPluginList *_sharedController;
 	return self;
 }
 
-- (void) awakeFromNib {
-	[[WHHelpIndexer sharedController] setPluginList:self];
-}
-
 #pragma mark -
 #pragma mark Plugin Loading
 
@@ -58,7 +54,9 @@ static WHPluginList *_sharedController;
 		NSString* pluginPath;
 		
 		while(pluginPath = [enumerator nextObject]) {
-			if(pluginClass = [self loadPlugin:pluginPath]) {
+			pluginClass = [self loadPlugin:pluginPath];
+			
+			if(pluginClass) {
 				[list addObject:[[pluginClass new] autorelease]];
 				NSLog(@"Plugin Name %@", [[list lastObject] packageName]);
 			} else {

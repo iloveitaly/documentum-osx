@@ -10,14 +10,16 @@
 
 @interface WHPluginSearch : NSObject {
 	IBOutlet NSWindow *oPluginSearchWindow;
-	IBOutlet NSTableView *oPluginTable;	
+	IBOutlet NSTableView *oPluginTable;
+	IBOutlet NSArrayController *oPluginListController;
 	
 	NSString *_searchString;
 	NSArray *_searchResults;
+	NSArray *_defaultResults;
 }
 
 - (IBAction) quickSearchReturn:(id)sender;
-- (IBAction) switchPlugin:(id)sender;
+- (IBAction)selectPlugin:(id)sender;
 
 // accessors
 - (BOOL) isSearching;

@@ -19,9 +19,6 @@
 	IBOutlet NSProgressIndicator *oProgress;
 	IBOutlet NSButton *oStopIndexButton;
 	
-	// general
-	WHPluginList *_pluginList;
-	
 	// archive loader vars
 	long long _expectedDataLength;
 	NSString *_archivePath;
