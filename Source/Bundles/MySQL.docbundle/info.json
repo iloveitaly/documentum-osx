@@ -1,5 +1,6 @@
 {
     "name": "mysql",
+	"full_name":"MySQL",
     "documentation_download_url": "http://downloads.mysql.com/docs/refman-5.0-en.html-chapter.tar.gz",
     "index_script": "index.rb",
     "overide_css": "styles.css"

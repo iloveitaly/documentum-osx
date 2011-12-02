@@ -464,7 +464,13 @@ class DocumentationIndexHelper
           doc = Nokogiri::HTML(File.open(absoluteFilePath))
           
           # remove javascript if desired
-          doc.xpath("//script").remove if @strip_javascript
+          if @strip_javascript
+            doc.xpath("//script").remove
+            
+            # when scraping this method wont be called
+            # set to false for when we are not scraping so generate_structure can strip JS if needed
+            @strip_javascript = false
+          end
           
           # relink css
           doc.xpath("//link").each do |link|
@@ -605,7 +611,7 @@ class DocumentationIndexHelper
             else
               anchor = @anchor_locator.call(helpElement, index, helpDoc)
             end
-          
+                      
             helpReference = {
               "path" => absoluteFilePath,
               "title" => helpElementName,
@@ -622,7 +628,7 @@ class DocumentationIndexHelper
           
             # for the first heiarchy level there really only be one header, first level is meant to be the title
             # TODO: this should be a bit more flexible
-            break if index == 0
+            break if index == 0 and heiarchy.length > 1
           end
           
           # if we didn't find any for this level, add the current level of hierarchy so we can keep digging further
@@ -638,6 +644,12 @@ class DocumentationIndexHelper
           # element_stack = previous_element_stack.pop
           # new_element_stack = []
         end
+      end
+      
+      # strip javascript if nessicary
+      if @strip_javascript
+        helpDoc.xpath("//script").remove
+        file_changed = true
       end
       
       File.open(absoluteFilePath, "w") { |file| file.puts helpDoc } if file_changed

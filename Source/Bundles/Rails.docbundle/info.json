@@ -1,5 +1,6 @@
 {
     "name":"rails",
+	"full_name":"Ruby on Rails",
     "documentation_download_url":"http://railsapi.com/doc/rails-v3.0.8rc1/rdoc.zip",
     "index_script":"index.rb",
     "overide_css": "styles.css"

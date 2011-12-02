@@ -1,0 +1,17 @@
+header, footer, body > a, body > p:last-child, form, section:empty {
+	display:none !important;
+}
+
+h1 {
+	font: bold 22px/1.5 "Helvetica Neue", sans-serif;
+}
+
+h2 {
+	font: bold 18px/1.5 "Helvetica Neue", sans-serif;
+}
+
+
+body {
+	font: normal 14px/1.5 "Helvetica Neue", sans-serif;
+	padding:15px !important;
+}

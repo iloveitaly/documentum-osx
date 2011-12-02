@@ -6,6 +6,6 @@
 require File.dirname(__FILE__) + '/../documentum'
 
 ih = DocumentationIndexHelper.new
-ih.crawl "http://css-infos.net/", :restrict => true
-ih.generate_structure ".propertyList a"
+# ih.crawl "http://css-infos.net/", :restrict => true
+ih.generate_structure "h1 > code"
 ih.write_structure

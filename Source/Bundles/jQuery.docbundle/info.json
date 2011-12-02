@@ -1,5 +1,6 @@
 {
     "name":"jquery",
+	"full_name":"jQuery",
     "index_script":"index.rb",
     "overide_css": "styles.css"
 }
