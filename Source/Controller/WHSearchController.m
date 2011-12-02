@@ -10,6 +10,8 @@
 #import "WHPluginList.h"
 #import "WHWebController.h"
 #import "WHShared.h"
+#import "WHAppController.h"
+
 #import <WebKit/WebKit.h>
 
 @implementation WHSearchController
@@ -25,7 +27,10 @@
 	if(![sender currentEditor]) {//then they pressed enter
 		[oHelpTree selectRow:0 byExtendingSelection:NO];
 		[[oHelpTree target] performSelector:[oHelpTree action] withObject:self];
-	}	
+		
+		// focus on the search field after text is typed in
+		[[[WHAppController sharedController] mainWindow] makeFirstResponder:oHelpTree];
+	}
 }
 
 - (IBAction) openWebViewFindPanel:(id)sender {

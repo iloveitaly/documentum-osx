@@ -51,6 +51,7 @@
 		2725A9530F119A4300B3BE06 /* WHCommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2725A9470F1199DD00B3BE06 /* WHCommonFunctions.m */; };
 		274466DC0F0D4ADD0059E529 /* MTDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 274466B50F0D496C0059E529 /* MTDataSource.m */; };
 		274467560F0D515A0059E529 /* mt_index in Resources */ = {isa = PBXBuildFile; fileRef = 274467550F0D515A0059E529 /* mt_index */; };
+		274F248A1489453600242F6A /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 274F24891489453600242F6A /* libsqlite3.0.dylib */; };
 		275100C20C5D3EEA004C8CA9 /* WHToolbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275100C10C5D3EEA004C8CA9 /* WHToolbarController.m */; };
 		275101110C5D4537004C8CA9 /* WHSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 275101100C5D4537004C8CA9 /* WHSearchController.m */; };
 		275118C510D43F33007815B2 /* kohana_index in Resources */ = {isa = PBXBuildFile; fileRef = 275118C410D43F33007815B2 /* kohana_index */; };
@@ -60,7 +61,6 @@
 		2778154F0C5F8FC20044FDB1 /* NSString+SearchAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2778154D0C5F8FC20044FDB1 /* NSString+SearchAdditions.m */; };
 		277A0CC00BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */; };
 		277A0CC10BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */; };
-		277A0CF10BE1AF8900C17EBA /* libsqlite3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 277A0CF00BE1AF8900C17EBA /* libsqlite3.a */; };
 		279607440FD9536800FB72BE /* WHPluginXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 279607430FD9536800FB72BE /* WHPluginXMLParser.m */; };
 		279608690FD984E400FB72BE /* buildindex.py in Resources */ = {isa = PBXBuildFile; fileRef = 279608680FD984E400FB72BE /* buildindex.py */; };
 		279608AF0FD9879100FB72BE /* Kohana-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 279608AE0FD9879100FB72BE /* Kohana-Info.plist */; };
@@ -229,6 +229,7 @@
 		274466D20F0D4AAE0059E529 /* MooTools.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MooTools.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		274466D30F0D4AAE0059E529 /* MooTools-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MooTools-Info.plist"; path = "Source/Plugins/MT/MooTools-Info.plist"; sourceTree = "<group>"; };
 		274467550F0D515A0059E529 /* mt_index */ = {isa = PBXFileReference; lastKnownFileType = text; name = mt_index; path = build/mt_index; sourceTree = "<group>"; };
+		274F24891489453600242F6A /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = ../../../../../usr/lib/libsqlite3.0.dylib; sourceTree = "<group>"; };
 		275100C00C5D3EEA004C8CA9 /* WHToolbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHToolbarController.h; path = Source/Controller/WHToolbarController.h; sourceTree = "<group>"; };
 		275100C10C5D3EEA004C8CA9 /* WHToolbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHToolbarController.m; path = Source/Controller/WHToolbarController.m; sourceTree = "<group>"; };
 		2751010F0C5D4537004C8CA9 /* WHSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHSearchController.h; path = Source/Controller/WHSearchController.h; sourceTree = "<group>"; };
@@ -248,7 +249,6 @@
 		277816E20C60EC400044FDB1 /* PHPDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PHPDataSource.h; path = Source/Plugins/PHP/PHPDataSource.h; sourceTree = "<group>"; };
 		277816E30C60EC400044FDB1 /* PHPDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PHPDataSource.m; path = Source/Plugins/PHP/PHPDataSource.m; sourceTree = "<group>"; };
 		277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
-		277A0CF00BE1AF8900C17EBA /* libsqlite3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsqlite3.a; path = Frameworks/libsqlite3.a; sourceTree = "<group>"; };
 		277A0D8B0BE2366F00C17EBA /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/Python/buildindex.py; sourceTree = "<group>"; };
 		277C749F10EAF1E200BAA961 /* buildindex.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = buildindex.py; path = Source/Plugins/AS/buildindex.py; sourceTree = "<group>"; };
 		279607420FD9536800FB72BE /* WHPluginXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHPluginXMLParser.h; path = ../Model/WHPluginXMLParser.h; sourceTree = "<group>"; };
@@ -360,10 +360,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274F248A1489453600242F6A /* libsqlite3.0.dylib in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				27B58C2D0BCD19850011B993 /* WebKit.framework in Frameworks */,
 				277A0CC00BE1AC1E00C17EBA /* libcrypto.dylib in Frameworks */,
-				277A0CF10BE1AF8900C17EBA /* libsqlite3.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +788,7 @@
 		29B97314FDCFA39411CA2CEA /* PyHelp */ = {
 			isa = PBXGroup;
 			children = (
+				274F24891489453600242F6A /* libsqlite3.0.dylib */,
 				276755C90C4A8288009BC88B /* Plugins */,
 				27046B1F0C0A5C5900430E1B /* PluginSupport */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -826,7 +827,6 @@
 			isa = PBXGroup;
 			children = (
 				271BB6EC144611AA0036AE71 /* Vendor */,
-				277A0CF00BE1AF8900C17EBA /* libsqlite3.a */,
 				277A0CBF0BE1AC1E00C17EBA /* libcrypto.dylib */,
 				27B58C2C0BCD19850011B993 /* WebKit.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,

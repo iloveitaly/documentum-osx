@@ -74,6 +74,10 @@ static WHOutlineDataSource *_sharedController;
 		[oHelpTree setUsesAlternatingRowBackgroundColors:YES];		
 	}
 	
+	// load last page viewed on this plugin
+	
+	// load search string (if it was present)
+	
 	[oSearchController setSearchString:@""];
 }
 
@@ -154,6 +158,10 @@ static WHOutlineDataSource *_sharedController;
 	[cell setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSSmallControlSize]]];
 }
 
+- (void) outlineViewSelectionDidChange:(NSNotification *)note {
+	[[WHWebController sharedController] setHelpPage:self];
+}
+
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if([oSearchController isSearching]) {
 		[oHelpTree setIndentationPerLevel:0.0];
@@ -163,4 +171,5 @@ static WHOutlineDataSource *_sharedController;
 		[oHelpTree setUsesAlternatingRowBackgroundColors:NO];
 	}	
 }
+
 @end

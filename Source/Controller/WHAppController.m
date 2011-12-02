@@ -18,9 +18,19 @@
 #define HOME_PAGE_URL @"http://prosit-software.com/webhelp.html"
 #define MIN_LEFT_PANEL_W 200
 
+static WHAppController *_sharedController;
+
 @implementation WHAppController
++ (WHAppController *) sharedController {
+	extern WHAppController *_sharedController;
+	return _sharedController;	
+}
+
 - (id) init {
 	if(self = [super init]) {
+		extern WHAppController *_sharedController;
+		_sharedController = self;
+		
 		/*
 		FMDatabase *pythonDatabase = [[FMDatabase alloc] initWithPath:@"/test.db"];
 		[pythonDatabase open];
@@ -41,6 +51,8 @@
 	[[WHSupportFolder sharedController] createSupportFolder];
 	[oMainWindow setExcludedFromWindowsMenu:YES];
 }
+
+- (NSWindow *) mainWindow { return oMainWindow; }
 
 - (IBAction) gotoHomePage:(id)sender {
 	OPEN_URL(HOME_PAGE_URL);

@@ -13,5 +13,7 @@
 	IBOutlet NSWindow *oMainWindow;
 }
 
++ (WHAppController *) sharedController;
+- (NSWindow *) mainWindow;
 - (IBAction) gotoHomePage:(id)sender;
 @end

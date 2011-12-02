@@ -47,6 +47,10 @@ static WHWebController *_sharedController;
 // called by the outline view
 - (IBAction) setHelpPage:(id)sender {
 	WHHelpNode *selected = [oHelpTree itemAtRow:[oHelpTree selectedRow]];
+	
+	// check for same selection
+	if(selected == _selectedNode) return;
+	
 	NSString *filePath = [selected valueForKey:@"filePath"];
 	NSURL *fileURL = [selected completeURL];
 	

@@ -91,7 +91,7 @@
 															<string key="NSFrameSize">{249, 366}</string>
 															<reference key="NSSuperview" ref="484502212"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="138796471"/>
+															<reference key="NSNextKeyView" ref="122141736"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="_NSCornerView" key="NSCornerView">
 																<nil key="NSNextResponder"/>
@@ -197,7 +197,7 @@
 													<string key="NSFrame">{{-100, -100}, {11, 355}}</string>
 													<reference key="NSSuperview" ref="636111386"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="484502212"/>
+													<reference key="NSNextKeyView" ref="138796471"/>
 													<int key="NSsFlags">256</int>
 													<reference key="NSTarget" ref="636111386"/>
 													<string key="NSAction">_doScroller:</string>
@@ -210,7 +210,7 @@
 													<string key="NSFrame">{{-100, -100}, {249, 11}}</string>
 													<reference key="NSSuperview" ref="636111386"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="561082693"/>
+													<reference key="NSNextKeyView" ref="484502212"/>
 													<int key="NSsFlags">257</int>
 													<reference key="NSTarget" ref="636111386"/>
 													<string key="NSAction">_doScroller:</string>
@@ -221,7 +221,7 @@
 											<string key="NSFrame">{{-1, 36}, {251, 368}}</string>
 											<reference key="NSSuperview" ref="644161487"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="484502212"/>
+											<reference key="NSNextKeyView" ref="561082693"/>
 											<int key="NSsFlags">150018</int>
 											<reference key="NSVScroller" ref="561082693"/>
 											<reference key="NSHScroller" ref="138796471"/>
@@ -1134,7 +1134,7 @@
 				<string key="NSClassName">WHToolbarController</string>
 			</object>
 			<object class="NSCustomView" id="605131785">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">256</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSSearchField" id="39936723">
@@ -1142,6 +1142,8 @@
 						<int key="NSvFlags">256</int>
 						<string key="NSFrameSize">{151, 22}</string>
 						<reference key="NSSuperview" ref="605131785"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSSearchFieldCell" key="NSCell" id="1044177871">
 							<int key="NSCellFlags">343014976</int>
@@ -1196,6 +1198,9 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{151, 22}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView" ref="39936723"/>
 				<string key="NSClassName">NSView</string>
 				<string key="NSExtension">NSResponder</string>
 			</object>
@@ -2843,7 +2848,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">340</int>
+			<int key="maxID">341</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
