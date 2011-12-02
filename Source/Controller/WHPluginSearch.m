@@ -1,20 +1,14 @@
 //
-//  WHSearchController.m
+//  WHPluginSearch.m
 //  PyHelp
 //
-//  Created by Michael Bianco on 7/29/07.
-//  Copyright 2007 Prosit Software. All rights reserved.
+//  Created by Michael Bianco on 12/2/11.
+//  Copyright (c) 2011 MAB Web Design. All rights reserved.
 //
 
-#import "WHSearchController.h"
-#import "WHPluginList.h"
-#import "WHWebController.h"
-#import "WHShared.h"
-#import "WHAppController.h"
+#import "WHPluginSearch.h"
 
-#import <WebKit/WebKit.h>
-
-@implementation WHSearchController
+@implementation WHPluginSearch
 
 - (id) init {
 	if(self = [super init]) {
@@ -104,4 +98,5 @@
 		}
 	}
 }
+
 @end
