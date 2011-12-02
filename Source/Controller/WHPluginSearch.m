@@ -7,6 +7,10 @@
 //
 
 #import "WHPluginSearch.h"
+#import "WHAppController.h"
+#import "WHPluginList.h"
+#import "WHShared.h"
+#import "NSString+Levenshtein.h"
 
 @implementation WHPluginSearch
 
@@ -18,37 +22,18 @@
 	return self;
 }
 
+- (IBAction) switchPlugin:(id)sender {
+	
+}
+
 - (IBAction) quickSearchReturn:(id)sender {
 	if(![sender currentEditor]) {//then they pressed enter
-		[oHelpTree selectRow:0 byExtendingSelection:NO];
-		[[oHelpTree target] performSelector:[oHelpTree action] withObject:self];
+		[oPluginTable selectRow:0 byExtendingSelection:NO];
+		//[[oPluginTable target] performSelector:[oHelpTree action] withObject:self];
 		
 		// focus on the search field after text is typed in
-		[[[WHAppController sharedController] mainWindow] makeFirstResponder:oHelpTree];
+		//[[[WHAppController sharedController] mainWindow] makeFirstResponder:oHelpTree];
 	}
-}
-
-- (IBAction) openWebViewFindPanel:(id)sender {
-	if(!oFindPanel) {
-		[NSBundle loadNibNamed:@"Find" owner:self];
-	}
-	
-	[oFindPanel makeKeyAndOrderFront:self];
-}
-
-- (IBAction) findNext:(id)sender {
-	[oWebView searchFor:[oFindStringField stringValue] direction:YES caseSensitive:NO wrap:YES];
-}
-
-- (IBAction) findPrevious:(id)sender {
-	[oWebView searchFor:[oFindStringField stringValue] direction:NO caseSensitive:NO wrap:YES];
-}
-
-#pragma mark -
-#pragma mark Accessors
-
-- (BOOL) isSearching {
-	return _isSearching;
 }
 
 - (void) setIsSearching:(BOOL)aValue {
@@ -80,22 +65,29 @@
 	// but we dont want the noficiations to go out until the -reloadData is called
 	
 	if(isEmpty(_searchString)) {
-		_isSearching = NO;
-		[oHelpTree reloadData];
-		
-		[self setIsSearching:NO];
+		[oPluginTable reloadData];
 		[self setSearchResults:nil];
 	} else {
-		NSArray *resultSet = [[[WHPluginList sharedController] selectedPlugin] searchResultsForString:_searchString withAllPages:[[WHWebController sharedController] allPages]];
-		[self setSearchResults:resultSet];
+		NSMutableArray *results = [NSMutableArray array];
 		
-		if(_isSearching) {
-			[oHelpTree reloadData];
-		} else {
-			_isSearching = YES;
-			[oHelpTree reloadData];
-			[self setIsSearching:YES];
+		for (id plugin in [[WHPluginList sharedController] pluginList]) {
+			// levenshtein algorithm
+			float score = [[plugin packageFullName] compareWithString:_searchString];
+			
+			[results addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:score], @"score", plugin, @"plugin", nil]];
 		}
+		
+		// sort list
+		[results sortedArrayUsingComparator: (NSComparator)^(id obj1, id obj2) {
+			float f1 = [[obj1 valueForKey:@"score"] floatValue], f2 = [[obj2 valueForKey:@"score"] floatValue];
+			if(f1 == f2) return NSOrderedSame;
+			return f1 < f2 ? NSOrderedAscending : NSOrderedDescending;
+		}];
+		
+		// possibly display a limited number of results?
+		
+		[self setSearchResults:results];
+		[oPluginTable reloadData];
 	}
 }
 

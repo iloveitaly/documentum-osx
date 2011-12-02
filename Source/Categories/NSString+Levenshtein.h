@@ -10,8 +10,7 @@
 
 @interface NSString (Levenshtein)
 
-// calculate the smallest distance between all words in stringA and  
-stringB
+// calculate the smallest distance between all words in stringA and stringB
 - (float) compareWithString: (NSString *) stringB;
 
 // calculate the distance between two string treating them each as a
