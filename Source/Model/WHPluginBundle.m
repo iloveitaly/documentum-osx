@@ -65,7 +65,7 @@
 }
 
 - (NSString *) indexFileName {
-		
+	return isEmpty([_bundleInfo valueForKey:@"index_name"]) ? @"index.html" : [_bundleInfo valueForKey:@"index_name"];
 }
 
 - (NSString *) bundlePath {

@@ -371,7 +371,7 @@ class DocumentationIndexHelper
   # and strips it down to something that should be displayed in the app
   def process_element_name(name, level)
     name = name.strip
-    rootName = name[/^[0-9a-zA-Z_:]+/]
+    rootName = name[/^[0-9a-zA-Z_:-]+/]
     
     if rootName.nil?
       puts "No match for #{name}"

@@ -2,6 +2,7 @@
 
 # other options:
 #   http://www.w3.org/TR/1998/REC-CSS2-19980512/css2.zip
+#   https://developer.mozilla.org/en/CSS/CSS_Reference
 
 require File.dirname(__FILE__) + '/../documentum'
 

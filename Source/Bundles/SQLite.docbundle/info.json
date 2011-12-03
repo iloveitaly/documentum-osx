@@ -1,0 +1,7 @@
+{
+    "name":"sqlite",
+	"full_name":"SQLite",
+    "documentation_download_url":"http://www.sqlite.org/sqlite-doc-3070900.zip",
+    "index_script":"index.rb",
+    "overide_css": "styles.css"
+}

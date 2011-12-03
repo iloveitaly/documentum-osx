@@ -1,1 +1,1 @@
-#version-warning, #header, .menu, #wikibar { display:none; }
+#version-warning, #header, .menu, #wikibar { display:none !important; }
