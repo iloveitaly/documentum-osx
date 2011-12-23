@@ -41,8 +41,7 @@
 
 
 // calculate the distance between two string treating them eash as a single word
-- (int) compareWithWord:(NSString *) stringB matchGain:(NSInteger)gain missingCost:(NSInteger)cost
-{
+- (NSInteger) compareWithWord:(NSString *) stringB matchGain:(NSInteger)gain missingCost:(NSInteger)cost {
 	// normalize strings
 	NSString * stringA = [NSString stringWithString: self];
 	stringA = [[stringA stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] lowercaseString];

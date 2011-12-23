@@ -15,6 +15,8 @@
 #import "WHPluginList.h"
 #import "WHShared.h"
 
+#import "ASIHTTPRequest.h"
+
 static WHHelpIndexer *_sharedController;
 
 @implementation WHHelpIndexer
@@ -102,17 +104,21 @@ static WHHelpIndexer *_sharedController;
 }
 
 - (void) downloadHelpArchiveAtURL:(NSURL *)url {
-	AMURLLoader *loader = [AMURLLoader loaderWithURL:url target:self selector:@selector(didReceiveData:context:) userInfo:nil];
-	[loader setDelegate:self];
-	
-	// make sure the progress indicater is set correctly
+	// reset progress indicator
 	[oProgress setIndeterminate:NO];
 	[oProgress setDoubleValue:0.0];
 	
-	[self setDownloader:loader];
+	NSString *downloadName = [[[_downloader url] absoluteString] lastPathComponent];
+	NSString *downloadFilePath = [[[WHSupportFolder sharedController] supportFolderForPlugin:_indexerInfo] stringByAppendingPathComponent:downloadName];
+	[self setArchivePath:downloadFilePath];
 	
-	// download the documenation
-	[loader load];
+	// setup the async download request
+	ASIHTTPRequest *loader = [ASIHTTPRequest requestWithURL:url];
+	[loader setDownloadDestinationPath:downloadFilePath];
+	[loader setDownloadProgressDelegate:oProgress];
+	[loader setDelegate:self];
+	[self setDownloader:loader];
+	[loader startAsynchronous];
 }
 
 #pragma mark -
@@ -180,14 +186,6 @@ static WHHelpIndexer *_sharedController;
 	_archivePath = path;
 }
 
-- (long long) expectedDataLength {
-	return _expectedDataLength;
-}
-
-- (void) setExpectedDataLength:(long long)aValue {
-	_expectedDataLength = aValue;
-}
-
 - (void) setIndexerInformation:(id <WHDataSource>)info {
 	[info retain];
 	[_indexerInfo release];
@@ -241,6 +239,21 @@ static WHHelpIndexer *_sharedController;
 	}
 }
 
+- (void)request:(ASIHTTPRequest *)request willRedirectToURL:(NSURL *)newURL {
+	NSLog(@"REDIRECT !!! %@", newURL);
+}
+
+- (void)requestFinished:(ASIHTTPRequest *)request {
+	[_indexerInfo performActionForStep:_currentStep withController:self];
+	
+	NSLog(@"%@", [_downloader url]);
+	
+	[oProgress setIndeterminate:YES];
+	[oProgress startAnimation:self];
+	[self setCurrentStep:WHUncompressHelpDocs];
+}
+
+
 // NSFileHandle notification method (from NSTask)
 - (void) didReceiveData:(NSData *)data context:(NSDictionary *)context {
 	// at this point we have recieved all the data for the file we were downloading
@@ -277,13 +290,18 @@ static WHHelpIndexer *_sharedController;
 	}
 }
 
-// AMURLoader Delegate Methods
-- (void)loader:(AMURLLoader *)loader willReceiveDataOfLength:(long long)length {
-	[self setExpectedDataLength:length];
+- (void)requestFailed:(ASIHTTPRequest *)request {
+	NSError *error = [request error];
+	
+	NSString *errorString = [NSString stringWithFormat:@"The documentation download failed with reason: %@. Would you like to try again?", [error localizedDescription]];
+	
+	if(NSRunAlertPanel(NSLocalizedString(@"Load Error", nil),
+					   NSLocalizedString(errorString, nil),
+					   NSLocalizedString(@"Yes", nil), NSLocalizedString(@"No", nil), nil) == NSOKButton) {
+		[_indexerInfo performActionForStep:_currentStep - 1 withController:self];
+	} else {
+		[self stopIndexing:self];
+	}
 }
 
-- (void)loader:(AMURLLoader *)loader didReceiveDataOfLength:(long long)length {
-	double newProgress = (double)length/_expectedDataLength * 100.0;
-	[oProgress incrementBy:newProgress - [oProgress doubleValue]];
-}
 @end

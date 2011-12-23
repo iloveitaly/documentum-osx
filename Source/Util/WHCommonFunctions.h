@@ -9,4 +9,6 @@
 
 #import <Cocoa/Cocoa.h>
 
+#define NUMERIC_COMPARE(x, y) (x == y ? NSOrderedSame : (x > y ? NSOrderedDescending : NSOrderedAscending))
+
 NSInteger lengthSort(id ob1, id ob2, void *context);

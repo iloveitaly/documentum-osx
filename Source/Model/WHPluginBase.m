@@ -14,19 +14,16 @@
 #import "WHPluginJSONParser.h"
 #import "WHCommonFunctions.h"
 #import "WHShared.h"
+#import "NSString+SearchAdditions.h"
 
-static int searchSort(id ob1, id ob2, void *searchString) {
+static NSComparisonResult searchSort(id ob1, id ob2, void *searchString) {
 	// the shorter string is a better match, but exact match is best
 	
 	// try for exact match
 	if([[ob1 name] isEqualToString:searchString]) return NSOrderedAscending;
 	if([[ob2 name] isEqualToString:searchString]) return NSOrderedDescending;
 	
-	// sort by shortest string
-	int l1 = [[ob1 name] length], l2 = [[ob2 name] length];
-	if(l1 < l2) return NSOrderedAscending;
-	else if(l1 > l2) return NSOrderedDescending;
-	else return NSOrderedSame;
+	return NUMERIC_COMPARE([[ob1 name] length], [[ob2 name] length]);
 }
 
 @implementation WHPluginBase
@@ -150,21 +147,26 @@ static int searchSort(id ob1, id ob2, void *searchString) {
 		}
 			
 		case WHDownloadHelpDocs: {
+			NSLog(@"Archive Path: %@", [controller archivePath]);
+			
 			// /bin/sh (c = executes the following string and exits instead of going into the interactive shell)
 			// gzip (c = dont modify file, output to stdout; f = force; d = decompress)
 			NSString *extension = [[controller archivePath] pathExtension],
 					 *fileName = [[controller archivePath] lastPathComponent];
 			
-			if([extension isEqualToString:@"zip"]) {
-				// TODO: handle unzip
-				[controller runCommand:@"/usr/bin/unzip" withArgs:[NSArray arrayWithObjects:@"-o", @"-d", @"docs", [controller archivePath], nil]];
-			} else if([fileName hasSuffix:@".tar.gz"] || [fileName hasSuffix:@".tgz"]) {
+			if([fileName hasSuffix:@".tar.gz"] || [fileName hasSuffix:@".tgz"]) {
 				[controller runCommand:@"/usr/bin/tar" withArgs:[NSArray arrayWithObjects:@"xzf", [controller archivePath], nil]];
 			} else {
-				NSLog(@"Uncaught uncompress extension: %@", fileName);
+				// this is tricky because if the file was redirected we would have to pull the filename from the request headers
+				// TODO: restructure the download aritecture to store a archive type hint that could be pulled from the filename, response headers, or bundle
+				
+				if(![extension isEqualToString:@"zip"]) {
+					NSLog(@"Uncaught uncompress extension, defaulting to zip: %@", fileName);
+				}
+				
+				[controller runCommand:@"/usr/bin/unzip" withArgs:[NSArray arrayWithObjects:@"-o", @"-d", @"docs", [controller archivePath], nil]];
 			}
 		}
-
 			break;
 		case WHUncompressHelpDocs: {
 			// eventually there will be three options: encrypted index script, decrypted index script, and some pre-wrapped commands for common use cases
@@ -209,26 +211,21 @@ static int searchSort(id ob1, id ob2, void *searchString) {
 	// use distance algorithm: http://weblog.wanderingmango.com/articles/14/fuzzy-string-matching-and-the-principle-of-pleasant-surprises?commented=0
 	
 	NSMutableArray *results = [NSMutableArray array], *firstPassContents = [NSMutableArray array];
-	int a = 0, l = [allPages count];
-	WHHelpNode *tempNode;
 	
 	// run through the array being case sensative
-	for(; a < l; a++) {
-		tempNode = [allPages objectAtIndex:a];
-		
-		if([[tempNode name] containsString:searchString ignoringCase:NO]) {
-			[results addObject:tempNode];
-			[firstPassContents addObject:tempNode];
+	for (WHHelpNode *node in allPages) {
+		if([[node name] containsString:searchString ignoringCase:NO]) {
+			[results addObject:node];
+			[firstPassContents addObject:node];
 		}
 	}
 	
 	// run through the array disregarding case
-	a = 0, l = [allPages count];
-	for(; a < l; a++) {
-		tempNode = [allPages objectAtIndex:a];
-		if(![firstPassContents containsObject:tempNode] && [[tempNode name] containsString:searchString ignoringCase:YES]) {
-			[results addObject:tempNode];
+	for (WHHelpNode *node in allPages) {
+		if(![firstPassContents containsObject:node] && [[node name] containsString:searchString ignoringCase:YES]) {
+			[results addObject:node];
 		}
+
 	}
 	
 	return [results sortedArrayUsingFunction:searchSort context:searchString];	

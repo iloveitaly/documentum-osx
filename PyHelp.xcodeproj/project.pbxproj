@@ -76,9 +76,11 @@
 		27B58D020BCD21AF0011B993 /* SplitBar.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 27B58D010BCD21AF0011B993 /* SplitBar.tiff */; };
 		27B755980FE7F55900A67786 /* ASHelpNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DB7C110DB77BB500481CC5 /* ASHelpNode.m */; };
 		27B755990FE7F55900A67786 /* ASDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 27DB7BF90DB778E200481CC5 /* ASDataSource.m */; };
-		27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */ = {isa = PBXBuildFile; fileRef = 27B7555B0FE7F48E00A67786 /* ActionScript.plugin */; };
 		27BB0008137468D90050FBD8 /* PHPDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 277816E30C60EC400044FDB1 /* PHPDataSource.m */; };
 		27BB009613746B570050FBD8 /* php_index in Resources */ = {isa = PBXBuildFile; fileRef = 27DB7B0B0DB5796B00481CC5 /* php_index */; };
+		27BEEF2414A5128B002E13E8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEEF2314A5128B002E13E8 /* libPods.a */; };
+		27BEEF2614A5135F002E13E8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEEF2514A5135E002E13E8 /* SystemConfiguration.framework */; };
+		27BEEF2814A51375002E13E8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 27BEEF2714A51375002E13E8 /* libz.dylib */; };
 		27BFB6260BCB35EF00E7B173 /* WHAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6250BCB35EF00E7B173 /* WHAppController.m */; };
 		27BFB6490BCBC57200E7B173 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6440BCBC57200E7B173 /* FMDatabase.m */; };
 		27BFB64A0BCBC57200E7B173 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BFB6460BCBC57200E7B173 /* FMDatabaseAdditions.m */; };
@@ -151,19 +153,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				27B755AE0FE7F5AD00A67786 /* ActionScript.plugin in Copy Plugins */,
 			);
 			name = "Copy Plugins";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		27BB02721375738B0050FBD8 /* Python Modules */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = pymodules;
-			dstSubfolderSpec = 7;
-			files = (
-			);
-			name = "Python Modules";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -280,6 +271,9 @@
 		27B7555C0FE7F48E00A67786 /* ActionScript-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ActionScript-Info.plist"; path = "Source/Plugins/AS/ActionScript-Info.plist"; sourceTree = "<group>"; };
 		27BBFFD8137468A00050FBD8 /* PHP.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PHP.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BBFFD9137468A00050FBD8 /* PHP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PHP-Info.plist"; path = "Source/Plugins/PHP/PHP-Info.plist"; sourceTree = "<group>"; };
+		27BEEF2314A5128B002E13E8 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = Pods/build/Release/libPods.a; sourceTree = "<group>"; };
+		27BEEF2514A5135E002E13E8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = ../../../../../System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<group>"; };
+		27BEEF2714A51375002E13E8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = ../../../../../usr/lib/libz.dylib; sourceTree = "<group>"; };
 		27BFB6240BCB35EF00E7B173 /* WHAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHAppController.h; path = Source/Controller/WHAppController.h; sourceTree = "<group>"; };
 		27BFB6250BCB35EF00E7B173 /* WHAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WHAppController.m; path = Source/Controller/WHAppController.m; sourceTree = "<group>"; };
 		27BFB6430BCBC57200E7B173 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -306,6 +300,7 @@
 		32CA4F630368D1EE00C91783 /* PyHelp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PyHelp_Prefix.pch; path = Source/PyHelp_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* PyHelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PyHelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +359,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BEEF2814A51375002E13E8 /* libz.dylib in Frameworks */,
+				27BEEF2614A5135F002E13E8 /* SystemConfiguration.framework in Frameworks */,
+				27BEEF2414A5128B002E13E8 /* libPods.a in Frameworks */,
 				274F248A1489453600242F6A /* libsqlite3.0.dylib in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				27B58C2D0BCD19850011B993 /* WebKit.framework in Frameworks */,
@@ -796,6 +794,9 @@
 		29B97314FDCFA39411CA2CEA /* PyHelp */ = {
 			isa = PBXGroup;
 			children = (
+				27BEEF2714A51375002E13E8 /* libz.dylib */,
+				27BEEF2514A5135E002E13E8 /* SystemConfiguration.framework */,
+				27BEEF2314A5128B002E13E8 /* libPods.a */,
 				274F24891489453600242F6A /* libsqlite3.0.dylib */,
 				276755C90C4A8288009BC88B /* Plugins */,
 				27046B1F0C0A5C5900430E1B /* PluginSupport */,
@@ -804,6 +805,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */,
 			);
 			name = PyHelp;
 			sourceTree = "<group>";
@@ -851,6 +853,7 @@
 			buildPhases = (
 				272172D10BDE2BFF00ECBC6C /* Sources */,
 				272172D20BDE2BFF00ECBC6C /* Frameworks */,
+				F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -868,6 +871,7 @@
 				2725A8820F11953700B3BE06 /* Resources */,
 				2725A8830F11953700B3BE06 /* Sources */,
 				2725A8840F11953700B3BE06 /* Frameworks */,
+				F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -885,6 +889,7 @@
 				2725A9170F1198C800B3BE06 /* Resources */,
 				2725A9180F1198C800B3BE06 /* Sources */,
 				2725A9190F1198C800B3BE06 /* Frameworks */,
+				F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -902,6 +907,7 @@
 				274466CE0F0D4AAE0059E529 /* Resources */,
 				274466CF0F0D4AAE0059E529 /* Sources */,
 				274466D00F0D4AAE0059E529 /* Frameworks */,
+				F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -919,6 +925,7 @@
 				2796089D0FD9875C00FB72BE /* Resources */,
 				2796089E0FD9875C00FB72BE /* Sources */,
 				2796089F0FD9875C00FB72BE /* Frameworks */,
+				F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -936,6 +943,7 @@
 				27B755570FE7F48E00A67786 /* Resources */,
 				27B755580FE7F48E00A67786 /* Sources */,
 				27B755590FE7F48E00A67786 /* Frameworks */,
+				F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -953,6 +961,7 @@
 				27BBFFD4137468A00050FBD8 /* Resources */,
 				27BBFFD5137468A00050FBD8 /* Sources */,
 				27BBFFD6137468A00050FBD8 /* Frameworks */,
+				F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -972,7 +981,7 @@
 				8D11072C0486CEB800E47090 /* Sources */,
 				274467450F0D4EA70059E529 /* Copy Plugins */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
-				27BB02721375738B0050FBD8 /* Python Modules */,
+				F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1129,6 +1138,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/Python//buildindex.py $BUILD_DIR/py_index slitherypython\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/CSS/buildindex.py $BUILD_DIR/css_index sneakycss\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/PHP/buildindex.py $BUILD_DIR/php_index poopyphp\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/MT/buildindex.py $BUILD_DIR/mt_index moocow\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/Kohana/buildindex.py $BUILD_DIR/kohana_index hokan\n$TARGET_BUILD_DIR/EncryptTool $SRCROOT/Source/Plugins/AS/buildindex.py $BUILD_DIR/as_index scriptaction\n\n# also link the bundles for testing\nrsync -avz --stats \"$SOURCE_ROOT/Source/Bundles\" \"$HOME/Library/Application Support/PyHelp/\"";
+		};
+		F7BA9F1E88214C9D90E7E559 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1297,8 +1320,10 @@
 /* Begin XCBuildConfiguration section */
 		272172DC0BDE2C2300ECBC6C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_MODEL_TUNING = G5;
@@ -1312,14 +1337,17 @@
 					Foundation,
 				);
 				PRODUCT_NAME = EncryptTool;
+				SKIP_INSTALL = YES;
 				ZERO_LINK = YES;
 			};
 			name = Debug;
 		};
 		272172DD0BDE2C2300ECBC6C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1331,19 +1359,23 @@
 					Foundation,
 				);
 				PRODUCT_NAME = EncryptTool;
+				SKIP_INSTALL = YES;
 				ZERO_LINK = NO;
 			};
 			name = Release;
 		};
 		2725A8880F11953900B3BE06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/Python/Python-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -1355,18 +1387,22 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = Python;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
 		2725A8890F11953900B3BE06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/Python/Python-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -1378,6 +1414,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = Python;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = NO;
 			};
@@ -1385,9 +1422,11 @@
 		};
 		2725A91D0F1198C900B3BE06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1405,16 +1444,19 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = CSS;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
 		2725A91E0F1198C900B3BE06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -1430,6 +1472,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = CSS;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = NO;
 			};
@@ -1437,14 +1480,17 @@
 		};
 		274466D40F0D4AAF0059E529 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/MT/MooTools-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -1456,19 +1502,23 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = MooTools;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
 		274466D50F0D4AAF0059E529 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Source/Plugins/MT/MooTools-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Bundles";
 				OTHER_LDFLAGS = (
@@ -1480,6 +1530,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = MooTools;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = NO;
 			};
@@ -1487,9 +1538,11 @@
 		};
 		279608A30FD9875D00FB72BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1507,16 +1560,19 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = Kohana;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
 		279608A40FD9875D00FB72BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -1532,6 +1588,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = Kohana;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = NO;
 			};
@@ -1539,9 +1596,11 @@
 		};
 		27B7555D0FE7F48F00A67786 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1559,16 +1618,19 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = ActionScript;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
 		27B7555E0FE7F48F00A67786 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -1584,6 +1646,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = ActionScript;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = NO;
 			};
@@ -1591,9 +1654,11 @@
 		};
 		27BBFFDA137468A00050FBD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1611,16 +1676,19 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = PHP;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 			};
 			name = Debug;
 		};
 		27BBFFDB137468A00050FBD8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
@@ -1636,6 +1704,7 @@
 					dynamic_lookup,
 				);
 				PRODUCT_NAME = PHP;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = plugin;
 				ZERO_LINK = NO;
 			};
@@ -1643,11 +1712,14 @@
 		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Resources/Info.plist;
@@ -1655,10 +1727,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"\"$(SRCROOT)/Pods/build/Release\"",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
 				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = PyHelp;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -1666,19 +1740,24 @@
 		};
 		C01FCF4C08A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD6E399F6D8F4CBC8A602B37 /* Pods.xcconfig */;
 			buildSettings = {
+				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_1)",
+					"\"$(SRCROOT)/Pods/build/Release\"",
 				);
 				LIBRARY_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/Frameworks\"";
 				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = PyHelp;
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1687,6 +1766,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_VERSION = .5;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1698,6 +1778,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_VERSION = .5;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

@@ -52,6 +52,10 @@
 	return [_bundleInfo valueForKey:@"documentation_download_url"];
 }
 
+- (NSString *) documentationArchiveType {
+	return [_bundlePath stringByAppendingPathComponent:[_bundleInfo valueForKey:@"download_archive_type"]];
+}
+
 - (NSString *) indexScriptPath {
 	return !isEmpty([_bundleInfo valueForKey:@"index_script"]) ? [_bundlePath stringByAppendingPathComponent:[_bundleInfo valueForKey:@"index_script"]] : nil;
 }

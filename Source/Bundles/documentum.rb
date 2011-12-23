@@ -433,7 +433,7 @@ class DocumentationIndexHelper
       
       # check if the holder directory is inside the docs dir
       # if so, we have to move things around for the renaming
-      if not docs.empty? and docs.start_with? @docs_dir
+      if not docs.empty? and docs.start_with? @docs_dir and docs != @docs_dir
         temp_dir = File.join @plugin_directory, 'temp'
         FileUtils.move File.join(@plugin_directory, docs), temp_dir
         docs = 'temp'

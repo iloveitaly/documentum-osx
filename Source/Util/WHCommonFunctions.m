@@ -13,5 +13,5 @@
 //	http://stackoverflow.com/questions/3212901/symbol-not-found-objc-class-article
 
 NSInteger lengthSort(id ob1, id ob2, void *context) {
-	return [[[ob1 name] length] compare:[[ob2 name] length]];
+	return NUMERIC_COMPARE([[ob1 name] length], [[ob2 name] length]);
 }
