@@ -412,25 +412,40 @@ class DocumentationIndexHelper
   # when the doc download is uncompressed it still has the old name... we want to rename it to /docs
   # this assumes we are in the original PWD
   def rename_uncompressed_docs
+    Dir.chdir @plugin_directory
+    
     # if the docs dir is empty, remove it
     Dir.rmdir(@docs_path) if Dir[File.join @docs_path, '*'].empty?
     
-    docs = Dir[File.basename(@plugin_directory) + '*']
+    docs = Dir['*' + File.basename(@plugin_directory) + '*']
     
     if docs.empty?
-      directories = Dir["*"].reject {|fn| not File.directory?(fn) }
+      # dive a maximum number of 5 levels deep to find the 'holder' directory
+      5.times do
+        directories = Dir[docs.empty? ? "*" : File.join(docs, '*')].reject {|fn| not File.directory?(fn) }
       
-      if directories.length == 1
-        docs = directories[0]
-      else
-        docs = ""
+        if directories.length == 1
+          docs = directories[0]
+        else
+          break
+        end
+      end
+      
+      # check if the holder directory is inside the docs dir
+      # if so, we have to move things around for the renaming
+      if not docs.empty? and docs.start_with? @docs_dir
+        temp_dir = File.join @plugin_directory, 'temp'
+        FileUtils.move File.join(@plugin_directory, docs), temp_dir
+        docs = 'temp'
+        
+        FileUtils.rmdir @docs_path
       end
     end
     
     if docs.empty? or (docs.class == String and File.basename(docs) == @docs_dir)
-      puts "Error finding docs directory or already exists"
+      $stderr.puts "Error finding docs directory or already exists"
     else
-      FileUtils.mv(File.join(Dir.pwd, docs), File.join(Dir.pwd, @docs_dir))
+      FileUtils.mv(File.join(@plugin_directory, docs), File.join(@plugin_directory, @docs_dir))
     end
   end
   
