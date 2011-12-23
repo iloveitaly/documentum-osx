@@ -81,16 +81,14 @@
 		
 		for (id plugin in [[WHPluginList sharedController] pluginList]) {
 			// modified levenshtein algorithm
-			int score = [_searchString compareWithWord:[plugin packageFullName] matchGain:10 missingCost:1];
+			NSInteger score = [_searchString compareWithWord:[plugin packageFullName] matchGain:10 missingCost:1];
 			
-			[results addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:score], @"score", plugin, @"plugin", nil]];
+			[results addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:score], @"score", plugin, @"plugin", nil]];
 		}
 		
 		// sort list
 		results = [results sortedArrayUsingComparator: (NSComparator)^(id obj1, id obj2) {
-			float f1 = [[obj1 valueForKey:@"score"] intValue], f2 = [[obj2 valueForKey:@"score"] intValue];
-			if(f1 == f2) return NSOrderedSame;
-			return f1 < f2 ? NSOrderedAscending : NSOrderedDescending;
+			return [[obj1 valueForKey:@"score"] compare:[obj2 valueForKey:@"score"]];
 		}];
 		
 		// NSLog(@"Results %@", results);

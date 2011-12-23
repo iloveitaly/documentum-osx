@@ -90,7 +90,7 @@ static WHWebController *_sharedController;
 		NSLog(@"%@ : %@", [[_selectedNode completeURL] path], [currURL path]);
 	}
 	
-	unsigned int index = [_allPages indexOfObject:currURL];
+	NSUInteger index = [_allPages indexOfObject:currURL];
 	
 	if(index != NSNotFound) {
 		NSLog(@"Found new node! %@", [_allPages objectAtIndex:index]);
@@ -177,7 +177,7 @@ static WHWebController *_sharedController;
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	if([keyPath isEqualToString:@"isSearching"] && ![object isSearching]) {
-		unsigned int index = [_allPages indexOfObject:_selectedNode];
+		NSUInteger index = [_allPages indexOfObject:_selectedNode];
 		if(index != NSNotFound) {
 			[self setSelectedNode:[_allPages objectAtIndex:index]];
 			[self webView:nil didFinishLoadForFrame:nil];

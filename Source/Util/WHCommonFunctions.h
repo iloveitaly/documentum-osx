@@ -9,4 +9,4 @@
 
 #import <Cocoa/Cocoa.h>
 
-int lengthSort(id ob1, id ob2, void *context);
+NSInteger lengthSort(id ob1, id ob2, void *context);

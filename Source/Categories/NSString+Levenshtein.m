@@ -2,9 +2,11 @@
 //  NSString+Levenshtein.m
 //  PyHelp
 //
-//  Created by Michael Bianco on 12/2/11.
-//  Copyright (c) 2011 MAB Web Design. All rights reserved.
+//  Modified by Michael Bianco on 12/2/11.
+//	<http://mabblog.com>
 //
+//  Created by Rick Bourner on Sat Aug 09 2003.
+//  rick@bourner.com
 
 #import "NSString+Levenshtein.h"
 
@@ -14,9 +16,9 @@
 // default cost: 1
 
 // calculate the mean distance between all words in stringA and stringB
-- (float) compareWithString: (NSString *) stringB matchGain:(int)gain missingCost:(int)cost {
-	float averageSmallestDistance = 0.0;
-	float smallestDistance;
+- (CGFloat) compareWithString: (NSString *) stringB matchGain:(NSInteger)gain missingCost:(NSInteger)cost {
+	CGFloat averageSmallestDistance = 0.0;
+	CGFloat smallestDistance;
 	
 	NSString *mStringA = [self stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
 	NSString *mStringB = [stringB stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
@@ -28,18 +30,18 @@
 		smallestDistance = 99999999.0;
 		
 		for (NSString *tokenB in arrayB) {
-			smallestDistance = MIN((float) [tokenA compareWithWord:tokenB matchGain:gain missingCost:cost], smallestDistance);
+			smallestDistance = MIN((CGFloat) [tokenA compareWithWord:tokenB matchGain:gain missingCost:cost], smallestDistance);
 		}
 		
 		averageSmallestDistance += smallestDistance;
 	}
 	
-	return averageSmallestDistance / (float) [arrayA count];
+	return averageSmallestDistance / (CGFloat) [arrayA count];
 }
 
 
 // calculate the distance between two string treating them eash as a single word
-- (int) compareWithWord:(NSString *) stringB matchGain:(int)gain missingCost:(int)cost
+- (int) compareWithWord:(NSString *) stringB matchGain:(NSInteger)gain missingCost:(NSInteger)cost
 {
 	// normalize strings
 	NSString * stringA = [NSString stringWithString: self];
@@ -47,13 +49,13 @@
 	stringB = [[stringB stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] lowercaseString];	
 	
 	// Step 1
-	int k, i, j, change, *d, distance;
+	NSInteger k, i, j, change, *d, distance;
 	
-	int n = [stringA length];
-	int m = [stringB length];	
+	NSUInteger n = [stringA length];
+	NSUInteger m = [stringB length];	
 	
 	if( n++ != 0 && m++ != 0 ) {
-		d = malloc( sizeof(int) * m * n );
+		d = malloc( sizeof(NSInteger) * m * n );
 		
 		// Step 2
 		for( k = 0; k < n; k++)
