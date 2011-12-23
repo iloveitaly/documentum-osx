@@ -1,0 +1,7 @@
+{
+    "name":"senchatouch",
+	"full_name":"Sencha Touch",
+    "documentation_download_url":"http://cdn.sencha.io/touch/sencha-touch-2-pr2.zip",
+    "index_script":"index.rb",
+    "overide_css": "styles.css"
+}
