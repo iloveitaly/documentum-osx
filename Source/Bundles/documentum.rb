@@ -345,6 +345,11 @@ class DocumentationIndexHelper
   
   attr_accessor :docs_dir
   attr_accessor :docs_path
+  attr_accessor :name_type
+  
+  NAME_NORMAL_TYPE = 1
+  NAME_DEFINITION_TYPE = 2
+  NAME_SECTION_TYPE = 3
   
   def initialize
     # set defaults
@@ -353,6 +358,7 @@ class DocumentationIndexHelper
     @process_name = :process_element_name
     @file_list = []   # define a list of files to process
     @structure = Hash.new
+    @name_type = NAME_DEFINITION_TYPE
     
     # these determine if the page is empty or not
     @content_holder_selector = nil
@@ -371,14 +377,19 @@ class DocumentationIndexHelper
   # and strips it down to something that should be displayed in the app
   def process_element_name(name, level)
     name = name.strip
-    rootName = name[/^[0-9a-zA-Z_:-]+/]
     
-    if rootName.nil?
-      puts "No match for #{name}"
+    return name if @name_type == NAME_NORMAL_TYPE
+    
+    if @name_type == NAME_SECTION_TYPE
+      return name.sub(/^[0-9.]+/, '').strip
     end
     
+    rootName = name[/^[0-9a-zA-Z_:-]+/]    
+    puts "No match for #{name}" if rootName.nil?
     rootName
   end
+  
+  private :process_element_name
   
   # path is an ordered array, ex: ['errors', 'array', 'IndexError']
   def insert_tree_reference(path, insertion)
@@ -407,10 +418,11 @@ class DocumentationIndexHelper
     currentReference
   end
   
-  private :process_element_name
+  # when a doc archive is uncompressed it could be nested inside the docs/ folder
+  # have a completely different name or the documentation could be nested a couple folders deep
+  # this normalizes the docs dir: digs into the heirachy and finds the 'real' documentation folder and brings
+  # that up to the root renamed as docs/
   
-  # when the doc download is uncompressed it still has the old name... we want to rename it to /docs
-  # this assumes we are in the original PWD
   def rename_uncompressed_docs
     Dir.chdir @plugin_directory
     
@@ -538,7 +550,14 @@ class DocumentationIndexHelper
       helpDoc = Nokogiri::HTML(File.open(absoluteFilePath))
       
       # the window title is used for a peice of the heirarchy in the app's title
-      windowTitle = helpDoc.xpath("//title")[0].content
+      titleElements = helpDoc.xpath("//title")
+      
+      if titleElements.length > 0
+        windowTitle = titleElements[0].content
+      else
+        $stderr.puts "Error locating window title: #{helpFile}"
+        windowTitle = ""
+      end
       
       # check if we are dealing with a empty page
       # define content_holder_selector & unimportant_content_selectors

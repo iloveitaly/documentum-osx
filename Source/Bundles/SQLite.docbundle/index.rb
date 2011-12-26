@@ -5,6 +5,7 @@ require File.dirname(__FILE__) + '/../documentum'
 ih = DocumentationIndexHelper.new
 # ih.content_holder_selector = "#description"
 ih.rename_uncompressed_docs
+ih.name_type = DocumentationIndexHelper::NAME_SECTION_TYPE
 # ih.fix_asset_references
 # ih.process_name = proc do |name, level, *opts|
 #   conv = Iconv.new("UTF-8//IGNORE","ASCII")

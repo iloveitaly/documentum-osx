@@ -8,7 +8,6 @@
 
 #import "WHHelpIndexer.h"
 
-#import "AMURLLoader.h"
 #import "WHSupportFolder.h"
 #import "WHOutlineDataSource.h"
 #import "WHWebController.h"
@@ -77,7 +76,10 @@ static WHHelpIndexer *_sharedController;
 }
 
 - (void) runCommand:(NSString *)command withArgs:(NSArray *)args {
-	NSLog(@"%@", args);
+#ifdef DEBUG_BUNDLE
+	NSLog(@"Running Command: %@ %@", command, [args componentsJoinedByString:@" "]);
+#endif
+	
 	// convience function for running commands
 	// the CWD is the support folder for the current plugin
 	
@@ -108,9 +110,13 @@ static WHHelpIndexer *_sharedController;
 	[oProgress setIndeterminate:NO];
 	[oProgress setDoubleValue:0.0];
 	
-	NSString *downloadName = [[[_downloader url] absoluteString] lastPathComponent];
+	NSString *downloadName = [[url absoluteString] lastPathComponent];
 	NSString *downloadFilePath = [[[WHSupportFolder sharedController] supportFolderForPlugin:_indexerInfo] stringByAppendingPathComponent:downloadName];
 	[self setArchivePath:downloadFilePath];
+	
+#ifdef DEBUG_BUNDLE
+	NSLog(@"Archive Download Path: %@", downloadFilePath);
+#endif
 	
 	// setup the async download request
 	ASIHTTPRequest *loader = [ASIHTTPRequest requestWithURL:url];
@@ -121,7 +127,7 @@ static WHHelpIndexer *_sharedController;
 	[loader startAsynchronous];
 }
 
-#pragma mark -
+#pragma mark -pressrelease-20071212.html
 #pragma mark Accessors
 
 - (NSString *) status {

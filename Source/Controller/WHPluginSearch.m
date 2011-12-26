@@ -41,7 +41,10 @@
 	if(![sender currentEditor]) {//then they pressed enter
 		[oPluginListController setSelectionIndex:0];
 		[self selectPlugin:self];
+		
+		// close plugin search window & focus on the search field
 		[oPluginSearchWindow close];
+		[oMainWindow makeFirstResponder:oSearchField];
 	}
 }
 

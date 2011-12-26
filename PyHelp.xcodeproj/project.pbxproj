@@ -95,54 +95,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2725A88E0F11957C00B3BE06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2725A8850F11953700B3BE06;
-			remoteInfo = Python;
-		};
-		2725A9410F11993B00B3BE06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2725A91A0F1198C800B3BE06;
-			remoteInfo = CSS;
-		};
-		274467400F0D4E9C0059E529 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 274466D10F0D4AAE0059E529;
-			remoteInfo = MooTools;
-		};
 		277A0D110BE1B67200C17EBA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 272172D30BDE2BFF00ECBC6C;
 			remoteInfo = EncryptTool;
-		};
-		279608B10FD987C100FB72BE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 279608A00FD9875C00FB72BE;
-			remoteInfo = Kohana;
-		};
-		27B7559B0FE7F59E00A67786 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 27B7555A0FE7F48E00A67786;
-			remoteInfo = ActionScript;
-		};
-		27BBFFED137468B50050FBD8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 27BBFFD7137468A00050FBD8;
-			remoteInfo = PHP;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -271,7 +229,7 @@
 		27B7555C0FE7F48E00A67786 /* ActionScript-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ActionScript-Info.plist"; path = "Source/Plugins/AS/ActionScript-Info.plist"; sourceTree = "<group>"; };
 		27BBFFD8137468A00050FBD8 /* PHP.plugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PHP.plugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BBFFD9137468A00050FBD8 /* PHP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PHP-Info.plist"; path = "Source/Plugins/PHP/PHP-Info.plist"; sourceTree = "<group>"; };
-		27BEEF2314A5128B002E13E8 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = Pods/build/Release/libPods.a; sourceTree = "<group>"; };
+		27BEEF2314A5128B002E13E8 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = Pods/build/Release/libPods.a; sourceTree = "<group>"; };
 		27BEEF2514A5135E002E13E8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = ../../../../../System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<group>"; };
 		27BEEF2714A51375002E13E8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = ../../../../../usr/lib/libz.dylib; sourceTree = "<group>"; };
 		27BFB6240BCB35EF00E7B173 /* WHAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WHAppController.h; path = Source/Controller/WHAppController.h; sourceTree = "<group>"; };
@@ -986,12 +944,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				27BBFFEE137468B50050FBD8 /* PBXTargetDependency */,
-				279608B20FD987C100FB72BE /* PBXTargetDependency */,
-				2725A9420F11993B00B3BE06 /* PBXTargetDependency */,
-				2725A88F0F11957C00B3BE06 /* PBXTargetDependency */,
-				274467410F0D4E9C0059E529 /* PBXTargetDependency */,
-				27B7559C0FE7F59E00A67786 /* PBXTargetDependency */,
 				277A0D120BE1B67200C17EBA /* PBXTargetDependency */,
 			);
 			name = PyHelp;
@@ -1253,40 +1205,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2725A88F0F11957C00B3BE06 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2725A8850F11953700B3BE06 /* Python */;
-			targetProxy = 2725A88E0F11957C00B3BE06 /* PBXContainerItemProxy */;
-		};
-		2725A9420F11993B00B3BE06 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2725A91A0F1198C800B3BE06 /* CSS */;
-			targetProxy = 2725A9410F11993B00B3BE06 /* PBXContainerItemProxy */;
-		};
-		274467410F0D4E9C0059E529 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 274466D10F0D4AAE0059E529 /* MooTools */;
-			targetProxy = 274467400F0D4E9C0059E529 /* PBXContainerItemProxy */;
-		};
 		277A0D120BE1B67200C17EBA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 272172D30BDE2BFF00ECBC6C /* EncryptTool */;
 			targetProxy = 277A0D110BE1B67200C17EBA /* PBXContainerItemProxy */;
-		};
-		279608B20FD987C100FB72BE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 279608A00FD9875C00FB72BE /* Kohana */;
-			targetProxy = 279608B10FD987C100FB72BE /* PBXContainerItemProxy */;
-		};
-		27B7559C0FE7F59E00A67786 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 27B7555A0FE7F48E00A67786 /* ActionScript */;
-			targetProxy = 27B7559B0FE7F59E00A67786 /* PBXContainerItemProxy */;
-		};
-		27BBFFEE137468B50050FBD8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 27BBFFD7137468A00050FBD8 /* PHP */;
-			targetProxy = 27BBFFED137468B50050FBD8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

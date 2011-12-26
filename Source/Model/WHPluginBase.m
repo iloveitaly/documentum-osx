@@ -146,9 +146,7 @@ static NSComparisonResult searchSort(id ob1, id ob2, void *searchString) {
 			break;
 		}
 			
-		case WHDownloadHelpDocs: {
-			NSLog(@"Archive Path: %@", [controller archivePath]);
-			
+		case WHDownloadHelpDocs: {			
 			// /bin/sh (c = executes the following string and exits instead of going into the interactive shell)
 			// gzip (c = dont modify file, output to stdout; f = force; d = decompress)
 			NSString *extension = [[controller archivePath] pathExtension],
