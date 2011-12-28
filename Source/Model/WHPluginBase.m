@@ -212,7 +212,7 @@ static NSComparisonResult searchSort(id ob1, id ob2, void *searchString) {
 	
 	// run through the array being case sensative
 	for (WHHelpNode *node in allPages) {
-		if([[node name] containsString:searchString ignoringCase:NO]) {
+		if(!isEmpty([node filePath]) && [[node name] containsString:searchString ignoringCase:NO]) {
 			[results addObject:node];
 			[firstPassContents addObject:node];
 		}
@@ -220,7 +220,7 @@ static NSComparisonResult searchSort(id ob1, id ob2, void *searchString) {
 	
 	// run through the array disregarding case
 	for (WHHelpNode *node in allPages) {
-		if(![firstPassContents containsObject:node] && [[node name] containsString:searchString ignoringCase:YES]) {
+		if(!isEmpty([node filePath]) && ![firstPassContents containsObject:node] && [[node name] containsString:searchString ignoringCase:YES]) {
 			[results addObject:node];
 		}
 
