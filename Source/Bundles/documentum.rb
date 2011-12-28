@@ -81,6 +81,7 @@ class Spider
   
   attr_accessor :output_dir
   attr_accessor :restrict_crawl
+  attr_accessor :exclude_urls
   
   def initialize
     @already_visited = {}
@@ -88,6 +89,7 @@ class Spider
     @assets = {}
     @page_limit = 500
     @restrict_crawl = nil
+    @exclude_urls = []
   end
 
   def crawl_web(urls, depth=2, page_limit = 100)
@@ -96,12 +98,15 @@ class Spider
       urls.each do |url|
         url_object = open_url(url)
         next if url_object == nil
+        
         url = update_url_if_redirected(url, url_object)
         parsed_url = parse_url(url_object)
         next if parsed_url == nil
+        
         @already_visited[url]=true if @already_visited[url] == nil
         return if @already_visited.size == page_limit
-        next_urls += (find_urls_on_page(parsed_url, url)-@already_visited.keys)
+        
+        next_urls += (find_urls_on_page(parsed_url, url) - @already_visited.keys)
         next_urls.uniq!
       end
       urls = next_urls
@@ -132,7 +137,9 @@ class Spider
       url_object = nil, parsed_url = nil
       
       url_list.each do |page_url|
-        if urls_on_same_domain?(url, page_url) and @already_visited[page_url] == nil and (@restrict_crawl.nil? or page_url.include?(@restrict_crawl))
+        included = @exclude_urls.detect { |ob| page_url.start_with? ob }.nil?
+        
+        if urls_on_same_domain?(url, page_url) and @already_visited[page_url] == nil and (@restrict_crawl.nil? or page_url.include?(@restrict_crawl)) and included
           puts "Going to crawl: #{page_url}"
           crawl_domain(page_url)
         end
@@ -204,7 +211,7 @@ class Spider
       # TODO: validate URL, with some documentation sites there are invalid URLs laying around
       
       # skip anchor links
-      next if x["href"].start_with? "#" or x["href"].downcase.start_with? "javascript:" or x["href"].downcase.start_with? "mailto:"
+      next if x["href"].start_with? "#" or x["href"].downcase.start_with? "javascript:" or x["href"].downcase.start_with? "mailto:" or x["href"].downcase.start_with? "irc:"
       
       new_url, anchor = x['href'].split('#')
       unless new_url == nil
@@ -464,6 +471,7 @@ class DocumentationIndexHelper
   def crawl(domain, options = {})
     @spider = Spider.new
     @spider.restrict_crawl = (options[:restrict] === true) ? domain : options[:restrict]
+    @spider.exclude_urls = options[:exclude_urls] if not options[:exclude_urls].nil?
     @spider.output_dir = @docs_path
     @spider.crawl_domain(domain)
   end

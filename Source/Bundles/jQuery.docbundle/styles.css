@@ -1,0 +1,20 @@
+body {
+	background:white !important;
+}
+
+#jq-siteContain {
+	width:100% !important;
+	margin:0 !important;
+}
+
+#jq-primaryContent {
+	width:80% !important;
+}
+
+#jq-interiorNavigation {
+	width:20%;
+}
+
+#jq-header {
+	display:none
+}

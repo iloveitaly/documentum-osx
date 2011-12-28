@@ -2,3 +2,8 @@ TODO:
 	- arrow down on search field moves focus to the search results
 	- remember last used bundle @done(2011-12-28)
 	- display hiearchy names when duplicate items exist in search results
+	- cmd+t should default focus on search field
+	- move bundles into Documentum/Bundles instead the root level application support file
+	Crawler:
+		- log excluded items
+		- better detection of bad / false URLs
