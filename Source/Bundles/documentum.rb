@@ -606,7 +606,7 @@ class DocumentationIndexHelper
           before_count = new_element_stack.length
           current_selector = heiarchy[index].class == Array ? heiarchy[index].first : heiarchy[index]
           
-          puts "Relative Hierarchy: #{relative_hierarchy.name}: #{current_selector}"
+          puts "Relative Hierarchy: #{relative_hierarchy.name} : #{current_selector}"
           
           relative_hierarchy.relative_root.css(current_selector).each do |helpElement|
             if @process_name.class == Symbol

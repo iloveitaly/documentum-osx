@@ -1,3 +1,4 @@
 TODO:
 	- arrow down on search field moves focus to the search results
-	- remember last used bundle
+	- remember last used bundle @done(2011-12-28)
+	- display hiearchy names when duplicate items exist in search results

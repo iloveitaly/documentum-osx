@@ -9,6 +9,8 @@
 
 #define DEBUG_BUNDLE
 
+#define WHLastUsedPlugin @"WHLastUsedPlugin"
+
 #define APP_NAME [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"]
 #define APP_VERSION [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"]
 #define OPEN_URL(urlString) [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlString]]

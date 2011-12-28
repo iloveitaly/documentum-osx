@@ -31,9 +31,10 @@ static WHPluginList *_sharedController;
 		// plugin development: http://www.far-blue.co.uk/hacks/plugin-frameworks.html
 		// undefined symbol error: http://www.borkware.com/quickies/one?topic=Xcode
 		
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillFinishLaunching:) name:NSApplicationWillFinishLaunchingNotification object:nil];
-		
-		//[self setPluginList:[NSArray arrayWithObjects:[PHDataSource new], [PHPDataSource new], [CSSDataSource new], nil]];
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(applicationWillFinishLaunching:)
+													 name:NSApplicationWillFinishLaunchingNotification
+												   object:nil];
 	}
 	
 	return self;
@@ -160,6 +161,8 @@ static WHPluginList *_sharedController;
 			[[WHHelpIndexer sharedController] setIndexerInformation:_selectedPlugin];
 			[[WHHelpIndexer sharedController] startIndexing:self];
 		}
+		
+		PREF_SET_KEY_VALUE(WHLastUsedPlugin, [_selectedPlugin packageName]);
 	}
 }
 
@@ -168,6 +171,26 @@ static WHPluginList *_sharedController;
 
 - (void)applicationWillFinishLaunching:(NSNotification*)notification {
 	[self findAvailablePlugins];
+	
+	// try loading from defaults (which stores the last accessed plugin)
+	NSString *lastUsedPluginName = PREF_KEY_VALUE(WHLastUsedPlugin);
+	
+	if(!isEmpty(lastUsedPluginName)) {
+		NSUInteger pluginIndex = [_pluginList indexOfObjectPassingTest:^(id obj, NSUInteger idx, BOOL *stop) {
+			if([[obj packageName] isEqualToString:lastUsedPluginName]) {
+				*stop = YES;
+				return YES;
+			}
+			
+			return NO;
+		}];
+		
+		if(pluginIndex != NSNotFound) {
+			[self setSelectedPlugin:[_pluginList objectAtIndex:pluginIndex]];
+			return;
+		}
+	}
+		   
 	[self setSelectedPlugin:[_pluginList lastObject]];
 }
 
