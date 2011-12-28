@@ -23,7 +23,12 @@ ih.process_name = proc do |name, *args|
   end
 end
 ih.unimportant_content_selectors = "h1,h2,h3,h4,h5,div.sectiontitle,ul"
-ih.generate_structure "h1", ".method .title"
+
+# for testing
+# ih.file_list = ['classes/ActionView/Helpers/FormBuilder.html']
+
+# the -1 instructs the next level of selectors to start from the top (in this case the next level selectors are not located under the h1)
+ih.generate_structure ["h1", -1], ".method .title b"
 ih.structure.each do |index,value|
   if (index.count "::") > 1
     ih.insert_tree_reference index.split("::"), value
@@ -32,12 +37,4 @@ ih.structure.each do |index,value|
     puts "Only once: #{index}"
   end
 end
-# ih.anchor_locator = proc do |element, index, document|
-#   if index == 0
-#     ""
-#   else
-#     element.parent.parent.css("a[name*=method]").first["name"]
-#   end
-# end
-# ih.anchor_strip_prefix = "method-[ic]-"
 ih.write_structure
